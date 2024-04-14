@@ -1,0 +1,1666 @@
+.inner-large-banner {
+  &.smart-acheivers-banner {
+    @include mq("tablet", max) {
+      .left-section {
+        .banner-caption {
+          left: 40px;
+        }
+        h1 {
+          max-width: 610px;
+          br {
+            display: none;
+          }
+          @include mq("phone", max) {
+            max-width: 340px;
+          }
+        }
+      }
+    }
+    @include mq("phone", max) {
+      .left-section {
+        .banner-caption {
+          left: 30px;
+        }
+      }
+    }
+    .right-section {
+      background: url("./../img/smart_achiever/banner.jpg") no-repeat 0px 0px / cover;
+    }
+  }
+}
+.jigyasa-section-one {
+  &.smart {
+    padding: 72px 0;
+    h2 {
+      br {
+        display: none !important;
+        @include mq("tablet", max) {
+          display: block !important;
+        }
+      }
+    }
+    p {
+      max-width: 642px;
+      width: 100%;
+      margin: auto;
+    }
+    @include mq("tablet", max) {
+      padding: 54px 0 60px;
+      @include mq("phone", max) {
+        p {
+          max-width: 365px;
+        }
+      }
+    }
+  }
+}
+
+.smart-section-two {
+  padding: 80px 0;
+  position: relative;
+  background: $bg-grey;
+  .bg-white {
+    background: $bg-white;
+    height: 100%;
+    width: 50%;
+    @include abs-position(0, 0, auto, auto);
+    z-index: 0;
+  }
+  .test-card-set {
+    .test-card {
+      padding: 0 62px;
+      position: relative;
+      z-index: 1;
+      @include mq("smdesktop", max) {
+        padding: 0 20px;
+      }
+      .inner-card {
+        figure {
+          border-radius: 50%;
+          margin-right: 17px;
+        }
+        .content {
+          min-height: 195px;
+          .para {
+            max-width: 320px;
+            width: 100%;
+            > p {
+              @include font-source-sans(14px, $heading-font-color, 400, 16px);
+              font-style: italic;
+              display: inline;
+              position: relative;
+              &::before {
+                content: " “ ";
+                display: block;
+                @include abs-position(0, auto, auto, -20px);
+                font-size: 52px;
+                color: #cccccc;
+              }
+              &:after {
+                content: " “ ";
+                display: block;
+                @include css3-prefix(transform, rotate(180deg));
+                @include abs-position(auto, -30px, 5px, auto);
+                font-size: 52px;
+                color: #cccccc;
+              }
+            }
+          }
+          .name {
+            margin-top: 20px;
+            p {
+              @include font-source-sans(14px, $theme-blue, 700, 16px);
+              position: relative;
+              padding-top: 14px;
+              span {
+                @include font-source-sans(13px, $heading-font-color, 400, 16px);
+                &.cap {
+                  font-size: 12px;
+                }
+              }
+              &::before {
+                @include pseudo;
+                @include abs-position(-13px, auto, 0, 0);
+                margin-top: 20px;
+                background: #2dabff;
+                height: 2px;
+                width: 46px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 0;
+    .bg-white {
+      width: 100%;
+      height: 50%;
+      bottom: 0;
+      top: auto;
+    }
+    .test-card-set {
+      flex-direction: column;
+      .test-card {
+        margin: 60px 0;
+      }
+    }
+  }
+  @include mq("phone", max) {
+    .test-card-set {
+      .test-card {
+        padding: 0 20px;
+        margin: 60px 0;
+        .inner-card {
+          flex-direction: column;
+          figure {
+            margin-bottom: 20px;
+          }
+          .name {
+            p {
+              br {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.smart-section-three {
+  padding: 115px 0 10px;
+  background: url("../img/smart_achiever/dual_card_bg.png") no-repeat right top / contain;
+  &.opacity-bg {
+    &::after {
+      @include pseudo;
+      @include abs-position(0, auto, auto, 0);
+      width: 100%;
+      height: 100%;
+      background: #f6f6f6;
+      opacity: 0.94;
+    }
+  }
+  .dual-para-card {
+    position: relative;
+    z-index: 1;
+    .left {
+      margin-bottom: 25px;
+      h2 {
+        margin-bottom: 30px;
+        // max-width: 296px;
+        max-width: 394px;
+        width: 100%;
+      }
+      h5 {
+        @include font-source-sans(18px, $heading-font-color, 600, 20px);
+        margin-bottom: 9px;
+      }
+      .content {
+        width: 100%;
+        max-width: 460px;
+        img {
+          margin: 5px 8px 0 0;
+        }
+        p {
+          @include font-source-sans(16px, $heading-font-color, 400, 18px);
+          margin-bottom: 23px;
+          b {
+            font-weight: 600;
+          }
+        }
+      }
+      .terms {
+        @include abs-position(auto, auto, -175px, auto);
+        max-width: 420px;
+        @include mq("tablet", max) {
+          max-width: 355px;
+        }
+        small {
+          &:last-child {
+            margin-top: 5px;
+            &::before {
+              display: none;
+            }
+          }
+        }
+        @include mq("tablet", max) {
+          left: 15px;
+        }
+      }
+    }
+    .right {
+      &.role-section {
+        padding: 0;
+        background: transparent;
+        margin: 0 0 -250px;
+        position: relative;
+        z-index: 1;
+        .role-card-set {
+          .role-card {
+            width: 154px;
+            height: auto;
+            min-height: 222px;
+            padding: 35px 25px;
+            margin: 0 12px 24px 12px;
+            pointer-events: none;
+            .card-content {
+              text-align: center;
+              .icon-circle {
+                width: 60px;
+                height: 60px;
+                margin: auto auto 16px;
+              }
+              p {
+                @include font-source-sans(12px, $heading-font-color, 400, 15px);
+              }
+            }
+            &:hover {
+              background: $bg-white;
+              p {
+                color: $heading-font-color;
+              }
+            }
+          }
+          &.two {
+            margin-top: 70px;
+          }
+        }
+      }
+    }
+  }
+  @include mq("tablet", max) {
+    padding-top: 60px;
+    background: url("../img/smart_achiever/dual_card_bg.png") no-repeat right top / cover;
+    .mobile-break {
+      display: none;
+    }
+    .dual-para-card {
+      .left {
+        h2 {
+          max-width: 450px;
+        }
+      }
+      .right {
+        &.role-section {
+          margin: 0 0 -175px;
+        }
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding-top: 40px;
+    .dual-para-card {
+      flex-direction: column;
+      .left {
+        padding: 10px;
+        .terms {
+          bottom: -290px;
+          @include mq("smphone", max) {
+            bottom: -330px;
+          }
+        }
+      }
+      .right.role-section {
+        align-items: start !important;
+        .role-card-set {
+          &.one {
+            margin-right: 24px;
+          }
+          &.two {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.grow-learn-lead {
+  &.program-structure {
+    padding: 330px 0 70px;
+    .gll-wrap {
+      margin-bottom: 130px;
+      &:before {
+        content: "Program Features";
+      }
+      .gll-left {
+        position: relative;
+        > p {
+          max-width: 475px;
+        }
+        ul {
+          margin-top: 18px;
+          figure {
+            margin-right: 20px;
+            @include mq("tablet", max) {
+              margin-right: 10px;
+            }
+          }
+          p {
+            max-width: 370px;
+          }
+        }
+        .term {
+          margin-left: 20px;
+          @include font-source-sans(11px, $para-font-color, 600, 15px);
+          max-width: 340px;
+          width: 100%;
+          @include abs-position(auto, auto, 0, 0);
+          &.smart {
+            bottom: 0;
+            @include mq("tablet", max) {
+              bottom: 90px;
+            }
+          }
+        }
+      }
+      .gll-right {
+        > figure {
+          img {
+            width: 100%;
+          }
+          position: relative;
+          figure {
+            border-radius: 50%;
+            background: $bg-half-white;
+            @include abs-position(0, auto, auto, 12px);
+            @include css3-prefix("transform", "translateY(-50%)");
+            width: 76px;
+            height: 76px;
+            z-index: 1;
+            img {
+              width: unset;
+            }
+          }
+          .square-content {
+            max-width: 400px;
+            background: $theme-blue;
+            border-radius: 10px;
+            box-shadow: 0px 8px 12px #0000000f;
+            @include abs-position(auto, auto, -100px, -50px);
+            p {
+              @include font-source-sans(16px, $bg-white, 400, 20px);
+              padding: 34px 66px 20px;
+              text-align: center;
+              b {
+                font-weight: bold;
+              }
+            }
+            @include mq("tablet", max) {
+              position: absolute !important;
+              bottom: -85px !important;
+              p {
+                padding: 34px 35px 30px;
+              }
+            }
+          }
+          &.img-square {
+            .square-content {
+              bottom: -55px;
+            }
+          }
+        }
+      }
+    }
+    @include mq("tablet", max) {
+      // padding: 230px 0 60px;
+      padding: 250px 0 30px;
+      .gll-wrap {
+        margin-bottom: 120px;
+        .gll-right {
+          margin-top: 0;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+    }
+    @include mq("phone", max) {
+      padding: 380px 0 20px;
+      @include mq("smphone", max) {
+        padding: 320px 0 60px;
+      }
+      .gll-wrap {
+        &:before {
+          @include mq("smphone", max) {
+            font-size: 12vw !important;
+            letter-spacing: -2.4px;
+          }
+        }
+        .gll-left {
+          h2 {
+            br {
+              display: block;
+            }
+          }
+        }
+        .gll-right {
+          > figure {
+            width: 100%;
+            @include mq("phone", max) {
+              margin-top: 40px;
+            }
+            figure {
+              left: -10px;
+            }
+            .square-content {
+              max-width: 100%;
+              left: -20px;
+              p {
+                padding: 34px 40px 20px;
+                br {
+                  display: block;
+                }
+              }
+            }
+          }
+          @include mq("phone", max) {
+            margin-bottom: 90px;
+          }
+        }
+        margin-bottom: 120px;
+      }
+    }
+    .course-bottom {
+      margin-bottom: 30px;
+      @include mq("tablet", max) {
+        margin-top: 30px;
+      }
+      .card-content {
+        min-height: 90px;
+        padding-bottom: 20px;
+        min-width: 355px;
+        h4 {
+          @include font-source-sans(25px, $heading-font-color, 400, 25px);
+          margin-bottom: 8px;
+        }
+        p {
+          @include font-source-sans(14px, $heading-font-color, 400, 18px);
+          max-width: 355px;
+          margin-bottom: 8px;
+        }
+        a {
+          @include font-source-sans(14px, $heading-font-color, 600, 18px);
+          &::before {
+            background: url(../img/arrow_red_down.svg) no-repeat center;
+          }
+        }
+        &.bottom-line {
+          position: relative;
+          &::before {
+            @include pseudo;
+            @include abs-position(auto, auto, 0, -20px);
+            width: 109px;
+            height: 1px;
+            background: #a8a8a8;
+            opacity: 0.5;
+            // @include mq("phone", max) {
+            //   display: none;
+            // }
+          }
+          &.mbl {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+      @include mq("phone", max) {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 15px;
+        .card-content {
+          margin-bottom: 30px;
+          min-width: unset;
+          p {
+            max-width: 340px;
+          }
+          &.bottom-line.mbl {
+            &::before {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.smart-section-five {
+  padding: 110px 0 126px;
+  .container {
+    position: relative;
+  }
+  h2 {
+    // margin-bottom: 12px;
+    margin: auto auto 48px;
+  }
+  p {
+    max-width: 608px;
+    width: 100%;
+    margin: auto auto 48px;
+  }
+
+  .smart-circle-wrapper.count {
+    margin-bottom: 80px;
+    .circle-card {
+      width: 150px;
+      margin: 0 25px;
+      .circle-card-inner {
+        .circle {
+          min-width: 118px;
+          width: 118px;
+          height: 118px;
+          margin: auto auto 12px;
+          // margin-bottom: 12px;
+          background: #fff;
+          span {
+            @include font-source-sans(30px, $theme-blue, 600, 30px);
+            margin-bottom: 0px;
+          }
+          &.blue {
+            background: $theme-blue;
+            // border: 1px solid $para-font-color;
+            span {
+              color: $bg-white;
+            }
+          }
+        }
+        .content {
+          p {
+            @include font-source-sans(14px, $heading-font-color, 400, 18px);
+            margin: 0;
+          }
+        }
+      }
+      &.add {
+        position: relative;
+        &::after {
+          content: "+";
+          font-size: 50px;
+          color: #cccccc;
+          @include abs-position(33px, -35px, 0, auto);
+        }
+      }
+      &.equal {
+        position: relative;
+        &::after {
+          content: "";
+          background: url("../img/smart_achiever/grey_arrow_right.svg") no-repeat center / contain;
+          width: 25px;
+          height: 25px;
+          @include abs-position(48px, -35px, 0, auto);
+        }
+      }
+    }
+    .arrow {
+      img {
+        margin-top: 46px;
+      }
+    }
+  }
+  .bottom-curr {
+    h4 {
+      @include font-source-sans(25px, $heading-font-color, 400, 30px);
+      margin: 0 auto 40px auto;
+      max-width: 495px;
+      @include mq("phone", max) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .bottom-content {
+    .bottom-left,
+    .bottom-right {
+      max-width: 370px;
+      .point-content {
+        img {
+          margin: 5px 6px auto 0;
+        }
+        p {
+          @include font-source-sans(16px, $heading-font-color, 400, 20px);
+          margin-bottom: 16px;
+        }
+      }
+      .cur-btn-wrap {
+        margin: 40px 20px 0 auto;
+        // @include mq("phone", max) {
+        //   margin-top: 60px;
+        // }
+        @include mq("phone", max) {
+          margin-top: 30px;
+          justify-content: flex-start !important;
+        }
+      }
+    }
+    &.right-line {
+      position: relative;
+      &:before {
+        @include pseudo;
+        @include abs-position(10px, 0, auto, 0);
+        margin: auto;
+        width: 1px;
+        height: 104px;
+        background: #a8a8a8;
+        @include mq("phone", max) {
+          display: none;
+        }
+      }
+    }
+    // .bottom-right {
+    // background: $bg-white;
+    // max-width: 370px;
+    // margin-left: 65px;
+    // padding: 40px;
+    // h5 {
+    //   @include font-source-sans(18px, $heading-font-color, 400, 24px);
+    // }
+    //   position: relative;
+    //   .view-more {
+    //     @include abs-position(auto, 0, -65px, auto);
+    //     @include css3-prefix("transition", ".3s");
+    //     .read-more {
+    //       // @include font-source-sans(14px, #404040, 600, 18px);
+    //       padding: 0 45px 0 20px;
+    //       &::before {
+    //         background: url("../img/icon/arrow_red.svg") no-repeat center;
+    //         padding: 15px;
+    //         right: 0;
+    //       }
+    //     }
+    //     &:hover {
+    //       margin-right: -20px;
+    //     }
+    //   }
+    // }
+  }
+  .mobile-left {
+    @include mq("phone", max) {
+      text-align: left;
+      padding: 0px 10px;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 60px 0;
+    .smart-circle-wrapper {
+      margin: 0 20px;
+      justify-content: center;
+      flex-wrap: unset;
+      .circle-card-inner {
+        margin-left: 0;
+        @include mq("phone", max) {
+          // margin-left: calc(50% - 75px);
+        }
+        .content {
+          margin-left: 0;
+        }
+      }
+    }
+    .bottom-content {
+      @include mq("phone", max) {
+        padding: 0 10px;
+      }
+
+      .bottom-left {
+        margin-right: 20px;
+      }
+      .bottom-right {
+        margin-left: 20px;
+      }
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 60px 0 60px;
+    .smart-circle-wrapper.count {
+      flex-direction: column;
+      // margin-bottom: 0;
+      margin: 0;
+      .circle-card {
+        margin: 0 auto 60px !important;
+        width: 100%;
+        .circle-card-inner {
+          display: flex;
+          justify-content: center;
+          @include mq("phone", max) {
+            justify-content: center;
+          }
+          align-items: center;
+          .circle {
+            margin: auto 15px 0;
+            position: relative;
+            &.add {
+              &::after {
+                content: "+";
+                font-size: 50px;
+                color: #cccccc;
+                @include abs-position(auto, 50%, -59px, auto);
+                @include css3-prefix("transform", "translateX(50%)");
+                font-size: 44px;
+                line-height: 60px;
+              }
+            }
+            &.equal {
+              &::after {
+                content: "";
+                background: url("../img/smart_achiever/grey_arrow_right.svg") no-repeat center / contain;
+                width: 22px;
+                height: 25px;
+                @include abs-position(auto, 40%, -45px, auto);
+                @include css3-prefix("transform", "rotate(90deg)");
+              }
+            }
+          }
+        }
+
+        .content {
+          margin: 0;
+          width: 130px;
+          p {
+            text-align: left;
+            br {
+              display: block;
+            }
+          }
+        }
+        &.add,
+        &.equal {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+    @include mq("phone", max) {
+      .bottom-content {
+        .bottom-right,
+        .bottom-left {
+          margin-bottom: 0px !important;
+          .point-content {
+            p {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+    @include mq("phone", max) {
+      .bottom-content {
+        flex-direction: column;
+        .bottom-right,
+        .bottom-left {
+          margin-left: 0;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+.smart-section-six {
+  padding: 104px 0 110px;
+  background: $bg-white;
+  figure {
+    margin: 70px 0 40px;
+    img,
+    svg {
+      width: 100%;
+      max-width: 943px;
+    }
+  }
+  ul {
+    margin-left: 95px;
+    li {
+      @include font-source-sans(10px, $heading-font-color, 400, 16px);
+      margin-bottom: 6px;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 60px 0;
+    figure {
+      img,
+      svg {
+        width: 100%;
+      }
+    }
+    ul {
+      margin-left: 25px;
+    }
+  }
+  @include mq("phone", max) {
+    padding: 60px 0;
+    figure {
+      img,
+      svg {
+        width: 90%;
+      }
+    }
+    ul {
+      margin-left: 25px;
+    }
+  }
+}
+
+.smart-section-seven {
+  background: $bg-half-white;
+
+  &.benefits-section {
+    padding: 110px 0 110px;
+    @include mq("tablet", max) {
+      padding: 64px 0 70px 0;
+    }
+    @include mq("phone", max) {
+      padding: 60px 0 60px 0;
+    }
+  }
+  h2 {
+    margin-bottom: 12px;
+  }
+  p {
+    max-width: 566px;
+    width: 100%;
+    margin: auto auto 56px;
+  }
+  .dashed-line {
+    position: relative;
+    margin-bottom: 30px;
+    h5 {
+      @include mq("phone", max) {
+        font-size: 22px !important;
+      }
+      @include font-source-sans(24px, $heading-font-color, 600, 28px);
+      padding: 0 24px;
+      display: inline-block;
+      margin: auto;
+      background: $bg-half-white;
+      position: relative;
+      z-index: 1;
+    }
+    &::before {
+      @include pseudo;
+      @include abs-position(0, 0, 0, 0);
+      margin: auto;
+      max-width: 570px;
+      width: 100%;
+      height: 2px;
+      border-bottom: 1px dotted $btn-color;
+      z-index: 0;
+      @include mq("phone", max) {
+        display: none;
+      }
+    }
+  }
+  .role-card-set {
+    margin-bottom: 100px;
+    .role-card {
+      margin-right: 44px;
+      pointer-events: none;
+      &:hover {
+        background: $bg-white;
+        h6 {
+          color: $font-blue;
+        }
+        p {
+          color: $heading-font-color;
+        }
+      }
+      @include mq("phone", max) {
+        height: 285px;
+      }
+    }
+    @include mq("tablet", max) {
+      margin-bottom: 30px;
+    }
+    @include mq("tablet", max) {
+      margin-bottom: 50px;
+    }
+  }
+  h4 {
+    @include font-source-sans(32px, $heading-font-color, 600, 36px);
+    margin-bottom: 38px;
+    @include mq("phone", max) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  .card-set {
+    min-height: 300px;
+    height: 100%;
+    margin-bottom: 30px;
+    &.smart {
+      margin-left: 200px;
+      @include mq("desktop", max) {
+        margin-left: 150px;
+      }
+      @include mq("smdesktop", max) {
+        margin-left: 40px;
+      }
+      @include mq("tablet", max) {
+        margin-left: 0;
+        justify-content: center !important;
+        .icon-card {
+          margin: 0 140px 155px 50px !important;
+          min-height: 150px;
+        }
+      }
+      @include mq("phone", max) {
+        margin-bottom: 50px;
+        .icon-card {
+          min-height: 175px;
+          margin: 0 140px 165px 50px !important;
+        }
+      }
+    }
+    @include mq("tablet", max) {
+      flex-wrap: wrap;
+    }
+  }
+  .icon-card {
+    width: 125px;
+    margin: 0 127px 0 30px;
+    .content {
+      background-color: $bg-half-white;
+      min-width: 200px;
+      .title {
+        @include font-source-sans(18px, $heading-font-color, 600, 20px);
+        width: 205px;
+        @include mq("phone", max) {
+          font-size: 15px;
+          line-height: 17px;
+          width: 171px;
+        }
+      }
+      small {
+        @include font-source-sans(13px, $heading-font-color, 400, 18px);
+        width: 195px;
+        display: block;
+        @include mq("phone", max) {
+          width: 174px;
+        }
+      }
+    }
+    @include mq("tablet", max) {
+      margin: 0 140px 133px 50px !important;
+    }
+  }
+
+  .smart-circle-wrapper {
+    margin-bottom: 60px;
+    .circle-card {
+      width: 155px;
+      margin: 0 35px;
+      .circle-card-inner {
+        .circle {
+          width: 137px;
+          height: 137px;
+          border-radius: 50%;
+          box-shadow: 0px 3px 6px #00000029;
+          margin-bottom: 12px;
+        }
+        .content {
+          span {
+            @include font-source-sans(40px, #cccccc, 400, 32px);
+          }
+          p {
+            @include font-source-sans(14px, $heading-font-color, 400, 16px);
+            margin: 0 0 0 6px;
+          }
+        }
+      }
+    }
+    @include mq("phone", max) {
+      .circle-card {
+        width: 205px;
+      }
+    }
+    @include mq("tablet", max) {
+      justify-content: center !important;
+      .circle {
+        margin: 0 auto 12px;
+      }
+    }
+    @include mq("phone", max) {
+      margin-bottom: 10px;
+      align-items: center !important;
+      flex-direction: column;
+      .circle-card {
+        margin-bottom: 30px;
+        .content {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  p {
+    &.term {
+      padding: 10px;
+      text-align: center;
+      @include font-source-sans(11px, $heading-font-color, 600, 16px, italic);
+      margin-bottom: 0;
+    }
+  }
+}
+
+// smart-section-eight
+
+.smart-section-eight {
+  padding: 110px 0 110px;
+  background: $bg-white;
+  p {
+    max-width: 608px;
+    width: 100%;
+    margin: 10px auto 58px;
+    &.term {
+      text-align: center;
+      @include font-source-sans(11px, $heading-font-color, 600, 16px, italic);
+      margin: 10px auto 0;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 60px 0px 80px 0px;
+    h2 {
+      // max-width: 320px;
+      margin: auto;
+    }
+    p {
+      margin-bottom: 20px;
+      @include mq("phone", max) {
+        max-width: 92%;
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 60px 0;
+    h2 {
+      max-width: 320px;
+      margin: auto;
+    }
+  }
+  .smart-circle-wrapper {
+    .circle-card {
+      max-width: 186px;
+      .circle-card-inner {
+        .content {
+          // margin-left: 0;
+        }
+      }
+    }
+  }
+}
+.smart-circle-wrapper {
+  .circle-card {
+    width: 200px;
+    margin: 0 28px;
+    .circle-card-inner {
+      .circle {
+        width: 186px;
+        height: 186px;
+        border-radius: 50%;
+        box-shadow: 0px 3px 6px #00000029;
+        margin-bottom: 25px;
+        span {
+          @include font-source-sans(14px, $theme-blue, bold, 16px);
+          margin-bottom: 5px;
+        }
+        p {
+          @include font-source-sans(18px, $heading-font-color, 600, 22px);
+          margin: 0;
+        }
+        &.blue {
+          background: $theme-blue;
+          // border: 1px solid $para-font-color;
+          p {
+            color: $bg-white;
+          }
+        }
+      }
+      .content {
+        > p {
+          @include font-source-sans(14px, $heading-font-color, 400, 16px);
+          &.sb-600 {
+            font-weight: 600;
+          }
+          b {
+            font-weight: 600;
+          }
+        }
+        div {
+          img {
+            margin: 2px 5px 0 0;
+          }
+          p {
+            @include font-source-sans(14px, $heading-font-color, 400, 16px);
+            margin: 0 0 6px 0;
+          }
+        }
+        max-width: 158px;
+        margin-left: auto;
+        margin-right: auto;
+        &.width-unset {
+          // max-width: unset;
+          // margin-left: -8px;
+        }
+        @include mq("tablet", max) {
+          max-width: 100%;
+          margin: 0 15px 0 0;
+        }
+      }
+    }
+  }
+  .arrow {
+    img {
+      margin-top: 83px;
+      width: 25px;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 0;
+    &.tab-flex-col {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .circle-card {
+      margin: 20px 0;
+      &.pos-arrow {
+        margin-top: 40px;
+        position: relative;
+        .arrow {
+          display: flex;
+          justify-content: center;
+          @include abs-position(-36px, auto, auto, 50%);
+          @include css3-prefix("transform", "translateX(-50%)");
+          img {
+            margin: 0;
+            @include css3-prefix(transform, rotate(90deg));
+            width: 18px;
+          }
+        }
+      }
+      .content {
+        margin-left: 15px;
+      }
+    }
+    .arrow {
+      img {
+        margin-top: 83px;
+      }
+    }
+  }
+  @include mq("phone", max) {
+    justify-content: center !important;
+    .circle-card {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.smart-section-nine {
+  padding: 110px 0 110px;
+  background: #fcfcfc;
+  h2 {
+    margin-bottom: 10px;
+  }
+  p {
+    margin: auto auto 60px;
+    max-width: 494px;
+    width: 100%;
+    @include mq("phone", max) {
+      width: 80%;
+    }
+  }
+  h4 {
+    @include font-source-sans(28px, $heading-font-color, 600, 28px);
+  }
+
+  h3 {
+    margin-top: 12px;
+    @include font-source-sans(32px, $heading-font-color, 400, 40px);
+  }
+  figure {
+    img {
+      max-width: 1059px;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 60px 0;
+    p {
+      margin: auto auto 60px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+    figure {
+      img,
+      svg {
+        // width: 65%;
+        width: 100%;
+        height: auto;
+        @include mq("phone", max) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @include mq("phone", max) {
+    .container {
+      padding: 0 0 0 15px;
+    }
+  }
+}
+
+.smart-section-ten {
+  overflow: hidden;
+  background: $bg-half-white;
+  .women-section {
+    padding: 76px 0 156px 148px;
+    p {
+      @include mq("phone", max) {
+        width: 75%;
+      }
+    }
+  }
+  .women-section {
+    p {
+      @include mq("tablet", max) {
+        width: 61%;
+      }
+    }
+  }
+  .women-scroll-slider {
+    background: $bg-half-white;
+    .left-fixed-card {
+      h2 {
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+      p {
+        color: $heading-font-color;
+      }
+    }
+    .video-card {
+      .image-center {
+        a {
+          .big_150 {
+            color: #e5e5e5;
+            opacity: 0.3;
+            font-size: 80px;
+            letter-spacing: -6px;
+            bottom: -42px;
+          }
+        }
+      }
+      .img-content {
+        p {
+          color: $heading-font-color;
+          font-weight: 400;
+        }
+      }
+      &.first {
+        .image-center {
+          .big_150 {
+            left: -100px;
+          }
+        }
+      }
+      &.second {
+        .image-center {
+          .big_150 {
+            left: -160px;
+            font-size: 80px;
+            top: -52px;
+          }
+        }
+      }
+      &.third {
+        .image-center {
+          .big_150 {
+            left: -100px;
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      @include abs-position(auto, auto, -30px, 50vw);
+      font-size: 0;
+      &.slick-prev {
+        left: calc(50% - 36px);
+        right: auto;
+        // bottom: 18vh;
+        bottom: 67px;
+        @include circle(26px, $bg-white);
+        border: 1px solid $btn-color;
+        background: url("../img/icon/left_arrow_circle.svg") no-repeat center;
+        &:hover {
+          left: calc(50% - 40px);
+          @include css3-prefix("transition", "0.2s");
+        }
+      }
+      &.slick-next {
+        right: calc(50% - 36px);
+        left: auto;
+        // bottom: 18vh;
+        bottom: 67px;
+        @include circle(26px, $bg-white);
+        border: 1px solid $btn-color;
+        background: url("../img/icon/right_arrow_circle.svg") no-repeat center;
+        &:hover {
+          right: calc(50% - 40px);
+          @include css3-prefix("transition", "0.2s");
+        }
+      }
+      &.slick-disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+    .slick-dots {
+      display: flex;
+      bottom: 8px;
+      left: 180px;
+      right: auto;
+    }
+  }
+}
+
+.smart-section-eleven {
+  .join-us-section {
+    p {
+      max-width: 100%;
+      @include mq("phone", max) {
+        max-width: 85%;
+      }
+    }
+    .employee-slider {
+      .employee-card {
+        .content {
+          // justify-content: space-between;
+          // min-height: 391px;
+          // padding: 109px 40px 56px;
+          @include mq("phone", max) {
+            padding: 80px 20px 56px;
+          }
+          h5 {
+            // @include font-source-sans(16px, $heading-font-color, 400, 20px);
+            // padding: 0 18px;
+            @include mq("desktop", max) {
+              padding: 0;
+            }
+          }
+          // .name {
+          //   margin-left: 15px;
+          // }
+        }
+      }
+      .slick-dots,
+      .slick-arrow {
+        display: none !important;
+      }
+      @include mq("tablet", max) {
+        .slick-dots {
+          display: flex !important;
+        }
+        .slick-arrow {
+          display: block !important;
+        }
+      }
+    }
+  }
+}
+
+.question-answer {
+  &.smart {
+    h2 {
+      br {
+        display: none;
+        @include mq("phone", max) {
+          display: block;
+        }
+      }
+    }
+    .accordion-list {
+      li {
+        div {
+          &.active {
+            h6 {
+              color: #0a6bbc;
+            }
+          }
+        }
+        &.active {
+          div {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .smart-circle-wrapper .circle-card .circle-card-inner .content {
+    &.sa-sel-pros-first {
+      margin-left: 0;
+    }
+  }
+}
+
+.for-only-tab {
+  display: none;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .round-selection .smart-circle-wrapper .circle-card .circle-card-inner .content > div {
+    margin-bottom: 12px;
+  }
+  .round-selection .smart-circle-wrapper .circle-card .circle-card-inner .content p br.for-only-tab {
+    display: block !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .sa-women {
+    background-color: #f6f6f6 !important;
+  }
+
+  .grow-learn-lead.program-structure.sa-ps .gll-wrap .gll-right > figure.img-square .square-content {
+    position: relative;
+    @include css3-prefix("transform", "translate(0)");
+  }
+
+  .grow-learn-lead.program-structure.sa-ps .gll-wrap:before {
+    @include css3-prefix("transform", "translate(-50%, -200px)");
+    @include mq("phone", max) {
+      @include css3-prefix("transform", "translate(2%, -153px)");
+    }
+  }
+  .smart-section-three .dual-para-card {
+    padding-left: 12px;
+  }
+  .smart-section-three {
+    background: url(../img/smart_achiever/dual_card_bg.png) no-repeat right bottom/102%;
+  }
+  .grow-learn-lead.program-structure {
+    padding-top: 290px;
+  }
+  .grow-learn-lead.program-structure .gll-wrap .gll-right > figure .square-content p {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 32px 40px 30px;
+  }
+  .smart-section-five .bottom-curr h4 {
+    max-width: 475px;
+  }
+  .smart-section-seven .dashed-line {
+    margin-bottom: 10px;
+  }
+  .smart-section-seven .role-card-set .role-card {
+    height: 300px;
+  }
+  .round-selection .smart-circle-wrapper .circle-card .circle-card-inner .content * {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .grow-learn-lead.sa-ps .gll-wrap:before {
+    top: 0;
+  }
+  .grow-learn-lead.program-structure .gll-wrap .gll-left .term.smart {
+    position: static;
+    margin-top: 20px;
+  }
+  .grow-learn-lead.program-structure.sa-ps .gll-wrap {
+    margin-bottom: 30px;
+  }
+  .smart-section-three .dual-para-card {
+    padding-left: 0;
+  }
+  .smart-section-three {
+    background: url(../img/smart_achiever/dual_card_bg.png) no-repeat center / cover;
+  }
+  .grow-learn-lead.program-structure {
+    padding-top: 403px;
+    padding-bottom: 2px;
+  }
+  .smart-section-five .bottom-curr h4 {
+    max-width: 100%;
+  }
+  .smart-section-seven .role-card-set .role-card {
+    height: auto;
+  }
+  .round-selection .smart-circle-wrapper .circle-card .circle-card-inner .content * {
+    white-space: pre-wrap;
+  }
+  .inner-large-banner.smart-acheivers-banner .right-section {
+    background: url(./../img/smart_achiever/banner.jpg) no-repeat center / cover;
+  }
+  .smart-section-three.section-line.sa-landing.opacity-bg {
+    &:before {
+      opacity: 0;
+    }
+  }
+  .smart-section-five h2 {
+    margin-bottom: 28px;
+  }
+  .smart-section-five {
+    padding-bottom: 60px;
+  }
+  .smart-section-six figure {
+    margin-top: 40px;
+  }
+  .smart-section-nine p {
+    margin-bottom: 40px;
+  }
+  .smart-section-seven .role-card-set {
+    margin-bottom: 80px;
+  }
+
+  .smart-section-seven .dashed-line {
+    margin-bottom: 24px;
+  }
+  .smart-section-five .smart-circle-wrapper.count .circle-card .circle-card-inner .circle.add::after {
+    font-size: 36px;
+  }
+  .smart-section-five .smart-circle-wrapper.count .circle-card .circle-card-inner .circle.equal::after {
+    background: url(../img/smart_achiever/grey_arrow_right.svg) no-repeat center/16px;
+    right: calc(39% - 1px);
+  }
+  .smart-section-nine.sa {
+    padding: 60px 20px;
+  }
+
+  .smart-section-seven.role-section.benefits-section.sa-gc {
+    .smart-circle-wrapper .circle-card .circle-card-inner .content {
+      margin-left: 34px;
+      width: 150px;
+    }
+  }
+  .jigyasa-section-one .content p {
+    max-width: 365px;
+  }
+  .smart-section-seven .card-set.smart .icon-card {
+    text-align: center;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    .box-125 {
+      display: inline-block;
+    }
+    .content {
+      text-align: left;
+    }
+  }
+  .round-selection .smart-circle-wrapper .circle-card .circle-card-inner .content .sa-letter {
+    line-height: 10px;
+  }
+  .smart-section-ten .women-section .video-card-set .img-content p {
+    max-width: 315px;
+    margin-left: unset;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 767px) {
+  .smart-section-three .dual-para-card .left .terms {
+    bottom: -310px;
+  }
+  .grow-learn-lead.program-structure {
+    padding-top: 383px;
+  }
+}
+
+.sa-slide {
+  position: relative;
+  .video-card-slider {
+    position: static;
+    .video-card {
+      &.third {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.sa-dummy-video-card {
+  width: 10px;
+  height: 420px;
+}
+
+@media (max-height: 800px) {
+  .smart-section-ten {
+    .women-scroll-slider {
+      &.sa-slide {
+        .video-card-slider {
+          .slick-arrow.slick-prev {
+            // bottom: 10vh;
+            bottom: 95px;
+          }
+          .slick-arrow.slick-next {
+            bottom: 95px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .smart-section-ten {
+    .women-section {
+      padding: 76px 0 126px 130px;
+    }
+  }
+}
+
+@media (min-width: 1900px) {
+  .smart-section-ten {
+    .women-section {
+      padding: 76px 0 86px 11%;
+    }
+  }
+}

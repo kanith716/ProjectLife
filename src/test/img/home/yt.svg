@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41" height="81.5" viewBox="0 0 41 81.5">
+  <g id="Youtube" transform="translate(-1018.499 -1220.5)">
+    <g id="Group_3844" data-name="Group 3844">
+      <g id="Group_3585" data-name="Group 3585" transform="translate(798.482 815.639)">
+        <path id="Path_373" data-name="Path 373" d="M240.517,445.361a20,20,0,1,1,20-20A20.023,20.023,0,0,1,240.517,445.361Z" fill="none" stroke="#58595b" stroke-width="1" opacity="0.5"/>
+      </g>
+      <g id="Group_3586" data-name="Group 3586" transform="translate(798.482 815.639)">
+        <g id="Group_1407" data-name="Group 1407">
+          <path id="Path_374" data-name="Path 374" d="M252.493,422.328a5.136,5.136,0,0,0-5.137-5.136H234.035a5.135,5.135,0,0,0-5.136,5.136v6.243a5.135,5.135,0,0,0,5.136,5.136h13.321a5.136,5.136,0,0,0,5.137-5.136Zm-8.4,3.436-5.313,2.914c-.231.125-.439-.042-.439-.305v-5.981c0-.266.215-.433.446-.3l5.349,3.067A.348.348,0,0,1,244.088,425.764Z" fill="#58595b"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_3848" data-name="Group 3848" transform="translate(0 -9)">
+      <g id="Group_3839" data-name="Group 3839" transform="translate(798.482 865.639)">
+        <path id="Path_373-2" data-name="Path 373" d="M240.517,445.361a20,20,0,1,1,20-20A20.023,20.023,0,0,1,240.517,445.361Z" fill="red"/>
+      </g>
+      <g id="Group_3838" data-name="Group 3838" transform="translate(798.482 865.639)">
+        <g id="Group_1407-2" data-name="Group 1407">
+          <path id="Path_374-2" data-name="Path 374" d="M252.493,422.328a5.136,5.136,0,0,0-5.137-5.136H234.035a5.135,5.135,0,0,0-5.136,5.136v6.243a5.135,5.135,0,0,0,5.136,5.136h13.321a5.136,5.136,0,0,0,5.137-5.136Zm-8.4,3.436-5.313,2.914c-.231.125-.439-.042-.439-.305v-5.981c0-.266.215-.433.446-.3l5.349,3.067A.348.348,0,0,1,244.088,425.764Z" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,789 @@
+.tab-wrap {
+  &.graduates {
+    // Section I
+    .graduates-section-one {
+      padding: 78px 0 86px;
+      background: $bg-half-white;
+      .content {
+        max-width: 661px;
+        margin: auto;
+        h2 {
+          margin-bottom: 12px;
+        }
+        p {
+          padding: 0 10px;
+        }
+      }
+      @include mq("tablet", max) {
+        padding: 64px 0;
+      }
+      @include mq("phone", max) {
+        padding: 60px 0;
+      }
+    }
+
+    // Section II
+    .graduates-section-two {
+      background: $bg-white;
+      padding-bottom: 76px;
+      @include mq("tablet", max) {
+        padding-bottom: 30px;
+      }
+    }
+    .content-our-banner {
+      .tab-flip-our {
+        padding: 74px 0 50px;
+        @include mq("tablet", max) {
+          padding: 64px 0 30px;
+        }
+        .tab-button {
+          .tab-flip-wrap {
+            position: relative;
+            z-index: 2;
+          }
+          .active-bar {
+            @include abs-position(0, auto, auto, 0);
+            z-index: 1;
+            width: 280px;
+            height: 100%;
+            background-color: #0067ac;
+            @include css3-prefix("transition", ".6s ease");
+            border-radius: 4px;
+            @include mq("phone", max) {
+              width: 50%;
+            }
+          }
+          .button-flip-tab {
+            width: 560px;
+            height: 57px;
+            border-radius: 4px;
+            background: #fff;
+            li {
+              width: 280px !important;
+              height: 57px;
+              padding: 12px 0;
+              border: 1px solid #b1b1b1;
+              position: relative;
+              z-index: 2;
+              &:first-child {
+                border-right: none;
+              }
+              &:not(:last-child) {
+                border-radius: 4px 0 0 4px;
+                border-right: none;
+              }
+              &:last-child {
+                border-radius: 0px 4px 4px 0;
+                border-left: none;
+              }
+              a {
+                @include css3-prefix("transition-delay", ".2s");
+                @include font-source-sans(26px, #0067ac, 400, 30px);
+                position: relative;
+                z-index: 2;
+              }
+              &.active {
+                a {
+                  color: #fff;
+                }
+                #tab-our-root {
+                  display: block;
+                }
+              }
+            }
+            @include mq("phone", max) {
+              width: 100%;
+              li {
+                width: 100% !important;
+                white-space: nowrap;
+                a {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .tab-btn-wrap {
+        &.graduates {
+          background: $bg-white;
+        }
+        &.fixed {
+          // top: 60px;
+        }
+      }
+      h2 {
+        margin-bottom: 10px;
+        @include mq("tablet", max) {
+          max-width: 500px;
+          margin: auto auto 10px;
+        }
+      }
+      p {
+        max-width: 654px;
+        width: 100%;
+        margin: auto auto 50px;
+        @include mq("tablet", max) {
+          margin: auto auto 30px;
+        }
+      }
+      .program-image {
+        flex-wrap: wrap;
+        .grad-col {
+          margin: 0 28px;
+          @include mq("phone", max) {
+            margin: 0;
+          }
+          .inner-card {
+            max-width: 283px;
+            width: 100%;
+            // max-height: 473‬px;
+            height: auto;
+            figure {
+              position: relative;
+              .img-content {
+                @include abs-position(auto, 0, 0, auto);
+                h5 {
+                  @include font-source-sans(23px, $bg-white, 600, 25px);
+                  max-width: 219px;
+                  width: 100%;
+                }
+                p {
+                  @include font-source-sans(14px, $bg-white, 400, 18px);
+                  margin-bottom: 14px;
+                }
+                a {
+                  @include font-source-sans(12px, $bg-white, 400, 15px);
+                  display: inline-block;
+                  padding: 11px 29px;
+                  // width: 121px;
+                  background: $btn-color;
+                  &.grey {
+                    background: $card-font-color;
+                    margin-right: 8px;
+                    padding: 11px 27px;
+                    &:hover {
+                      background: #404040;
+                    }
+                  }
+                  &:hover {
+                    background: $btn-hover-color;
+                  }
+                }
+              }
+            }
+            .content {
+              p {
+                @include font-source-sans(14px, $heading-font-color, 400, 20px);
+                padding: 20px 17px 20px 35px;
+              }
+            }
+            &.one {
+              margin-top: 126px;
+              @include mq("tablet", max) {
+                margin-top: 0;
+              }
+            }
+            &.two {
+              margin-top: 63px;
+              @include mq("tablet", max) {
+                margin-top: 0;
+              }
+            }
+            @include mq("phone", max) {
+              // max-width: 100%;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+        @include mq("smdesktop", max) {
+          .grad-col {
+            margin: 0 8px;
+          }
+        }
+        @include mq("tablet", max) {
+          .grad-col {
+            margin: 0 20px;
+          }
+        }
+        @include mq("phone", max) {
+          .grad-col {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    //Section III
+    .graduates-section-three {
+      padding: 100px 0 126px;
+      background: $bg-half-white;
+      h2 {
+        margin-bottom: 8px;
+      }
+      p {
+        max-width: 640px;
+        width: 100%;
+        margin: auto auto 69px;
+      }
+      @include mq("tablet", max) {
+        padding: 64px 0;
+        p {
+          margin: auto auto 40px;
+        }
+      }
+      @include mq("phone", max) {
+        padding: 60px 0 0px;
+        p {
+          margin: auto auto 30px;
+        }
+      }
+      .career {
+        margin-left: -250px;
+        .jig_con {
+          li {
+            @include font-source-sans(22px, $heading-font-color, 600, 25px);
+            max-width: 310px;
+            padding: 0 15px;
+            position: relative;
+            &:first-child {
+              margin-left: 15px;
+              padding-right: 6px;
+            }
+            &:last-child {
+              &::before {
+                @include pseudo;
+                @include abs-position(0, auto, auto, 0);
+                height: 52px;
+                width: 1px;
+                background: #ccc;
+              }
+            }
+          }
+        }
+        .lead-single-card {
+          width: 687px;
+          // height: 394px;
+          max-height: 850px;
+          background: $bg-white;
+          padding: 50px;
+          position: relative;
+          figure {
+            @include abs-position(auto, -240px, 62px, auto);
+          }
+          .inner-content {
+            h4 {
+              @include font-source-sans(30px, $heading-font-color, 600, 30px);
+              margin-bottom: 24px;
+            }
+            img {
+              margin: 6px 8px 0 0;
+            }
+            p {
+              @include font-source-sans(18px, $heading-font-color, 400, 23px);
+              margin-bottom: 18px;
+            }
+          }
+          .btn-group {
+            @include abs-position(auto, 0, 10px, auto);
+            a {
+              @include font-source-sans(14px, $bg-white, 400, 18px);
+              display: inline-block;
+              padding: 12px 28px;
+              width: 134px;
+              background: $btn-color;
+              white-space: nowrap;
+              text-align: center;
+              &.grey {
+                background: $card-font-color;
+                margin-right: 10px;
+                &:hover {
+                  background: #404040;
+                }
+              }
+              &:hover {
+                background: $btn-hover-color;
+              }
+            }
+          }
+        }
+        @include mq("tablet", max) {
+          margin-left: -140px;
+          margin-top: 40px;
+          .jig_con {
+            li {
+              max-width: 250px;
+              font-size: 16px;
+              line-height: 20px;
+              padding: 0 10px;
+              img {
+                width: 150px;
+              }
+              &:first-child {
+                margin-left: 3px;
+              }
+              &:last-child {
+                &::before {
+                  height: 41px;
+                }
+              }
+            }
+          }
+          .lead-single-card {
+            width: 500px;
+            height: auto;
+            figure {
+              bottom: 60px;
+              img {
+                width: 230px;
+                height: auto;
+              }
+              right: -140px;
+            }
+            .inner-content {
+              h4 {
+                font-size: 23px;
+                line-height: 23px;
+                margin-bottom: 12px;
+              }
+              p {
+                font-size: 14px;
+                line-height: 18px;
+                margin-bottom: 8px;
+              }
+            }
+            .btn-group {
+              a {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        @include mq("phone", max) {
+          margin-left: 0;
+          padding: 0 0 70px;
+          margin-top: 0;
+          .jig_con {
+            width: 100%;
+            // flex-direction: column;
+            margin-bottom: 10px;
+            li {
+              padding: 5px;
+              // text-align: center;
+              font-size: 18px;
+              img {
+                max-width: 120px;
+                @include mq("smphone", max) {
+                  max-width: 95px;
+                }
+              }
+              &:last-child {
+                @include mq("smphone", max) {
+                  font-size: 16px;
+                }
+                &::before {
+                  // display: none;
+                  top: 6px;
+                }
+              }
+            }
+          }
+          .lead-single-card {
+            width: 100%;
+            height: auto;
+            // padding: 15px;
+            padding: 0;
+            figure {
+              position: relative;
+              bottom: auto;
+              right: auto;
+              margin-bottom: 20px;
+              img {
+                width: 100%;
+              }
+            }
+            .inner-content {
+              margin-bottom: 50px;
+              padding: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    //Section IV
+    .graduates-section-four {
+      padding: 100px 0 126px;
+      background: $bg-white;
+      h2 {
+        padding-left: 25px;
+        margin-bottom: 12px;
+      }
+      p {
+        max-width: 474px;
+        width: 100%;
+      }
+      @include mq("tablet", max) {
+        padding: 64px 0;
+        p {
+          max-width: 340px;
+          padding-bottom: 40px;
+        }
+      }
+      @include mq("phone", max) {
+        padding: 60px 0 0px;
+        p {
+          margin: auto auto 30px;
+        }
+      }
+      .career {
+        margin-left: -250px;
+        .jig_con {
+          li {
+            @include font-source-sans(22px, $heading-font-color, 600, 25px);
+            max-width: 310px;
+            padding: 0 15px;
+            position: relative;
+            &:first-child {
+              margin-left: 15px;
+              padding-right: 6px;
+            }
+            &:last-child {
+              &::before {
+                @include pseudo;
+                @include abs-position(0, auto, auto, 0);
+                height: 52px;
+                width: 1px;
+                background: #ccc;
+              }
+            }
+          }
+        }
+        h2 {
+          margin-bottom: 12px;
+        }
+        .lead-single-card {
+          width: 687px;
+          min-height: 275px;
+          // height: 394px;
+          background: $bg-half-white;
+          padding: 28px 0 0 33px;
+          position: relative;
+          figure {
+            @include abs-position(-100px, -211px, 176px, auto);
+          }
+          .inner-content {
+            h4 {
+              @include font-source-sans(30px, $heading-font-color, 600, 30px);
+              margin-bottom: 24px;
+            }
+            img {
+              margin: 6px 8px 0 0;
+            }
+            p {
+              @include font-source-sans(16px, $heading-font-color, 400, 23px);
+              margin-bottom: 18px;
+            }
+          }
+          .btn-group {
+            @include abs-position(auto, 0, 10px, auto);
+            a {
+              @include font-source-sans(14px, $bg-white, 400, 18px);
+              display: inline-block;
+              padding: 12px 28px;
+              width: 134px;
+              background: $btn-color;
+              white-space: nowrap;
+              text-align: center;
+              &.grey {
+                background: $card-font-color;
+                margin-right: 10px;
+                &:hover {
+                  background: #404040;
+                }
+              }
+              &:hover {
+                background: $btn-hover-color;
+              }
+            }
+          }
+        }
+        @include mq("tablet", max) {
+          margin-left: -140px;
+          .jig_con {
+            li {
+              max-width: 250px;
+              font-size: 16px;
+              line-height: 20px;
+              padding: 0 10px;
+              img {
+                width: 150px;
+              }
+              &:first-child {
+                margin-left: 3px;
+              }
+              &:last-child {
+                &::before {
+                  height: 41px;
+                }
+              }
+            }
+          }
+          .lead-single-card {
+            width: 500px;
+            height: auto;
+            figure {
+              bottom: 130px;
+              img {
+                width: 230px;
+                height: auto;
+              }
+              right: -140px;
+            }
+            .inner-content {
+              h4 {
+                font-size: 23px;
+                line-height: 23px;
+                margin-bottom: 12px;
+              }
+              p {
+                font-size: 14px;
+                line-height: 18px;
+                margin-bottom: 8px;
+              }
+            }
+            .btn-group {
+              a {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        @include mq("phone", max) {
+          margin-left: 0;
+          padding: 0 0 70px 0;
+          h2 {
+            text-align: center;
+            padding-left: 0;
+            margin: auto auto 18px;
+          }
+          .jig_con {
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 20px;
+            li {
+              padding: 5px;
+              text-align: center;
+              font-size: 18px;
+              &:last-child {
+                &::before {
+                  display: none;
+                }
+              }
+            }
+          }
+          .lead-single-card {
+            width: 100%;
+            height: auto;
+            // padding: 15px;
+            padding: 0;
+            figure {
+              position: relative;
+              bottom: auto;
+              right: auto;
+              margin-bottom: 20px;
+              top: auto;
+              img {
+                width: 100%;
+              }
+            }
+            .inner-content {
+              margin-bottom: 50px;
+              padding: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    //Section IV
+
+    .single-card-section {
+      background: $bg-white;
+      padding-top: 100px;
+      @include mq("tablet", max) {
+        padding-top: 0;
+      }
+      .white-patch {
+        height: 200px;
+        background: $bg-half-white;
+      }
+      .single-card {
+        box-shadow: 0px 10px 18px #0000001f;
+        .chart {
+          border: none;
+          .glance-stat {
+            &.miles {
+              .stat {
+                border-bottom: none;
+                .stat-grp {
+                  .stat-val {
+                    max-width: 325px;
+                    width: 100%;
+                    border-right: 1px dashed #ed1c24;
+                    &:nth-child(1) {
+                      padding-right: 68.5px;
+                    }
+                    &:nth-child(2) {
+                      padding-left: 81.5px;
+                      padding-right: 81.5px;
+                    }
+                    &:nth-child(3) {
+                      padding-left: 68.5px;
+                    }
+                    &:last-child {
+                      border: none;
+                    }
+                  }
+                }
+                @include mq("tablet", max) {
+                  .stat-grp {
+                    .stat-val {
+                      &:nth-child(1) {
+                        padding-right: 28.5px;
+                      }
+                      &:nth-child(2) {
+                        padding-left: 41.5px;
+                        padding-right: 41.5px;
+                      }
+                      &:nth-child(3) {
+                        padding-left: 28.5px;
+                      }
+                    }
+                  }
+                }
+                @include mq("phone", max) {
+                  &::before {
+                    display: none;
+                  }
+                  .stat-grp {
+                    flex-direction: column;
+                    .stat-val {
+                      border-right: none;
+                      border-bottom: 1px dashed #ed1c24;
+                      &:nth-child(1) {
+                        padding-right: 10px;
+                      }
+                      &:nth-child(2) {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                      }
+                      &:nth-child(3) {
+                        padding-left: 10px;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .bar-title {
+                width: 200px;
+                text-align: center;
+                padding: 0;
+                line-height: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Section V
+
+    // Section VI
+
+    .join-us-section {
+      &.graduates {
+        background-color: $bg-half-white;
+        padding: 116px 0 250px;
+        @include mq("tablet", max) {
+          padding: 60px 0 60px;
+        }
+        @include mq("phone", max) {
+          padding: 60px 0 80px;
+        }
+
+        h2 {
+          color: $heading-font-color;
+        }
+        p {
+          color: $heading-font-color;
+        }
+        .employee-slider {
+          .employee-card {
+            background-color: $bg-white;
+          }
+
+          // Slick-dots
+
+          .slick-dots {
+            li {
+              button {
+                &::before {
+                  background-color: $btn-color;
+                }
+                &:after {
+                  border: 1px solid $font-blue;
+                }
+              }
+              &.slick-active,
+              &:hover {
+                button {
+                  &:before {
+                    background-color: $font-blue;
+                  }
+                }
+              }
+            }
+          }
+
+          // Slick-Arrows
+
+          .slick-arrow {
+            &.slick-prev {
+              background: url("../img/icon/left_arrow_circle.svg") no-repeat center;
+            }
+            &.slick-next {
+              background: url("../img/icon/right_arrow_circle.svg") no-repeat center;
+            }
+            &.slick-disabled {
+              cursor: unset;
+              opacity: 0.5;
+              pointer-events: none;
+              &.slick-prev {
+                background: url("../img/icon/grey_left_arrow_circle.svg") no-repeat center;
+              }
+              &.slick-next {
+                background: url("../img/icon/grey_right_arrow_circle.svg") no-repeat center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.backgroung-white {
+  background: $bg-white !important;
+}
+
+.footer-bg.white-patch {
+  background: $bg-white !important;
+  height: 150px;
+  @include mq("tablet", max) {
+    display: none;
+  }
+}

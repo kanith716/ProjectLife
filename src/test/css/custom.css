@@ -1,0 +1,368 @@
+.search-parent {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner-slider .banner-img {
+    height: 126vh !important;
+    position: relative;
+}
+
+.banner-slider {
+    height: 120vh;
+}
+
+.banner-slider .banner-img::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #1e1e1e45 99%);
+    height: 50%;
+    z-index: -12;
+}
+
+.career-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    z-index: 100000;
+    border-radius: 10px;
+    border: 1px solid #eeeeee2e;
+}
+
+.career-search .input-wrap {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 20px 0px 25px;
+    width: 27%;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+}
+
+.career-search .input-wrap label {
+    color: #eee;
+    padding-bottom: 5px;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.career-search .input-wrap input::placeholder {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.drop-icon {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #ffffffc4;
+    right: 20px;
+    top: 54px;
+}
+
+.career-search .input-wrap input {
+    background-color: #3c3c3c29;
+    padding: 10px 10px 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid #eeeeee26;
+    border-radius: 7px;
+    padding: 9px;
+    color: #fff;
+}
+
+.btn-wrap {
+    width: 10%;
+    text-align: center;
+    align-self: center;
+    padding-top: 16px;
+}
+
+.btn-wrap button {
+    background-color: #ed1c24;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.job-search-inner {
+    width: 100%;
+    margin: 10px 0;
+    top: 100%;
+    height: 100%;
+    display: none !important;
+}
+
+.inner-wrap {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.job-search-inner.career-search .input-wrap {
+    width: 18%;
+}
+
+.job-inner-head {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.job-search-inner {
+    display: block;
+}
+
+.job-inner-head h2 {
+    color: #fff;
+    padding-bottom: 15px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.job-inner-head p {
+    color: #fff;
+}
+
+.total-search {
+    text-align: center;
+    width: 100% !important;
+    padding-bottom: 20px;
+    padding-top: 0;
+}
+
+.drop-check input[type=checkbox]:checked+label:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 1.3em;
+    line-height: 0.8;
+    height: 1px;
+    width: 8px;
+    padding-bottom: 3px;
+    border-left: 1px solid #2748e5;
+    border-bottom: 1px solid #2748e5;
+    transition: all 0.2s;
+    transform: scale(0) rotate(-45deg);
+    transform-origin: center;
+}
+
+.drop-check input[type=checkbox]:not(:checked)+label:before,
+.drop-check input[type=checkbox]:checked+label:before {
+    background-image: unset !important;
+}
+
+.drop-check input[type=checkbox] {
+    position: absolute;
+    left: 6px;
+    border-radius: 3px;
+    z-index: 999999;
+}
+
+.drop-check input[type=checkbox]:checked+label:after {
+    opacity: 1;
+    transform: scale(1);
+    transform: rotate(311deg);
+    z-index: 999999;
+}
+
+.drop-check li {
+    padding-bottom: 15px;
+    padding: 9px 0;
+}
+
+.drop-check input[type=checkbox]:not(:checked) {
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0px;
+    margin-top: 2px;
+}
+
+.drop-check input[type=checkbox]:checked {
+    padding: 0;
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: 2px;
+    background: #fff;
+}
+
+.drop-check {
+    position: absolute;
+    bottom: -82%;
+
+    width: 100%;
+    height: 100%;
+    /* padding-left: 10px; */
+
+}
+
+.drop-check ul {
+    position: relative;
+    background-color: #00000021;
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    z-index: 100000;
+    border-radius: 10px;
+    border: 1px solid #eeeeee2e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991px) {
+    .inner-wrap {
+        flex-wrap: wrap;
+    }
+
+    .search-parent {
+        width: 95%;
+    }
+
+    .job-search-inner.career-search .input-wrap {
+        width: 30%;
+    }
+
+    .job-search-inner.career-search .input-wrap {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .job-inner-head p {
+        padding-bottom: 10px;
+    }
+
+    .job-inner-head h2 {
+        font-size: 30px;
+        padding-bottom: 10px;
+    }
+
+    .job-search-inner .drop-icon {
+        top: 45px;
+        right: 12px;
+    }
+
+    .btn-wrap {
+        width: 15%;
+    }
+
+    .career-search .input-wrap {
+        width: 22%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* .job-search-inner.career-search{
+        display: none;
+    } */
+    .main-search {
+        display: none !important;
+    }
+
+    .mob-top {
+        padding-top: 20px !important;
+    }
+
+    .career-search .input-wrap {
+        padding: 0px 0px 15px;
+    }
+
+    .career-search {
+        display: block;
+    }
+
+    .btn-wrap {
+        width: 90% !important;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+
+    .btn-wrap button {
+        display: block;
+        width: 100%;
+    }
+
+    .drop-icon {
+        top: 35px;
+    }
+
+
+    .career-search .input-wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .input-wrap.mob-top .drop-icon {
+        top: 55px;
+    }
+
+    .job-inner-head {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .job-inner-head h2 {
+        font-size: 29px;
+    }
+
+    .inner-wrap {
+        display: block;
+    }
+
+    .job-search-inner.career-search .input-wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

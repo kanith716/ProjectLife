@@ -1,0 +1,411 @@
+.flip-card-section {
+  .inner-section-head {
+    margin-bottom: 33px;
+    @include mq("tablet", max) {
+      h2 {
+        @include font-source-sans(40px, $heading-font-color, 400, 45px);
+      }
+      margin-bottom: 40px;
+    }
+    @include mq("phone", max) {
+      margin-top: 151px;
+      margin-bottom: 20px;
+      h2 {
+        font-size: 34px;
+        line-height: 32px;
+        padding: 0 20px;
+      }
+      .bg-text {
+        top: -50px;
+      }
+    }
+    p {
+      max-width: 550px;
+      @include mq("phone", max) {
+        max-width: 100%;
+        @include font-source-sans(14px, $heading-font-color, 400, 16px);
+      }
+    }
+  }
+
+  .awards-flip-section {
+    position: relative;
+    .awards-flip-card {
+      position: relative;
+      margin: auto 120px;
+      > .year-wrap {
+        h3 {
+          @include font-source-sans(120px, #e9e9e9, 900, 171px);
+          letter-spacing: -6px;
+          text-align: center;
+          opacity: 0.5;
+          @include mq("phone", max) {
+            font-size: 60px;
+            line-height: 68px;
+          }
+        }
+        &:last-child {
+          > div {
+            &:last-child {
+              .award-card {
+                padding-bottom: 0;
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+      // .award-list {
+      .award-card {
+        padding: 24px 24px 24px;
+        @include css3-prefix("transition", "0.2s");
+        cursor: pointer;
+        margin-bottom: 32px;
+        @include mq("tablet", max) {
+          padding: 15px 15px 15px !important;
+          margin-bottom: 0;
+        }
+        .award-card-inner {
+          position: relative;
+          max-width: 292px;
+          height: 324px;
+        }
+        .image-center {
+          .award-img {
+            bottom: 33px;
+          }
+          .award-bg {
+            z-index: 0;
+          }
+        }
+        .content {
+          p {
+            @include font-source-sans(16px, $font-color, 600, 19px);
+            margin: 24px 0 0;
+          }
+        }
+
+        @include mq("smdesktop", max) {
+          padding: 24px 12px 24px;
+        }
+      }
+      @include mq("tablet", max) {
+        margin: auto 40px auto 60px;
+      }
+      @include mq("phone", max) {
+        margin: auto 26px !important;
+        padding: 0;
+        &.mt-90 {
+          margin-top: 90px !important;
+        }
+        .award-card {
+          margin: 0;
+          padding: 0 12px 16px;
+          .award-card-inner {
+            margin: 0 auto;
+          }
+        }
+      }
+      @include mq("smdesktop", max) {
+        margin: auto 60px;
+      }
+    }
+  }
+
+  .award-flip {
+    position: relative;
+    display: inline-block;
+    margin-right: 2px;
+    margin-bottom: 0;
+    width: 400px;
+    > .front,
+    > .back {
+      display: block;
+      color: white;
+      width: inherit;
+      background-size: cover !important;
+      background-position: center !important;
+      height: 220px;
+      padding: 1em 2em;
+      border-radius: 10px;
+      p {
+        font-size: 0.9125rem;
+        line-height: 160%;
+        color: #999;
+      }
+    }
+  }
+  .award-flip {
+    position: relative;
+    > .front,
+    > .back {
+      display: block;
+      padding: 59px 34px 30px 29px;
+      // -webkit-backface-visibility: hidden;
+      // backface-visibility: hidden;
+    }
+    > .front {
+      // @include css3-prefix("transform", "rotateY(0deg)");
+      max-width: 292px;
+      height: 324px;
+      border: 1px solid $bg-grey;
+      padding: 59px 42px 30px 42px;
+      box-shadow: 0px 8px 12px #0000000f;
+      background-color: $bg-white;
+      border-radius: 8px;
+      @include mq("desktop", max) {
+        padding: 59px 32px 30px 32px;
+      }
+    }
+    > .back {
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      p {
+        @include font-source-sans(16px, $bg-white, 600, 20px);
+      }
+      div {
+        margin-top: 19px;
+        height: 89px;
+        @include font-source-sans(14px, $bg-white, 400, 16px);
+        position: relative;
+        &:before {
+          @include abs-position(-13px, auto, auto, 0);
+          content: "";
+          width: 44px;
+          height: 1px;
+          background-color: $bg-white;
+        }
+      }
+    }
+    @include mq("tablet", min) {
+      // &:hover {
+      //   > .front {
+      //     @include css3-prefix("transform", "rotateY(180deg)");
+      //   }
+      //   > .back {
+      //     opacity: 1;
+      //     @include css3-prefix("transform", "rotateY(0deg)");
+      //   }
+      // }
+    }
+    @include mq("tablet", max) {
+      &.flip-active {
+        > .front {
+          @include css3-prefix("transform", "rotateY(180deg)");
+        }
+        > .back {
+          opacity: 1;
+          @include css3-prefix("transform", "rotateY(0deg)");
+        }
+      }
+    }
+  }
+}
+
+.indicator-award {
+  position: absolute;
+  top: 34px;
+  left: 30px;
+  height: 583px;
+  @include mq("tablet", max) {
+    left: 5px;
+  }
+  &.fixed {
+    position: fixed;
+  }
+  &.at-bottom {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+  }
+  .scroll-indicator {
+    position: relative;
+    span {
+      position: absolute;
+      z-index: 1;
+      top: 6px;
+      left: 11px;
+      width: 1px;
+      height: calc(100% - 15px);
+      background-color: #cccccc;
+      &.span-clr {
+        z-index: 2;
+        background-color: #0067ac;
+        @include css3-prefix("transition", ".3s");
+        height: 0;
+      }
+    }
+    ul {
+      li {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &:not(last-child) {
+          margin-bottom: 47px;
+        }
+        padding-left: 8px;
+        .indicator-dot {
+          width: 7px;
+          height: 7px;
+          background-color: #999;
+          border-radius: 50%;
+          margin-right: 8px;
+          @include css3-prefix("transition", ".3s");
+        }
+        div {
+          @include font-source-sans(14px, #58595b, 400, 16px);
+          @include css3-prefix("transition", ".3s");
+        }
+        &.active {
+          .indicator-dot {
+            background-color: #0067ac;
+          }
+          div {
+            color: #0067ac;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mbl-awards-select {
+  width: 292px;
+  margin: 0 auto 9px;
+  text-align: right;
+  padding-top: 20px;
+  b {
+    margin-right: 12px;
+    @include font-source-sans(18px, #cccccc, 400, 23px);
+  }
+  select {
+    @include font-source-sans(16px, #58595b, 400, 20px);
+    padding: 6px 16px 6px 2px;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: url(../img/icon/arrow_down.svg) no-repeat right center;
+  }
+  &.fixed {
+    position: fixed;
+    z-index: 2;
+    width: 320px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 14px 30px;
+    background: #fff;
+  }
+}
+
+.year-wrap {
+  @include mq("phone", max) {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.awards-inner-header {
+  header {
+    > .menu-header {
+      .mnu-group {
+        .header-search,
+        .ham-wrap {
+          border: 1px solid #ccc;
+        }
+        .header-search {
+          border-right: none;
+        }
+      }
+    }
+  }
+}
+
+.awards-sec-contain {
+  padding-bottom: 18px;
+}
+
+.awards-inner-header header > .menu-header .mnu-group .header-search.active:hover {
+  border-color: #ccc;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .flip-card-section {
+    .awards-flip-section {
+      .awards-flip-card {
+        .year-wrap {
+          > div {
+            flex-wrap: wrap;
+            .award-card {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .flip-card-section .awards-flip-section .awards-flip-card .award-card {
+    height: auto;
+  }
+  .flip-card-section .awards-flip-section .awards-flip-card .award-card .award-card-inner {
+    height: auto;
+  }
+  .flip-card-section .award-flip > .front {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .flip-card-section .awards-flip-section .awards-flip-card .year-wrap > div .award-card {
+    &.reduced-font {
+      .content {
+        p {
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+  .flip-card-section .awards-flip-section .awards-flip-card .year-wrap > div .award-card {
+    &.reduced-back-font {
+      .back {
+        div {
+          font-size: 13px;
+          line-height: 15px;
+        }
+      }
+    }
+  }
+}
+
+.flip-card-section .awards-flip-section {
+  &.safari {
+    .award-flip > .front,
+    .award-flip > .back {
+      @include css3-prefix("transition-duration", "0s");
+    }
+  }
+}
+
+.display-none-tab {
+  display: flex !important;
+  @include mq("tablet", max) {
+    display: none !important;
+  }
+}
+
+.tab-display-flex {
+  display: none !important;
+  @include mq("tablet", max) {
+    display: flex !important;
+  }
+}

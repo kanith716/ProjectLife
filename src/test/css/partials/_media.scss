@@ -1,0 +1,121 @@
+// @media only screen and (min-height: 550px) and (max-height: 700px) {
+//   .banner {
+//     .banner-slider {
+//       .banner-img {
+//         &.one {
+//           background: #ccc url("../img/home/banner_lady.png") no-repeat 80% bottom/50%;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .image-center {
+    .play {
+      top: 0 !important;
+      bottom: 0 !important;
+    }
+  }
+
+  // .video-card-set{
+  //   .slick-track{
+  //     margin-left: 25px;
+  //   }
+  // }
+  .role-card-set {
+    .role-card {
+      margin: 10px !important;
+    }
+  }
+
+  .social-tab-view {
+    .container {
+      div {
+        &.mbl-flex-column {
+          flex-direction: row !important;
+
+          .social-media-index {
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .location_drop {
+    .select-menu {
+      right: 242px !important;
+    }
+  }
+  // .role-panel {
+
+  //   .job-card {
+  //     width: calc(50% - 26px) !important;
+  //   }
+  // }
+}
+
+@media only screen and (max-width: 375px) {
+  .social-media {
+    &.social-tab-view {
+      .view-more {
+        right: 40px !important;
+      }
+    }
+  }
+  .awards-section {
+    .awards-slider {
+      .award-card {
+        padding: 0 8px 16px !important;
+      }
+    }
+  }
+  .tab-wrap {
+    .awards-section {
+      .awards-slider {
+        margin: auto 0 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  footer .footer-question .job-search div h3 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1170px) {
+  footer .footer-question .job-search div h3 {
+    font-size: 33px;
+  }
+  footer .footer-question .job-search div h5 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1300px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .stat {
+    .stat-grp {
+      width: 100% !important;
+      .stat-val {
+        width: 50% !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  .single-card-section .single-card .chart .glance-stat .stat .stat-grp .stat-val .bar-count {
+    font-size: 29px;
+    line-height: 29px;
+  }
+}

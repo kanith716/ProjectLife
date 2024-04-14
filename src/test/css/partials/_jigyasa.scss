@@ -1,0 +1,1115 @@
+header {
+  &.inner-large-header {
+    > .menu-header {
+      .mnu-group {
+        .header-search {
+          border: none;
+          background: rgba(255, 255, 255, 0.5);
+          &.active {
+            &:hover {
+              background: rgba(255, 255, 255, 0.5);
+            }
+          }
+        }
+        .ham-wrap {
+          border: none;
+          background: rgba(64, 64, 64, 0.6);
+          .hamburger-lines {
+            span {
+              background: #fff !important;
+            }
+          }
+          .txt {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.inner-large-banner {
+  height: calc(100vh - 150px);
+  background: #ffffff;
+  @include mq("desktop", max) {
+    height: 550px;
+  }
+  @include mq("tablet", max) {
+    height: calc(100vh - 125px);
+  }
+  @include mq("phone", max) {
+    height: calc(100vh - 130px);
+  }
+  display: flex;
+  .left-section {
+    position: relative;
+    background: #fff;
+    .banner-caption {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: -265.44px;
+      @include css3-prefix("transform", "translateY(-50%)");
+      h6 {
+        @include font-source-sans(18px, #404040, 400, 22px);
+        padding-right: 40px;
+        position: relative;
+        display: inline-block;
+        margin-left: 8px;
+        &:after {
+          @include pseudo;
+          position: absolute;
+          top: 50%;
+          margin-top: 1px;
+          right: 0;
+          width: 33px;
+          height: 1px;
+          background: #404040;
+          opacity: 0.5;
+          @include mq("phone", max) {
+            // display: none;
+            width: 28px;
+          }
+        }
+      }
+      h1 {
+        @include font-source-sans(70px, #404040, 600, 70px);
+        letter-spacing: -1.4px;
+        text-transform: none;
+        width: 614px;
+        margin-top: 6px;
+        margin-bottom: 19px;
+      }
+      .inner-large-banner-btn {
+        position: relative;
+        padding-left: 264px;
+        &:before {
+          @include pseudo;
+          position: absolute;
+          top: 50%;
+          margin-top: -0.5px;
+          left: 0;
+          width: 238px;
+          height: 1px;
+          background: #404040;
+          opacity: 0.5;
+        }
+        a {
+          @include font-source-sans(18px, #fff, bold, 18px);
+          display: inline-block;
+          padding: 18px 24px;
+          background: #ed1c24;
+          @include mq("tablet", min) {
+            &:hover {
+              background: #b11117;
+            }
+          }
+        }
+      }
+    }
+  }
+  .right-section {
+    background: url("./../img/jigyasa_banner.jpg") no-repeat center / cover;
+    img {
+      width: 132px;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      @include mq("desktop", max) {
+        bottom: 10px;
+      }
+    }
+  }
+
+  @include mq("tablet", max) {
+    display: flex;
+    flex-direction: column;
+    .left-section {
+      width: 100%;
+      height: 50%;
+      flex: auto !important;
+      .banner-caption {
+        top: 55%;
+        left: 40px;
+        right: auto;
+        h1 {
+          font-size: 56px;
+          line-height: 64px;
+          br {
+            display: block;
+          }
+        }
+        h6 {
+          margin-left: 5px;
+        }
+      }
+    }
+    .right-section {
+      width: 100%;
+      height: 50%;
+      background: url("./../img/jigyasa_banner.jpg") no-repeat center bottom / cover;
+      position: relative;
+      flex: auto !important;
+      img {
+        width: 110px;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        @include mq("phone", max) {
+          width: 70px;
+          bottom: 16px;
+          right: 16px;
+        }
+      }
+    }
+  }
+  @include mq("phone", max) {
+    .left-section {
+      width: 100%;
+      height: 59%;
+      .banner-caption {
+        top: 60%;
+        left: 25px;
+        h6 {
+          margin-left: 0;
+          font-size: 16px;
+          line-height: 22px;
+        }
+        h1 {
+          width: calc(100vw - 40px);
+          font-size: 32px;
+          line-height: 38px;
+          margin-bottom: 28px;
+          margin-top: 8px;
+          @include mq("smphone", max) {
+            margin-bottom: 15px;
+          }
+        }
+        .inner-large-banner-btn {
+          padding-left: 142px;
+          &:before {
+            width: 118px;
+          }
+          a {
+            font-size: 14px;
+            // padding: 12px 18px;
+            padding: 14px 25px;
+          }
+        }
+      }
+    }
+    .right-section {
+      width: 100%;
+      position: relative;
+    }
+  }
+}
+// Section I
+
+.jigyasa-section-one {
+  padding: 82px 0 85px;
+  .content {
+    max-width: 820px;
+    margin: auto;
+    h2 {
+      margin-bottom: 12px;
+      @include mq("tablet", max) {
+        &.wid-600 {
+          max-width: 600px;
+          margin: 0 auto 12px;
+        }
+      }
+    }
+    p {
+      padding: 0 10px;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 60px 30px;
+    .content {
+      h2 {
+        padding: 0 15px;
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 56px 30px 60px;
+    .content {
+      h2 {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Section II
+
+.grow-learn-lead {
+  padding: 160px 0 126px;
+  background: #fff;
+  .gll-wrap {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    &:before {
+      content: "Grow. Learn. Lead.";
+      @include font-source-sans(150px, #f6f6f6, 900, 189px);
+      letter-spacing: -7.5px;
+      white-space: nowrap;
+      @include abs-position(0, auto, auto, 50%);
+      z-index: -1;
+      @include css3-prefix("transform", "translate(-52%, -108px)");
+    }
+    .gll-left {
+      width: calc(100% - 400px);
+      h2 {
+        margin-bottom: 8px;
+      }
+      > p {
+        color: #003e67;
+        max-width: 469px;
+      }
+      ul {
+        margin-top: 43px;
+        li {
+          &:not(:last-child) {
+            margin-bottom: 16px;
+          }
+          figure {
+            @include circle(60px, #f6f6f6);
+            min-width: 60px;
+            min-height: 60px;
+            margin-right: 10px;
+            img {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+      }
+    }
+    .gll-right {
+      width: 400px;
+      figure {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 100px 0 74px;
+    .gll-wrap {
+      justify-content: space-between;
+      padding: 0;
+      &:before {
+        font-size: 88px !important;
+        line-height: normal;
+        letter-spacing: -6.5px;
+        left: 50%;
+        @include css3-prefix("transform", "translate(-50%, -193px)");
+        @include mq("phone", max) {
+          // @include css3-prefix("transform", "translate(-79%, -215px)");
+          @include css3-prefix("transform", "translate(0%, -193px)");
+        }
+        @include mq("smphone", max) {
+          @include css3-prefix("transform", "translate(2%, -193px)");
+        }
+      }
+      .gll-left {
+        width: 100%;
+        margin-bottom: 0;
+        padding-right: 32px;
+        > p {
+          max-width: 100% !important;
+        }
+      }
+      .gll-right {
+        display: flex;
+        justify-content: space-around;
+        width: 300px;
+        min-width: 300px;
+        figure {
+          width: 100%;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 80px 0 80px;
+    .gll-wrap {
+      flex-wrap: wrap;
+      .gll-left,
+      .gll-right {
+        width: 100%;
+      }
+      .gll-left {
+        margin-bottom: 0;
+        ul {
+          li {
+            p {
+              width: calc(100% - 70px);
+              max-width: 100% !important;
+            }
+          }
+        }
+      }
+      .gll-right {
+        // display: none !important;
+
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .grow-learn-lead {
+    .gll-wrap {
+      &:before {
+        font-size: 132px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .grow-learn-lead {
+    .gll-wrap {
+      &:before {
+        font-size: 13vw !important;
+        letter-spacing: -4.5px;
+        top: 26px;
+        left: 0;
+      }
+      .gll-left {
+        h2 {
+          margin-bottom: 16px;
+        }
+        ul {
+          figure {
+            margin-right: 12px !important;
+          }
+          li {
+            > div {
+              // align-items: flex-start !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .grow-learn-lead {
+    .gll-wrap {
+      &:before {
+        font-size: 12vw !important;
+        letter-spacing: -2.5px;
+      }
+    }
+  }
+}
+
+// Section III
+
+.fast-track {
+  padding: 102px 0 126px;
+  background: #f6f6f6;
+  .fast-track-heading {
+    margin-bottom: 64px;
+    h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      max-width: 428px;
+      display: inline-block;
+    }
+  }
+  .fast-track-wrap {
+    img {
+      width: 937px;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 74px 0 74px;
+
+    .fast-track-wrap {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 60px 0 60px;
+    .fast-track-heading {
+      p,
+      h2 {
+        padding: 0 15px;
+      }
+    }
+    .fast-track-wrap {
+      img {
+        width: 90%;
+        margin: auto;
+      }
+
+      &.overflow-img {
+        max-width: 100%;
+        overflow: auto;
+        padding-left: 20px;
+        img {
+          width: unset;
+          margin: 0 100px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: transparent;
+        }
+        &::-webkit-scrollbar {
+          width: 0px;
+          background: transparent;
+        }
+      }
+    }
+    .container {
+      padding: 0;
+    }
+  }
+}
+
+// Section IV
+
+.join-us-section.home-grey-bg {
+  &.jigyasa {
+    background: $bg-white;
+    padding: 100px 0 100px;
+    @include mq("tablet", max) {
+      padding: 60px 0 75px;
+    }
+
+    h2 {
+      color: $heading-font-color;
+    }
+    p {
+      color: $heading-font-color;
+      margin: 10px auto 40px;
+      max-width: 452px;
+      width: 100%;
+      @include mq("phone", max) {
+        margin-top: 6px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    .slick-arrow {
+      &.slick-disabled {
+        cursor: unset;
+        opacity: 1;
+        pointer-events: none;
+        &.slick-next {
+          background: url("../img/icon/grey_right_arrow_circle.svg") no-repeat center;
+        }
+        &.slick-prev {
+          background: url("../img/icon/grey_left_arrow_circle.svg") no-repeat center;
+        }
+      }
+    }
+    .slick-dots {
+      display: none;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      li {
+        padding: 0 4px 0;
+        button {
+          width: 12px;
+          height: 12px;
+          position: relative;
+        }
+        @include mq("desktop", min) {
+          &:first-child,
+          &:last-child {
+            display: none;
+          }
+        }
+        @include mq("tablet", min) {
+          &:first-child,
+          &:last-child {
+            display: none;
+          }
+        }
+
+        &::before {
+          display: none;
+        }
+        button {
+          &::before {
+            background-color: $btn-color;
+          }
+          &:after {
+            width: 12px;
+            height: 12px;
+            @include pseudo;
+            @include abs-position(0, auto, auto, -4px);
+            padding: 0;
+            border-radius: 50%;
+            border: 1px solid $font-blue;
+            @include css3-prefix("transition", "all .2s ease");
+            @include css3-prefix("transform", "scale(0)");
+          }
+        }
+        &.slick-active,
+        &:hover {
+          button {
+            &:before {
+              background-color: $font-blue;
+            }
+            &:after {
+              @include css3-prefix("transform", "scale(1)");
+            }
+          }
+        }
+      }
+      &::before {
+        @include pseudo;
+        display: none;
+      }
+      @include mq("phone", max) {
+        bottom: 0;
+      }
+    }
+
+    .slick-arrow {
+      @include abs-position(auto, auto, 50%, auto);
+      font-size: 0;
+      @include css3-prefix("transition", ".2s");
+      &.slick-prev {
+        left: 0;
+        @include circle(30px, transparent);
+        border: none;
+        padding: 0;
+        box-sizing: content-box;
+        background: url("../img/icon/left_arrow_circle.svg") no-repeat center;
+        @include mq("desktop", min) {
+          &:hover {
+            left: -5px;
+          }
+        }
+      }
+      &.slick-next {
+        right: 0;
+        @include circle(30px, transparent);
+        border: none;
+        padding: 0;
+        box-sizing: content-box;
+        background: url("../img/icon/right_arrow_circle.svg") no-repeat center;
+        @include mq("desktop", min) {
+          &:hover {
+            right: -5px;
+          }
+        }
+      }
+      &.slick-disabled {
+        cursor: unset;
+        opacity: 0.5;
+        pointer-events: none;
+        // border: 1px solid #ccc;
+        // &.slick-next {
+        //   background: url("../img/home/grey_right_disabled_arrow.svg") no-repeat center;
+        // }
+        // &.slick-prev {
+        //   background: url("../img/home/grey_left_disabled_arrow.svg") no-repeat center;
+        // }
+      }
+
+      @include mq("tablet", max) {
+        &.slick-prev {
+          left: 40px;
+          // width: 40px;
+          // height: 40px;
+          border-radius: 50%;
+          // background-size: 40px;
+        }
+        &.slick-next {
+          right: 40px;
+          // width: 40px;
+          // height: 40px;
+          border-radius: 50%;
+          // background-size: 40px;
+        }
+      }
+      @include mq("phone", max) {
+        @include abs-position(auto, auto, -10px, auto);
+        &.slick-prev {
+          left: calc(50% - 80px);
+          // background-size: 32px;
+          &:hover {
+            left: calc(50% - 80px);
+          }
+        }
+        &.slick-next {
+          right: calc(50% - 70px);
+          // background-size: 32px;
+          &:hover {
+            right: calc(50% - 70px);
+          }
+        }
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 60px 0 75px;
+  }
+
+  .employee-slider {
+    .employee-card {
+      width: 370px;
+      margin: 60px 13px 26px;
+      border-radius: 8px;
+      background-color: $bg-white;
+      box-shadow: 0px 10px 18px #00000029;
+      // @include css3-prefix("transition", "all .4s ease");
+      // @include css3-prefix("transition-delay", ".1s");
+      // @include css3-prefix("transform", "scale(0.8)");
+      &.slick-current.slick-center {
+        transform: scale(1);
+      }
+      &.before {
+        @include css3-prefix("transform-origin", "right");
+        @include css3-prefix("transition-delay", "0s");
+      }
+      &.after {
+        @include css3-prefix("transform-origin", "left");
+        @include css3-prefix("transition-delay", "0s");
+      }
+      .cir-img {
+        img {
+          @include abs-position(-60px, 0, auto, 0);
+          margin: auto;
+          @include mq("tablet", max) {
+            width: 98px;
+            top: -48px;
+          }
+        }
+      }
+      .content {
+        padding: 109px 30px 56px;
+        min-height: 500px;
+        flex-wrap: wrap;
+        @include mq("tablet", max) {
+          padding: 90px 40px 40px;
+          min-height: 400px;
+        }
+        @include mq("phone", max) {
+          padding: 74px 22px 32px 32px;
+          min-height: 380px;
+        }
+        @include mq("smphone", max) {
+          padding: 74px 22px 32px 22px;
+          min-height: 400px;
+        }
+        h5 {
+          @include font-source-sans(20px, $font-color, 400, 25px);
+          margin-bottom: 35px;
+          @include mq("tablet", max) {
+            font-size: 18px;
+            line-height: 23px;
+            margin-bottom: 80px;
+          }
+          @include mq("phone", max) {
+            font-size: 16px;
+            line-height: 23px;
+            margin-bottom: 30px;
+          }
+        }
+        .name {
+          p {
+            @include font-source-sans(16px, $font-color, 400, 18px);
+            padding-top: 16px;
+            @include mq("phone", max) {
+              padding-left: 0;
+              color: #404040;
+              font-weight: 400;
+              br {
+                display: initial;
+              }
+            }
+            margin: 0;
+            span {
+              @include font-source-sans(14px, $font-color, 400, 18px);
+              @include mq("phone", max) {
+                font-size: 12px;
+                line-height: 14px;
+              }
+            }
+            &::before {
+              @include pseudo;
+              @include abs-position(0, auto, 0, 0);
+              height: 2px;
+              width: 40px;
+              background-color: #2dabff;
+            }
+          }
+        }
+      }
+      @include mq("tablet", max) {
+        &.slick-active {
+          transform: scale(1);
+        }
+        margin-left: 160px;
+        margin-right: 160px;
+        margin-bottom: 40px;
+      }
+      @include mq("phone", max) {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 60px;
+      }
+      @include mq("smphone", max) {
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+//Section V
+
+.question-answer {
+  &.jigyasa {
+    background: $bg-half-white;
+
+    h2 {
+      br {
+        display: none;
+        @include mq("phone", max) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  padding: 100px 0 0;
+  .accordion-list-wrap {
+    margin-top: 60px;
+    .accordion-list {
+      margin-bottom: 36px;
+      &.less {
+        li {
+          &:nth-child(n + 5) {
+            display: none;
+          }
+        }
+      }
+      li {
+        > div {
+          padding: 14px 32px 14px 16px;
+          border-bottom: 1px solid #ccc;
+          cursor: pointer;
+          @include css3-prefix("transition", ".4s");
+          .question {
+            position: relative;
+            .question-count {
+              @include font-source-sans(28px, #e3e3e3, 900, 36px);
+              margin-right: 22px;
+            }
+            h6 {
+              @include font-source-sans(18px, #404040, 400, 25px);
+              @include css3-prefix("transition", ".4s");
+            }
+            .accordion-toggle {
+              width: 16px;
+              height: 16px;
+              position: absolute;
+              right: 0;
+              &:before,
+              &:after {
+                @include pseudo;
+                position: absolute;
+                background: #ed1c24;
+              }
+              &:before {
+                width: 100%;
+                height: 1px;
+                top: 7px;
+              }
+              &:after {
+                height: 100%;
+                width: 1px;
+                left: 7px;
+                @include css3-prefix("transition", ".4s");
+              }
+            }
+          }
+          .answer-wrap {
+            transition: max-height 0.6s;
+            max-height: 0;
+            overflow: hidden;
+          }
+          .answer {
+            padding: 6px 55px 0;
+            @include mq("phone", max) {
+              padding: 16px 0 0 55px;
+            }
+            .side-line {
+              padding-left: 16px;
+              position: relative;
+              p {
+                @include font-source-sans(14px, #404040, 400, 24px);
+                @include mq("phone", max) {
+                  br {
+                    display: block;
+                  }
+                }
+              }
+              img {
+                margin: 7px 6px 0 0;
+              }
+
+              b {
+                font-weight: 600;
+              }
+              @include mq("phone", max) {
+                .mobile-margin {
+                  margin-top: 10px;
+                }
+                span {
+                  br {
+                    display: block;
+                  }
+                }
+              }
+              a {
+                padding: 3px 16px;
+                font-size: 14px;
+                @include mq("tablet", min) {
+                  &:hover {
+                    background: #b11117;
+                  }
+                }
+              }
+              &:before {
+                @include pseudo;
+                @include abs-position(12px, auto, auto, 0);
+                width: 1px;
+                height: 0;
+                background: #2dabff;
+                @include css3-prefix("transition", ".4s");
+              }
+            }
+          }
+          &:hover {
+            .question {
+              h6 {
+                color: #0067ac;
+              }
+            }
+          }
+          &.active {
+            border-color: transparent;
+            background: #fff;
+            box-shadow: 0px 3px 6px #00000029;
+            .question {
+              .accordion-toggle {
+                &:after {
+                  height: 0;
+                }
+              }
+            }
+            .answer-wrap {
+              max-height: 600px;
+            }
+            .answer {
+              .side-line {
+                &:before {
+                  @include css3-prefix("transition-delay", ".4s");
+                  height: calc(100% - 24px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .view-less-more {
+      text-align: right;
+      > div {
+        display: inline-block;
+        cursor: pointer;
+        b {
+          &.view-more {
+            display: none;
+          }
+        }
+        &.view-more {
+          b {
+            &.view-more {
+              display: inline-block;
+            }
+            &.view-less {
+              display: none;
+            }
+          }
+          img {
+            @include css3-prefix("transform", "rotate(180deg)");
+          }
+        }
+      }
+      b {
+        @include font-source-sans(14px, #58595b, 600, 18px);
+      }
+      img {
+        margin-left: 16px;
+        width: 29px;
+        @include css3-prefix("transition", ".4s");
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 60px 0 0;
+    .accordion-list-wrap {
+      margin-top: 30px;
+      .accordion-list {
+        li {
+          > div {
+            padding: 14px 16px 14px 16px;
+            .question {
+              h6 {
+                padding-right: 30px;
+                font-size: 16px;
+                line-height: 23px;
+              }
+              .question-count {
+                margin-right: 15px;
+                font-size: 24px;
+                line-height: 32px;
+              }
+            }
+            .answer {
+              padding: 16px 10px 0 42px;
+            }
+          }
+        }
+      }
+    }
+    h2 {
+      padding: 0 15px;
+    }
+  }
+}
+
+// @media (max-height: 680px) {
+//   .inner-large-banner {
+//     height: 530px;
+//   }
+// }
+
+@media (max-width: 767px) {
+  .section-three h2 {
+    font-size: 28px;
+    line-height: 26px;
+  }
+}
+
+.gll-tab-mbl-heading {
+  display: none;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 3;
+  h2 {
+    display: inline-block;
+    max-width: 485px;
+    &.wid-460 {
+      max-width: 460px;
+      @include mq("phone", max) {
+        max-width: 340px;
+      }
+    }
+  }
+  p {
+    display: inline-block;
+    color: #003e67;
+    margin-top: 8px;
+    max-width: 625px;
+  }
+  @include mq("phone", max) {
+    margin-bottom: 18px;
+    padding: 0 0 0 10px;
+    text-align: left;
+    h2 {
+      display: block;
+      text-align: left;
+      max-width: 370px;
+    }
+    p {
+      text-align: left;
+      max-width: 320px;
+    }
+  }
+  @include mq("smphone", max) {
+    padding: 0 0 0 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .grow-learn-lead.program-structure .gll-wrap .gll-right > figure .square-content {
+    // position: relative !important;
+    bottom: -48px !important;
+    left: 0 !important;
+    width: 100%;
+  }
+  .grow-learn-lead.program-structure.engineering .gll-wrap .gll-right > figure figure {
+    bottom: 0 !important;
+  }
+
+  .grow-learn-lead .gll-wrap .gll-left ul li > div > div {
+    width: 100% !important;
+  }
+
+  .grow-learn-lead .gll-wrap .gll-left h2,
+  .grow-learn-lead .gll-wrap .gll-left h2 + p {
+    display: none;
+  }
+
+  .gll-tab-mbl-heading {
+    display: block;
+  }
+
+  .grow-learn-lead .gll-wrap .gll-left ul {
+    margin-top: 0 !important;
+  }
+
+  .grow-learn-lead.program-structure .gll-wrap .gll-right > figure figure {
+    width: 56px !important;
+    height: 56px !important;
+    left: 10px !important;
+    bottom: -48px !important;
+    @include css3-prefix("transform", "translateY(50%)");
+    img {
+      width: 27px !important;
+    }
+  }
+  .inner-large-banner .left-section .banner-caption .inner-large-banner-btn a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .grow-learn-lead.program-structure.pgpli.sales-future .gll-wrap .gll-left {
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .inner-large-banner {
+    height: 550px !important;
+  }
+}

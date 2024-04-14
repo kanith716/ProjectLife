@@ -1,0 +1,259 @@
+.inner-large-banner {
+  &.engineering-banner {
+    @include mq("tablet", max) {
+      .left-section {
+        h1 {
+          max-width: 610px;
+          br {
+            display: none;
+          }
+          @include mq("phone", max) {
+            max-width: 340px;
+          }
+        }
+      }
+    }
+    .right-section {
+      background: url("./../img/engineering_graduate/banner_img.jpg") no-repeat 0px center / cover;
+      @include mq("tablet", max) {
+        background: url("./../img/engineering_graduate/banner_img.jpg") no-repeat bottom / cover;
+      }
+    }
+    @include mq("phone", max) {
+      .left-section {
+        .banner-caption {
+          br {
+            &:last-child {
+              display: none;
+            }
+          }
+          top: 60%;
+        }
+      }
+    }
+  }
+}
+
+.jigyasa-section-one {
+  &.engineering {
+    // padding: 91px 0 112px;
+    padding: 82px 0 85px;
+    @include mq("tablet", max) {
+      padding: 68px 30px 72px;
+    }
+    @include mq("phone", max) {
+      padding: 56px 30px 60px;
+    }
+  }
+}
+
+.program-structure {
+  &.engineering {
+    padding: 180px 0 56px;
+    .gll-wrap {
+      margin-bottom: 25px;
+      &:before {
+        content: "Technology";
+        @include mq("phone", max) {
+          @include css3-prefix("transform", "translate(4%, -225px)");
+        }
+        @include mq("smphone", max) {
+          @include css3-prefix("transform", "translate(4%, -225px)");
+        }
+      }
+      @include mq("smphone", max) {
+        .gll-left {
+          h2 {
+            font-size: 33px;
+          }
+        }
+      }
+    }
+    @include mq("tablet", max) {
+      padding: 100px 0 60px;
+    }
+    @include mq("phone", max) {
+      padding: 80px 0 40px;
+      .gll-left {
+        h2 {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.section-three {
+  padding: 30px 0 74px;
+  background: $bg-white;
+  h4 {
+    @include font-source-sans(34px, $heading-font-color, 400, 50px);
+  }
+  @include mq("tablet", max) {
+    padding: 60px 0 0;
+    .icon-card {
+      margin-right: 35px !important;
+    }
+  }
+  @include mq("phone", max) {
+    padding: 64px 0;
+    h4 {
+      @include font-source-sans(28px, $heading-font-color, 400, 26px);
+    }
+  }
+}
+
+.benefits-section {
+  &.engineering {
+    background: $bg-white;
+    padding: 48px 0 150px;
+    .icon-card {
+      margin-right: 140px;
+      .content {
+        background: $bg-white;
+        .title {
+          width: 145px;
+        }
+        small {
+          @include font-source-sans(13px, $heading-font-color, 400, 16px);
+          max-width: 132px;
+          display: block;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      @include mq("phone", max) {
+        .content {
+          small {
+            max-width: 162px;
+          }
+        }
+      }
+    }
+    @include mq("tablet", max) {
+      padding: 48px 0 0;
+    }
+  }
+}
+
+.smart-section-nine {
+  &.engineering {
+    padding: 120px 0 120px;
+    background: $bg-white;
+    h3 {
+      font-weight: 400;
+    }
+    @include mq("tablet", max) {
+      padding: 60px 0 60px;
+    }
+  }
+}
+
+.question-answer.engg-grad-bg {
+  background: $bg-white;
+}
+
+.engg-grad-footer {
+  margin-top: 0;
+  padding-top: 146px;
+  // background: #f6f6f6;
+  background: $bg-white;
+  .footer-first-card-heading,
+  .footer-second-card-heading {
+    @include font-source-sans(40px, $heading-font-color, 45px);
+    font-weight: 200 !important;
+  }
+  @include mq("tablet", max) {
+    padding-top: 60px;
+    background: #fff;
+    .job-search {
+      min-height: 300px;
+    }
+  }
+  @include mq("tablet", max) {
+    .job-search {
+      min-height: 220px;
+      &.tab-height-job {
+        // height: 220px !important;
+      }
+
+      .footer-second-card-heading {
+        line-height: 30px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .eg-footer-first-card-heading {
+    margin-bottom: 40px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .program-structure.engineering.eg-ps {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .benefits-section.engineering {
+    padding-top: 35px;
+  }
+  .section-three.eg-tp {
+    padding-top: 0;
+    padding-bottom: 30px;
+    .benefits-section .card-set .icon-card {
+      margin: 0 0 150px 0 !important;
+    }
+  }
+  .grow-learn-lead.program-structure.engineering.eg-ps {
+    .gll-wrap {
+      .gll-right {
+        > figure {
+          .square-content {
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+
+  .section-three.eg-tp .benefits-section .card-set .icon-card {
+    text-align: center;
+    .box-125 {
+      display: inline-block;
+    }
+    .content {
+      text-align: left;
+    }
+  }
+
+  .section-three.eg-tp {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .inner-large-banner.engineering-banner .right-section {
+    background-position: center -80px;
+  }
+}
+
+.grow-learn-lead.program-structure.engineering .gll-wrap .gll-right > figure figure {
+  bottom: 40px;
+}
+
+.grow-learn-lead.program-structure.engineering .gll-wrap .gll-right > figure .square-content {
+  bottom: -40px;
+  p {
+    padding: 34px 66px 34px;
+    @include mq("tablet", max) {
+      padding: 34px 30px 34px;
+    }
+  }
+}
