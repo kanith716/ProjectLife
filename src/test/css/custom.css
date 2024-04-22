@@ -73,18 +73,25 @@
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 8px solid #ffffffc4;
-    right: 20px;
-    top: 54px;
+    right: 15px;
+    top: 55px;
 }
 
+.job-search-inner .drop-icon {
+    right: 15px;
+    top: 35px;
+}
+
+.career-search .input-wrap input,
 .career-search .input-wrap input {
-    background-color: #3c3c3c29;
+    background-color: transparent !important;
     padding: 10px 10px 20px;
     backdrop-filter: blur(10px);
-    border: 1px solid #eeeeee26;
+    border: 1px solid #eeeeee26 !important;
     border-radius: 7px;
-    padding: 9px;
+    padding: 9px !important;
     color: #fff;
+    margin: 0 !important;
 }
 
 .btn-wrap {
@@ -106,7 +113,7 @@
     margin: 10px 0;
     top: 100%;
     height: 100%;
-    display: none !important;
+    display: block !important;
 }
 
 .inner-wrap {
@@ -150,11 +157,11 @@
     padding-top: 0;
 }
 
-.drop-check input[type=checkbox]:checked+label:after {
+.check-box:after {
     content: "";
     position: absolute;
-    top: 8px;
-    left: 10px;
+    top: 4px;
+    left: 3px;
     font-size: 1.3em;
     line-height: 0.8;
     height: 1px;
@@ -170,6 +177,19 @@
 .drop-check input[type=checkbox]:not(:checked)+label:before,
 .drop-check input[type=checkbox]:checked+label:before {
     background-image: unset !important;
+    content: unset;
+}
+
+.check-box[type=checkbox]:checked:after {
+    opacity: 1;
+    transform: scale(1);
+    transform: rotate(311deg);
+    z-index: 999999;
+}
+
+.drop-check input[type=checkbox]:not(:checked)+label:after,
+.drop-check input[type=checkbox]:checked+label:after {
+    content: unset;
 }
 
 .drop-check input[type=checkbox] {
@@ -179,16 +199,14 @@
     z-index: 999999;
 }
 
-.drop-check input[type=checkbox]:checked+label:after {
-    opacity: 1;
-    transform: scale(1);
-    transform: rotate(311deg);
-    z-index: 999999;
-}
+
 
 .drop-check li {
     padding-bottom: 15px;
     padding: 9px 0;
+    color: #fff;
+    padding-left: 10px;
+    padding-bottom: 5px;
 }
 
 .drop-check input[type=checkbox]:not(:checked) {
@@ -216,23 +234,150 @@
 
 }
 
+.fun-btn span {
+
+    padding: 1px 5px 2px 8px;
+    display: inline-block;
+}
+
+.fun-btn .func-close {
+    padding: 1px 5px 2px 8px;
+}
+
+.func-wrap {
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border-radius: 2px;
+    display: inline-block;
+    border: 1px solid #1e1e1e03;
+}
+
 .drop-check ul {
     position: relative;
-    background-color: #00000021;
+    /* background-color: #00000021; */
     backdrop-filter: blur(10px);
     margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     z-index: 100000;
     border-radius: 10px;
     border: 1px solid #eeeeee2e;
+    max-height: 150px;
+    overflow-y: scroll;
 }
 
+.fun-btn {
+    display: inline-block;
+    text-align: left;
+    color: #ffffffad;
+    background: #3c3c3c29;
+    padding: 9px;
+    border: 1px solid #eeeeee26;
+    border-radius: 7px;
+}
 
+.select2-container {
+    /* min-width: 400px; */
+}
 
+.select2-results__option {
+    padding-right: 20px;
+    vertical-align: middle;
+}
 
+.select2-results__option:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #e9e9e9;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-right: 20px;
+    vertical-align: middle;
+}
 
+.select2-results__option[aria-selected=true]:before {
+    font-family: fontAwesome;
+    content: "\f00c";
+    color: #fff;
+    background-color: #f77750;
+    border: 0;
+    display: inline-block;
+    padding-left: 3px;
+}
 
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: #fff;
+}
 
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #eaeaeb;
+    color: #272727;
+}
+
+.select2-container--default .select2-selection--multiple {
+    /* margin-bottom: 10px; */
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+    border-radius: 4px;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border-color: #f77750;
+    border-width: 2px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border-width: 2px;
+    min-height: auto !important;
+}
+
+.select2-container--open .select2-dropdown--below {
+
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.select2-selection .select2-selection--multiple:after {
+    content: 'hhghgh';
+}
+
+/* select with icons badges single*/
+.select-icon .select2-selection__placeholder .badge {
+    display: none;
+}
+
+.select-icon .placeholder {
+    /* 	display: none; */
+}
+
+.select-icon .select2-results__option:before,
+.select-icon .select2-results__option[aria-selected=true]:before {
+    display: none !important;
+    /* content: "" !important; */
+}
+
+.select-icon .select2-search--dropdown {
+    display: none;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search__field {
+    padding: 5px 5px !important;
+    border: none !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    background: transparent !important;
+    border: 1px solid #eeeeee26 !important;
+}
+
+span.select2-dropdown.select2-dropdown--above {
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
 
 
 

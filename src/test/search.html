@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <meta name="bg-half-white" content="#f6f6f6">
     <link href="https://www.hdfclife.com/hdfc-careers/" rel="canonical" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
     <style>
         
         html,
@@ -66,10 +67,29 @@
                         </div>
                         
                         <div class="input-wrap">
-                            <label for="jobrole" class="search-label sub-parent">Job Role</label>
+                            <label for="function" class="search-label sub-parent ">Function</label>
                             <div class="drop-icon"></div>
-                            <input type="text" id="jobrole" placeholder="Job Role" />
-                            <div class="drop-check">
+                            <!-- <input type="text" id="jobrole" placeholder="Job Role" /> -->
+                            <!-- <div class="input"></div> -->
+                            <!-- <button class="fun-btn" type="text" value="Select">
+                                <div class="badj">
+                                    <div class="func-wrap"><span class="func-name">It Supports</span><span class="func-close">x</span></div>
+                                    <div class="func-wrap"><span class="func-name">Supports</span><span class="func-close">x</span></div>
+                                </div>
+                                <div>
+                                    <div class="func-wrap"><span class="func-name">Supports</span></div>
+                                </div>
+                            </button> -->
+                            <select class="js-select2" multiple="multiple">
+                                <option value="O1" data-badge="">Option1</option>
+                                <option value="O2" data-badge="">Option2</option>
+                                <option value="O3" data-badge="">Option3</option>
+                                <option value="O4" data-badge="">Option4</option>
+                                <option value="O5" data-badge="">Option5</option>
+                                <option value="O6" data-badge="">Option6</option>
+                                <option value="O7" data-badge="">Option7</option>
+                            </select>
+                            <!-- <div class="drop-check">
                                 <div>
                                     <ul class="">
                                         <li>
@@ -87,13 +107,29 @@
                                     
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                            
                         </div>
                         <div class="input-wrap">
-                            <label for="jobrole" class="search-label">Job Role</label>
+                            <label for="locate" class="search-label">Preferred Location</label>
                             <div class="drop-icon"></div>
-                            <input type="text" id="jobrole" placeholder="Job Role" />
+                            <input type="text" id="locate" placeholder="Location" class="drop-btn"/>
+                            <div class="drop-check">
+                                <div>
+                                    <ul class="">
+                                        <li>
+                                            Mumbai
+                                        </li>
+                                        <li>
+                                            Chennai
+                                        </li>
+                                        <li>
+                                            Kerela
+                                        </li>
+                            
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="btn-wrap">
                             <button type="submit">FIND MY FIT</button>
@@ -107,30 +143,30 @@
                         <div class="inner-wrap">
                     
                     <div class="input-wrap">
-                        <label for="jobrole" class="search-label">Job Role</label>
-                        <div class="drop-icon"></div>
-                        <input type="text" id="jobrole" placeholder="Job Role" />
+                        <!-- <label for="jobrole" class="search-label">Job Role</label> -->
+                        <!-- <div class="drop-icon"></div> -->
+                        <input type="date" id="dobirth" placeholder="Date of Birth" />
                     </div>
                     <div class="input-wrap">
-                        <label for="jobrole" class="search-label">Job Role</label>
-                        <div class="drop-icon"></div>
-                        <input type="text" id="jobrole" placeholder="Job Role" />
+                        <!-- <label for="jobrole" class="search-label">Job Role</label> -->
+                        <!-- <div class="drop-icon"></div> -->
+                        <input type="text" id="totalexp" placeholder="Total Experience (Yrs)" />
                     </div>
                     <div class="input-wrap">
-                        <label for="jobrole" class="search-label">Job Role</label>
-                        <div class="drop-icon"></div>
-                        <input type="text" id="jobrole" placeholder="Job Role" />
+                        <!-- <label for="jobrole" class="search-label">Job Role</label> -->
+                        <!-- <div class="drop-icon"></div> -->
+                        <input type="text" id="totalsalexp" placeholder="Total Sales Experience (Yrs)" />
                     </div>
                     <div class="input-wrap">
-                        <label for="jobrole" class="search-label">Job Role</label>
-                        <div class="drop-icon"></div>
-                        <input type="text" id="jobrole" placeholder="Job Role" />
+                        <!-- <label for="jobrole" class="search-label">Job Role</label> -->
+                        <!-- <div class="drop-icon"></div> -->
+                        <input type="text" id="totalbsfi" placeholder="Total BSFI Experience (Yrs)" />
                     </div>
                     
                     <div class="input-wrap">
-                        <label for="jobrole" class="search-label">Job Role</label>
-                        <div class="drop-icon"></div>
-                        <input type="text" id="jobrole" placeholder="Job Role" />
+                        <!-- <label for="jobrole" class="search-label">Job Role</label> -->
+                        <!-- <div class="drop-icon"></div> -->
+                        <input type="text" id="curctc" placeholder="Current CTC" />
                     </div>
                         </div>
                         <div class="btn-wrap total-search">
@@ -154,9 +190,11 @@
 
 
         </section>
+     
 
     </div>
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/animation.gsap.js'></script>
@@ -171,6 +209,33 @@
     <script src="js/blazy.min.js"></script>
     <script>
         $(function () {
+
+             $(".js-select2").select2({
+                closeOnSelect: false,
+                placeholder: "Select",
+                // allowHtml: true,
+                // allowClear: true,
+                tags: true // создает новые опции на лету
+            });
+
+             // function drop script start
+            $(".sub-parent").on("input", function () {
+                alert("Input event detected!");
+            });
+            // function drop script end
+
+            // Drop checkbox start
+            $('.drop-check input').change(function () {
+                if (this.checked) {
+                    // Checkbox is checked
+                    console.log(this.value);
+                } else {
+                    // Checkbox is not checked
+                    console.log('Checkbox is not checked');
+                }
+            });
+            // Drop checkbox End
+
 
             $('#filter-toggle').click(function () {
                 $(this).parent().toggleClass('filter-visible');
