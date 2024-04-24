@@ -57,6 +57,7 @@
                     </div>
                 </div>
             </div>
+           
             <div class="search-parent">
                 <form class="search-wrap">
                     <div class="career-search main-search" >
@@ -89,7 +90,7 @@
                                 <option value="O6" data-badge="">Option6</option>
                                 <option value="O7" data-badge="">Option7</option>
                             </select>
-                            <!-- <div class="drop-check">
+                            <div class="drop-check">
                                 <div>
                                     <ul class="">
                                         <li>
@@ -107,7 +108,7 @@
                                     
                                     </ul>
                                 </div>
-                            </div> -->
+                            </div> 
                            
                         </div>
                         <div class="input-wrap">
@@ -135,7 +136,7 @@
                             <button type="submit">FIND MY FIT</button>
                         </div>
                     </div>
-                    <div class="job-search-inner career-search">
+                    <div class="job-search-inner career-search" >
                         <div class="job-inner-head">
                             <h2>We will assist you in finding perfect match!</h2>
                             <p>Kindly provide us with additional details to curate the opening for you.</p>
@@ -188,7 +189,11 @@
                 </div>
             </div> -->
 
-
+<div class="app-wraper">
+    <div>
+        <button onclick="window.location.href = '/src/test/application.html';" class="btn-appplication">Application Tracker</button>
+    </div>
+</div>
         </section>
      
 
@@ -209,32 +214,34 @@
     <script src="js/blazy.min.js"></script>
     <script>
         $(function () {
-
+            // drop down select box 
              $(".js-select2").select2({
                 closeOnSelect: false,
                 placeholder: "Select",
-                // allowHtml: true,
+                allowHtml: true,
                 // allowClear: true,
                 tags: true // создает новые опции на лету
-            });
+            }).on('select2:select', function (e) {
+                 var selectedValues = $(this).val() || [];
+                 if (selectedValues.length <= 2) {
+                     $('#selected-values').val(selectedValues.join(', '));
+                     $('.hidden-element').hide();
+                 } else {
+                     $('#selected-values').val('');
+                     $('.hidden-element').show();
+                 }
+             });
 
              // function drop script start
-            $(".sub-parent").on("input", function () {
-                alert("Input event detected!");
+            $(".drop-btn").on("focus", function () {
+                $(this).siblings(".drop-check").slideDown();
+            });
+            $(".drop-btn").on("focusout", function () {
+                $(this).siblings(".drop-check").slideUp();
             });
             // function drop script end
 
-            // Drop checkbox start
-            $('.drop-check input').change(function () {
-                if (this.checked) {
-                    // Checkbox is checked
-                    console.log(this.value);
-                } else {
-                    // Checkbox is not checked
-                    console.log('Checkbox is not checked');
-                }
-            });
-            // Drop checkbox End
+            
 
 
             $('#filter-toggle').click(function () {
@@ -365,7 +372,7 @@
                 "bg": "#ccc url(./img/home/image_values.jpg) no-repeat top / cover"
             }, {
                 "class": "three",
-                "bg": "#ccc url(./img/home/live_your_dream.jpg) no-repeat center -30px / cover"
+                "bg": "#ccc url(./img/career-banner.png) no-repeat center -30px / cover"
             }, {
                 "class": "four",
                 "bg": "#ccc url(./img/home/image_progress.jpg) no-repeat top / cover"
