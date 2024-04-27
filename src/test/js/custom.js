@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     // otp mobile/email validation start

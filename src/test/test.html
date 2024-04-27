@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption Example</title>
+</head>
+
+<body>
+    <h1>Encryption Example</h1>
+    <form id="encryptionForm">
+        <label for="data">Data to Encrypt:</label><br>
+        <input type="text" id="data" name="data"><br>
+        <button type="button" onclick="encryptData()">Encrypt</button>
+    </form>
+    <div id="encryptedData"></div>
+
+    <script>
+        const crypto = require('crypto');
+
+        class Encrypter {
+            constructor(encryptionkey, iv) {
+                this.algorithm = 'aes-256-gcm';
+                this.key = encryptionkey.substr(0, 32);
+                this.iv = Buffer.from(iv, 'base64');
+                this.tagLength = 16;
+            }
+
+            encrypt(data) {
+                try {
+                    const cipher = crypto.createCipheriv(this.algorithm, this.key, this.iv);
+                    let cipherText = cipher.update(JSON.stringify(data), 'utf8');
+                    cipherText = Buffer.concat([cipherText, cipher.final()]);
+                    const tag = cipher.getAuthTag();
+                    const encryptedData = Buffer.concat([cipherText, tag]);
+
+                    return Buffer.from(encryptedData).toString('base64');
+                } catch (err) {
+                    console.error('Encryption error:', err);
+                    return null;
+                }
+            }
+
+            decrypt(encryptedData) {
+                try {
+                    const encryptedBuffer = Buffer.from(encryptedData, 'base64');
+                    const cipherText = encryptedBuffer.slice(0, encryptedBuffer.length - this.tagLength);
+                    const tag = encryptedBuffer.slice(-this.tagLength);
+                    const decipher = crypto.createDecipheriv(this.algorithm, this.key, this.iv);
+                    decipher.setAuthTag(tag);
+                    let data = decipher.update(cipherText, 'binary', 'utf8');
+                    data += decipher.final('utf8');
+                    return JSON.parse(data);
+                } catch (err) {
+                    console.error('Decryption error:', err);
+                    return null;
+                }
+            }
+        }
+
+        // Example usage
+        const encryptionkey = 'your_encryption_key_here';
+        const iv = 'your_base64_encoded_iv_here';
+        const encrypter = new Encrypter(encryptionkey, iv);
+
+        function encryptData() {
+            const dataInput = document.getElementById('data');
+            const data = dataInput.value;
+            const encrypted = encrypter.encrypt(data);
+            document.getElementById('encryptedData').innerText = `Encrypted Data: ${encrypted}`;
+        }
+    </script>
+</body>
+
+</html>

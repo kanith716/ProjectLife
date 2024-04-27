@@ -1,0 +1,70 @@
+[{
+    "id": 1,
+    "title": "Basic Form Validation",
+    "rating": "1.21K",
+    "updatedTime": "22/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<form> <input type='text' placeholder='Enter Your Name'/><input type='email' placeholder='Enter Your Email'/><input  type='submit' value='submit'/></form>",
+    "css": "input{color:#000;border:1px solid #eee;padding:10px 10px 10px 10px;margin-bottom:10px;width:100%;display:block;}form{text-align:center;padding:20px; width:50%;margin:0 auto;}",
+    "javascript": "const submitBtn = document.getElementById('submit-btn');\nconst validate = (e) => {  e.preventDefault();const username= document.getElementById('username');const emailAddress = document.getElementById('email-address');f (username.value === '') {alert('Please enter your username.');username.focus();return false;}if (emailAddress.value === '') {alert('Please enter your emailaddress.');emailAddress.focus();return false;}return true;}submitBtn.addEventListener('click', validate);"
+},
+{
+    "id": 2,
+    "title": "SSO Integration Using Python",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 2,
+    "title": "SSO Integration Using Python",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 2,
+    "title": "SSO Integration Using Python",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 2,
+    "title": "SSO Integration Using Python",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 2,
+    "title": "SSO Integration Using Python",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 2,
+    "title": "SSO Integration Using Python",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+}]

@@ -1,1558 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0%;
-    }
 
-    .main-job-card {
-      width: 90%;
-      margin: auto;
-      padding: 100px 0px;
-    }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 0%;
+  }
 
-    .job-card-title {
-      text-align: center;
-      margin-bottom: 3.2rem;
-    }
+  .main-job-card {
+    width: 90%;
+    margin: auto;
+    padding: 100px 0px;
+  }
 
-    .job-card-title h2 {
-      color: #233253;
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 48px;
-      margin: 0px 10px 0px 0px;
-    }
+  .job-card-title {
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
 
-    .job-card-title p {
-      font-size: 16px;
-      font-weight: 400;
-    }
+  .job-card-title h2 {
+    color: #233253;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    margin: 0px 10px 0px 0px;
+  }
 
-    .job-type {
-      min-width: 154px;
-      border: 1px solid #2332534d;
-      border-radius: 4px;
-      padding: 10px;
-      margin: 10px 10px;
-      color: #005e9e;
-    }
+  .job-card-title p {
+    font-size: 16px;
+    font-weight: 400;
+  }
 
-    .job-type.active {
-      background: #005e9e;
-      color: #fff;
-    }
+  .job-type {
+    min-width: 154px;
+    border: 1px solid #2332534d;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 10px;
+    color: #005e9e;
+  }
 
-    .job-type-content {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 22px;
-      margin: 0px;
-      text-align: center;
-    }
+  .job-type.active {
+    background: #005e9e;
+    color: #fff;
+  }
 
-    .job-type-main {
-      display: flex;
-      align-items: center;
-      overflow-x: scroll;
-      justify-content: center;
-    }
+  .job-type-content {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0px;
+    text-align: center;
+  }
 
-    .styled-select .sub-filter-select select {
-      -moz-appearance: none;
-      /* Firefox */
-      -webkit-appearance: none;
-      /* Safari and Chrome */
-      appearance: none;
-    }
+  .job-type-main {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    justify-content: center;
+  }
 
-    .sub-filter-select select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: transparent;
-      background-image: url("./352021_arrow_drop\ down_icon.png");
-      background-repeat: no-repeat;
-      background-position-x: 100%;
-      background-position-y: 5px;
-      border: 1px solid #dfdfdf;
-      border-radius: 2px;
-      margin-right: 2rem;
-      background-color: #f4f4f4;
-      font-size: 12px;
-      font-weight: 600;
-      color: #233253;
-      border-radius: 4px;
-      border: 0px;
-      line-height: 22px;
-      padding: 0.4rem;
-      background-position: right;
-      padding-right: 2rem;
-    }
+  .styled-select .sub-filter-select select {
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+  }
 
-    .sub-filter-select {
-      display: flex;
-      flex-direction: column;
-      margin: 10px 0px;
-    }
+  .sub-filter-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("./352021_arrow_drop\ down_icon.png");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    margin-right: 2rem;
+    background-color: #f4f4f4;
+    font-size: 12px;
+    font-weight: 600;
+    color: #233253;
+    border-radius: 4px;
+    border: 0px;
+    line-height: 22px;
+    padding: 0.4rem;
+    background-position: right;
+    padding-right: 2rem;
+  }
 
-    .filter-select-label {
-      line-height: 22px;
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 0.2rem;
-    }
+  .sub-filter-select {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+  }
 
-    .sub-filter-btn {
-      margin: 10px 0px;
-    }
+  .filter-select-label {
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
 
-    .main-job-sub-filter {
-      margin: 15px 0px;
-    }
+  .sub-filter-btn {
+    margin: 10px 0px;
+  }
 
-    .sub-filter-btn button {
-      color: #fff;
-      font-weight: 600;
-      padding: 0.4rem;
-      line-height: 22px;
-      border: 0px;
-      width: 100%;
-    }
+  .main-job-sub-filter {
+    margin: 15px 0px;
+  }
 
-    .main-job-sub-row {
-      -ms-box-orient: horizontal;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -moz-flex;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-justify-content: space-around;
-      justify-content: space-around;
-      -webkit-flex-flow: row wrap;
-      flex-flow: row wrap;
-      -webkit-align-items: stretch;
-      align-items: flex-end;
-    }
+  .sub-filter-btn button {
+    color: #fff;
+    font-weight: 600;
+    padding: 0.4rem;
+    line-height: 22px;
+    border: 0px;
+    width: 100%;
+  }
 
-    .row-job-filter {
-      flex-grow: 1;
-    }
+  .main-job-sub-row {
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: stretch;
+    align-items: flex-end;
+  }
 
-    .sub-filter-btn button:hover {
-      background-color: red;
-      color: #fff;
-      border-radius: 4px;
-      border: 0px;
-    }
+  .row-job-filter {
+    flex-grow: 1;
+  }
 
-    .job-card-title-list {
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 22px;
-      color: #005e9e;
-      margin: 0px;
-    }
+  .sub-filter-btn button:hover {
+    background-color: red;
+    color: #fff;
+    border-radius: 4px;
+    border: 0px;
+  }
 
-    .job-card-sub-title {
-      font-size: 20px;
-      line-height: 28px;
-      font-weight: 700;
-      color: #233253;
-      margin-top: 10px;
-    }
-    .accordion-item-description p {
-      margin: 0px;
-    }
-    .jd-accordian {
-      padding: 0px 20px;
-      margin-bottom: 6rem;
-    }
-    .jd-accordian .accordion {
-      border-top: 1px solid #ccc;
-    }
-    .job-location-main {
-      display: flex;
-      align-items: center;
-    }
+  .job-card-title-list {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #005e9e;
+    margin: 0px;
+  }
 
-    .job-location-main p {
-      line-height: 21px;
-      margin: 0.3rem 1.4rem 0.3rem 0.5rem;
-      font-size: 14px;
-      color: #233253;
-    }
+  .job-card-sub-title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #233253;
+    margin-top: 10px;
+  }
 
-    .job-sal {
-      display: flex;
-      align-items: center;
-    }
+  .accordion-item-description p {
+    margin: 0px;
+  }
 
-    .job-location {
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-    }
+  .jd-accordian {
+    padding: 0px 20px;
+    margin-bottom: 6rem;
+  }
 
-    .job-sal p {
-      line-height: 21px;
-      margin: 0.3rem 1.4rem 0.3rem 0.5rem;
-      font-size: 14px;
-      color: #233253;
-    }
+  .jd-accordian .accordion {
+    border-top: 1px solid #ccc;
+  }
 
-    .job-posted {
-      color: #8a93a5;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 22px;
-      margin-bottom: 0px;
-    }
+  .job-location-main {
+    display: flex;
+    align-items: center;
+  }
 
-    .main-job-card-list {
-      border: 1px solid #c7cacc;
-      text-align: left;
-      display: flex;
-      width: 33.3%;
-      margin-bottom: 20px;
-    }
+  .job-location-main p {
+    line-height: 21px;
+    margin: 0.3rem 1.4rem 0.3rem 0.5rem;
+    font-size: 14px;
+    color: #233253;
+  }
 
-    .left-list-border {
-      display: flex;
-      gap: 30px;
-    }
+  .job-sal {
+    display: flex;
+    align-items: center;
+  }
 
-    .left-list-border-line {
-      border-right: 4px solid red;
-      height: 40%;
-      transition: height 0.3s ease;
-    }
+  .job-location {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 
-    .main-job-card-list-sub {
-      padding: 24px;
-    }
+  .job-sal p {
+    line-height: 21px;
+    margin: 0.3rem 1.4rem 0.3rem 0.5rem;
+    font-size: 14px;
+    color: #233253;
+  }
 
-    .list-titles h4 {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 18px;
-      margin-bottom: 0px;
-    }
+  .job-posted {
+    color: #8a93a5;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 0px;
+  }
 
-    .list-titles p {
-      margin: 10px 0px;
-      font-size: 14px;
-    }
+  .main-job-card-list {
+    border: 1px solid #c7cacc;
+    text-align: left;
+    display: flex;
+    width: 33.3%;
+    margin-bottom: 20px;
+  }
 
-    .listof-cards {
-      display: flex;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
+  .left-list-border {
+    display: flex;
+    gap: 30px;
+  }
 
-    .list-titles {
-      border-right: 1px solid #a0a5b1;
-      padding-right: 20px;
-    }
+  .left-list-border-line {
+    border-right: 4px solid red;
+    height: 40%;
+    transition: height 0.3s ease;
+  }
 
-    .jd-main-title:last-child .list-titles {
-      border: 0px;
-      padding-right: 0px;
-    }
+  .main-job-card-list-sub {
+    padding: 24px;
+  }
 
-    .w3-container {
-      background: #eaf1f8;
-    }
+  .list-titles h4 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-bottom: 0px;
+  }
 
-    .question-jd h3 {
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 22px;
-    }
+  .list-titles p {
+    margin: 10px 0px;
+    font-size: 14px;
+  }
 
-    .question-jd p {
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 18px;
-    }
-    .question-jd h4 {
-      margin: 0px;
-      font-size: 16px;
-      line-height: 24px;
-      font-weight: 600;
-    }
-    .main-jd-applynow {
-      background-color: #eaf1f8;
-    }
-    .mobile-title-job {
-      margin-top: 15px;
-      background-color: #eaf1f8;
-    }
-    .question-jd ul li {
-      font-size: 14px;
-      line-height: 20px;
-    }
+  .listof-cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
 
-    .question-jd ul {
-      margin-top: 0px;
-    }
-    .question-jd {
-      padding: 0px 20px;
-    }
-    .jd-cta button {
-      background-color: red;
-      border: 0px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 12px;
-      padding: 10px 16px;
-      line-height: 20px;
-      border-radius: 4px;
-    }
-    .mobile-applynow button {
-                background-color: red;
-                border: 0px;
-                color: #fff;
-                font-weight: 600;
-                font-size: 12px;
-                padding: 10px 16px;
-                line-height: 20px;
-                border-radius: 4px;
-                width: 100%;
-              }
-              
-              .sticky-apply-jd{
-                width: 100%;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-              }
-            
-              .mobile-applynow  {
+  .list-titles {
+    border-right: 1px solid #a0a5b1;
+    padding-right: 20px;
+  }
+
+  .jd-main-title:last-child .list-titles {
+    border: 0px;
+    padding-right: 0px;
+  }
+
+  .w3-container {
+    background: #eaf1f8;
+  }
+
+  .question-jd h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .question-jd p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  .question-jd h4 {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .main-jd-applynow {
+    background-color: #eaf1f8;
+  }
+
+  .mobile-title-job {
+    margin-top: 15px;
+    background-color: #eaf1f8;
+  }
+
+  .question-jd ul li {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .question-jd ul {
+    margin-top: 0px;
+  }
+
+  .question-jd {
+    padding: 0px 20px;
+  }
+
+  .jd-cta button {
+    background-color: red;
+    border: 0px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 10px 16px;
+    line-height: 20px;
+    border-radius: 4px;
+  }
+
+  .mobile-applynow button {
+    background-color: red;
+    border: 0px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 10px 16px;
+    line-height: 20px;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .sticky-apply-jd {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .mobile-applynow {
     background-color: #ffff;
     display: flex;
     padding: 20px;
     justify-content: center;
-}
-    .jd-cta {
-      display: flex;
-    }
-    .job-discripattionaccordian .w3-container {
-      padding-bottom: 30px;
-    }
-    .job-card {
-      padding: 15px 0px;
-    }
-    .main-job-card-list.desktop-job-description.activecard {
-      background-color: #eaf1f8;
-      margin-bottom: 0px;
-      border-bottom: 0px;
-    }
-    .main-job-card-list.activecard .left-list-border-line {
-      height: 100%;
-    }
-    .pagination-job {
-      display: inline-block;
-      text-align: center;
-    }
+  }
 
-    .pagination-job a {
-      color: black;
-      float: left;
-      padding: 8px 16px;
-      text-decoration: none;
-    }
+  .jd-cta {
+    display: flex;
+  }
 
-    .pagination-job a.active {
-      background-color: #005e9e;
-      color: white;
-      border-radius: 5px;
-    }
+  .job-discripattionaccordian .w3-container {
+    padding-bottom: 30px;
+  }
 
-    .pagination-job a:hover:not(.active) {
-      background-color: #ddd;
-      border-radius: 5px;
-    }
-    .main-pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 5%;
-    }
+  .job-card {
+    padding: 15px 0px;
+  }
 
-    .main-pagination select {
-      border: 1px solid #233253;
-      border-radius: 4px;
-      padding: 6px 15px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: transparent;
-      background-image: url("./352021_arrow_drop\ down_icon.png");
-      background-repeat: no-repeat;
-      background-position-x: 100%;
-      background-position-y: 5px;
-      border: 1px solid #dfdfdf;
-      border-radius: 2px;
-      margin-right: 2rem;
-      /* background-color: #F4F4F4; */
-      font-size: 12px;
-      font-weight: 600;
-      color: #233253;
-      border-radius: 4px;
-      /* border: 0px; */
-      line-height: 22px;
-      padding: 0.4rem;
-      background-position: right;
-      padding-right: 2rem;
-    }
+  .main-job-card-list.desktop-job-description.activecard {
+    background-color: #eaf1f8;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+  }
 
-    .main-pagination select option {
-      line-height: 18px;
-      font-weight: 600;
-      font-size: 10px;
-    }
-    .main-pagination p,
-    a {
-      font-size: 10px;
-      line-height: 15px;
-    }
+  .main-job-card-list.activecard .left-list-border-line {
+    height: 100%;
+  }
 
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    /* .main-job-card {
+  .pagination-job {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .pagination-job a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  .pagination-job a.active {
+    background-color: #005e9e;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .pagination-job a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+
+  .main-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  .main-pagination select {
+    border: 1px solid #233253;
+    border-radius: 4px;
+    padding: 6px 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("./352021_arrow_drop\ down_icon.png");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    margin-right: 2rem;
+    /* background-color: #F4F4F4; */
+    font-size: 12px;
+    font-weight: 600;
+    color: #233253;
+    border-radius: 4px;
+    /* border: 0px; */
+    line-height: 22px;
+    padding: 0.4rem;
+    background-position: right;
+    padding-right: 2rem;
+  }
+
+  .main-pagination select option {
+    line-height: 18px;
+    font-weight: 600;
+    font-size: 10px;
+  }
+
+  .main-pagination p,
+  a {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* .main-job-card {
       display: none;
     } */
-    .mobile-job-sub-card-title {
+  .mobile-job-sub-card-title {
     display: flex;
     align-items: center;
     /* gap: 141px; */
     justify-content: flex-start;
-}
+  }
 
-.mobile-job-sub-card-title span {
+  .mobile-job-sub-card-title span {
     /* padding-right: 60px; */
     padding: 0rem 6rem 0rem 1.7rem;
-}
-.applyjd-discription-mobile{
-  display: none;
-}
-.mobile-job-sub-card-title h2 {
+  }
+
+  .applyjd-discription-mobile {
+    display: none;
+  }
+
+  .mobile-job-sub-card-title h2 {
     color: #233253;
     font-size: 22px;
-}
-    @media screen and (min-width: 768px) {
-      .desktop-job-description {
-        display: block !important;
-      }
-      .mobile-arrow {
-        display: none;
-      }
-      .mobile-job-description {
-        display: none;
-      }
-    }
-    @media screen and (max-width: 767px) {
-      .list-titles {
-        border: 0px;
-      }
-      .listof-cards {
-        gap: 0px;
-        border-bottom: 1px solid #eee;
-        flex-direction: column;
-      }
-      .left-list-border {
-        flex-direction: column;
-      }
-      .main-job-card-list {
-        width: 100%;
-      }
-      .left-list-border {
-        gap: 0;
-      }
-      .main-job-sub-row {
-        flex-direction: column;
-      }
-      .sub-filter-select {
-        width: 100%;
-      }
-      .sub-filter-select select {
-        margin-right: 0px;
-      }
-      .sub-filter-btn {
-        width: 100%;
-      }
-      .left-list-border {
-        margin-top: 5%;
-      }
-      .job-type-main {
-        justify-content: flex-start;
-      }
-      .mobile-arrow {
-        display: block;
-      }
-      .job-sub-card-title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .job-sub-card-title h2 {
-        margin: 0px;
-        font-size: 30px;
-      }
-      .job-sub-card-title span {
-        font-size: 30px;
-        padding-right: 15px;
-      }
+  }
+
+  @media screen and (min-width: 768px) {
+    .desktop-job-description {
+      display: block !important;
     }
 
-    /* :root {
+    .mobile-arrow {
+      display: none;
+    }
+
+    .mobile-job-description {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .list-titles {
+      border: 0px;
+    }
+
+    .listof-cards {
+      gap: 0px;
+      border-bottom: 1px solid #eee;
+      flex-direction: column;
+    }
+
+    .left-list-border {
+      flex-direction: column;
+    }
+
+    .main-job-card-list {
+      width: 100%;
+    }
+
+    .left-list-border {
+      gap: 0;
+    }
+
+    .main-job-sub-row {
+      flex-direction: column;
+    }
+
+    .sub-filter-select {
+      width: 100%;
+    }
+
+    .sub-filter-select select {
+      margin-right: 0px;
+    }
+
+    .sub-filter-btn {
+      width: 100%;
+    }
+
+    .left-list-border {
+      margin-top: 5%;
+    }
+
+    .job-type-main {
+      justify-content: flex-start;
+    }
+
+    .mobile-arrow {
+      display: block;
+    }
+
+    .job-sub-card-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .job-sub-card-title h2 {
+      margin: 0px;
+      font-size: 30px;
+    }
+
+    .job-sub-card-title span {
+      font-size: 30px;
+      padding-right: 15px;
+    }
+  }
+
+  /* :root {
   --border-color: #cccccc;
   --background-color: #f1f1f1;
   --transition: all 0.2s ease;
 } */
 
-    .accordion {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
-    }
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
 
-    .accordion .accordion-item .accordion-item-description-wrapper hr {
-      border: none;
-      visibility: visible;
-    }
+  .accordion .accordion-item .accordion-item-description-wrapper hr {
+    border: none;
+    visibility: visible;
+  }
 
-    .accordion .accordion-item.open .accordion-item-description-wrapper hr {
-      visibility: visible;
-    }
+  .accordion .accordion-item.open .accordion-item-description-wrapper hr {
+    visibility: visible;
+  }
 
-    .accordion .accordion-item .accordion-item-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0px;
-      cursor: pointer;
-    }
+  .accordion .accordion-item .accordion-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    cursor: pointer;
+  }
 
-    .accordion
-      .accordion-item
-      .accordion-item-header
-      .accordion-item-header-title {
-      font-weight: 600;
-    }
+  .accordion .accordion-item .accordion-item-header .accordion-item-header-title {
+    font-weight: 600;
+  }
 
-    .accordion
-      .accordion-item
-      .accordion-item-header
-      .accordion-item-header-icon {
-      transition: var(--transition);
-    }
+  .accordion .accordion-item .accordion-item-header .accordion-item-header-icon {
+    transition: var(--transition);
+  }
 
-    .accordion
-      .accordion-item.open
-      .accordion-item-header
-      .accordion-item-header-icon {
-      transform: rotate(-180deg);
-    }
+  .accordion .accordion-item.open .accordion-item-header .accordion-item-header-icon {
+    transform: rotate(-180deg);
+  }
 
-    .accordion .accordion-item .accordion-item-description-wrapper {
-      display: grid;
-      grid-template-rows: 0fr;
-      overflow: hidden;
-      transition: var(--transition);
-    }
+  .accordion .accordion-item .accordion-item-description-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: var(--transition);
+  }
 
-    .accordion .accordion-item.open .accordion-item-description-wrapper {
-      grid-template-rows: 1fr;
-    }
+  .accordion .accordion-item.open .accordion-item-description-wrapper {
+    grid-template-rows: 1fr;
+  }
 
-    .accordion
-      .accordion-item
-      .accordion-item-description-wrapper
-      .accordion-item-description {
-      min-height: 0;
-    }
+  .accordion .accordion-item .accordion-item-description-wrapper .accordion-item-description {
+    min-height: 0;
+  }
 
-    .accordion
-      .accordion-item
-      .accordion-item-description-wrapper
-      .accordion-item-description
-      p {
-      padding: 10px;
-      line-height: 1.5;
-    }
-  </style>
-  <body>
-    <div class="main-job-card">
-      <div class="job-card-title">
-        <div class="job-sub-card-title">
-          <span class="mobile-arrow">&#8592;</span>
-          <h2>Find your fit</h2>
-        </div>
-        <p>View our open jobs, apply and let your dreams take wing.</p>
+  .accordion .accordion-item .accordion-item-description-wrapper .accordion-item-description p {
+    padding: 10px;
+    line-height: 1.5;
+  }
+</style>
+
+<body>
+  <div class="main-job-card">
+    <div class="job-card-title">
+      <div class="job-sub-card-title">
+        <span class="mobile-arrow">&#8592;</span>
+        <h2>Find your fit</h2>
       </div>
-      <div class="job-head-tab">
-        <div class="job-type-main">
-          <div class="job-type">
-            <p class="job-type-content">All <span>(153)</span></p>
-          </div>
-          <div class="job-type active">
-            <p class="job-type-content">Field Sales <span>(20)</span></p>
-          </div>
-          <div class="job-type">
-            <p class="job-type-content">Sales <span>(20)</span></p>
-          </div>
-          <div class="job-type">
-            <p class="job-type-content">Technology <span>(32)</span></p>
-          </div>
-          <div class="job-type">
-            <p class="job-type-content">Operations <span>(32)</span></p>
-          </div>
+      <p>View our open jobs, apply and let your dreams take wing.</p>
+    </div>
+    <div class="job-head-tab">
+      <div class="job-type-main">
+        <div class="job-type">
+          <p class="job-type-content">All <span>(153)</span></p>
+        </div>
+        <div class="job-type active">
+          <p class="job-type-content">Field Sales <span>(20)</span></p>
+        </div>
+        <div class="job-type">
+          <p class="job-type-content">Sales <span>(20)</span></p>
+        </div>
+        <div class="job-type">
+          <p class="job-type-content">Technology <span>(32)</span></p>
+        </div>
+        <div class="job-type">
+          <p class="job-type-content">Operations <span>(32)</span></p>
         </div>
       </div>
-      <div class="job-sub-filter">
-        <div
-          class="main-job-sub-filter desktop-job-description"
-          style="display: none"
-        >
-          <div class="main-job-sub-row">
-            <div class="sub-filter-select row-job-filter">
-              <label class="filter-select-label">Function</label>
-              <select name="format" id="format">
-                <option selected>Select</option>
-                <option value="pdf">PDF</option>
-                <option value="txt">txt</option>
-                <option value="epub">ePub</option>
-                <option value="fb2">fb2</option>
-                <option value="mobi">mobi</option>
-              </select>
-            </div>
-            <div class="sub-filter-select row-job-filter">
-              <label class="filter-select-label">Function</label>
-              <select name="format" id="format">
-                <option>Select</option>
-                <option value="pdf " selected>Mumbai</option>
-                <option value="txt">txt</option>
-                <option value="epub">ePub</option>
-                <option value="fb2">fb2</option>
-                <option value="mobi">mobi</option>
-              </select>
-            </div>
-            <div class="sub-filter-btn row-job-filter">
-              <button>FIND MY FIT</button>
-            </div>
-          </div>
-          <div>
-            <div class="list-of-job-card">
-              <div class="job-card">
-                <div class="left-list-border">
-                  <div
-                    class="main-job-card-list"
-                    onclick="openCity(event,'chennai')"
-                  >
-                    <div class="left-list-border-line"></div>
-                    <div class="main-job-card-list-sub">
-                      <p class="job-card-title-list">Function 1</p>
-                      <h3 class="job-card-sub-title">
-                        Associate Manager- Branch Audit
-                      </h3>
-                      <div class="sub-job-card">
-                        <div class="job-location">
-                          <div class="job-location-main">
-                            <img src="./location.png" alt="" />
-                            <p>Mumbai</p>
-                          </div>
-                          <div class="job-location-main">
-                            <img src="./calendar.png" alt="" />
-                            <p>10 - 15 Years</p>
-                          </div>
-                        </div>
-                        <div class="job-sal">
-                          <img src="./money.png" alt="" />
-                          <p>₹ Not Disclosed</p>
-                        </div>
-                        <p class="job-posted">Posted 3 weeks ago</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="main-job-card-list"
-                    onclick="openCity(event,'London')"
-                  >
-                    <div class="left-list-border-line"></div>
-                    <div class="main-job-card-list-sub">
-                      <p class="job-card-title-list">Function 1</p>
-                      <h3 class="job-card-sub-title">
-                        Associate Manager- Branch Audit
-                      </h3>
-                      <div class="sub-job-card">
-                        <div class="job-location">
-                          <div class="job-location-main">
-                            <img src="./location.png" alt="" />
-                            <p>Mumbai</p>
-                          </div>
-                          <div class="job-location-main">
-                            <img src="./calendar.png" alt="" />
-                            <p>10 - 15 Years</p>
-                          </div>
-                        </div>
-                        <div class="job-sal">
-                          <img src="./money.png" alt="" />
-                          <p>₹ Not Disclosed</p>
-                        </div>
-                        <p class="job-posted">Posted 3 weeks ago</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="main-job-card-list"
-                    onclick="openCity(event, 'Paris')"
-                  >
-                    <div class="left-list-border-line"></div>
-                    <div class="main-job-card-list-sub">
-                      <p class="job-card-title-list">Function 1</p>
-                      <h3 class="job-card-sub-title">
-                        Associate Manager- Branch Audit
-                      </h3>
-                      <div class="sub-job-card">
-                        <div class="job-location">
-                          <div class="job-location-main">
-                            <img src="./location.png" alt="" />
-                            <p>Mumbai</p>
-                          </div>
-                          <div class="job-location-main">
-                            <img src="./calendar.png" alt="" />
-                            <p>10 - 15 Years</p>
-                          </div>
-                        </div>
-                        <div class="job-sal">
-                          <img src="./money.png" alt="" />
-                          <p>₹ Not Disclosed</p>
-                        </div>
-                        <p class="job-posted">Posted 3 weeks ago</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="job-discripattionaccordian">
-                  <div
-                    id="chennai"
-                    class="w3-container city"
-                    style="display: none"
-                  >
-                    <div class="listof-cards">
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Reporting to</b>
-                          </h4>
-                          <p>SVP- Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Designation</b>
-                          </h4>
-                          <p>Technical Solution Architect</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Grade</b>
-                          </h4>
-                          <p>CM/AVP</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Location</b>
-                          </h4>
-                          <p>Mumbai</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>IC/Team Manager role</b>
-                          </h4>
-                          <p>N/Z</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Education</b>
-                          </h4>
-                          <p>UG: Any Graduate PG: Any Postgraduate</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="question-jd">
-                      <h3>What are we looking for part 3?</h3>
-                      <p>
-                        We are seeking an experienced hardcore Software Solution
-                        Architect to join our Technology Transformation team at
-                        a leading insurance company.
-                      </p>
-                      <p>
-                        This role is crucial for technical solution,
-                        architecting, design, developing large- scale digital
-                        applications in the insurance domain.The ideal candidate
-                        will have a strong technical solution implementation
-                        background, hands on software development and a proven
-                        track record in designing robust, scalable, cloud native
-                        and efficient large size software solutions. They should
-                        have architected and designed web, mobile application
-                        and Microservice base solution for Indian life
-                        Insurance.
-                      </p>
-                    </div>
-                    <div class="question-jd">
-                      <h3>What does the job entail?</h3>
-                      <h4>Key Responsibilities:</h4>
-                      <ul>
-                        <li>
-                          <strong>Software Architectural Leadership:</strong>
-                          Steer the architectural direction for digital
-                          applications, ensuring they meet business goals and
-                          adhere to industry standards.
-                        </li>
-                        <li>
-                          <strong>Development Expertise:</strong> Utilize your
-                          extensive experience in front-end and back-end
-                          development to guide architectural decisions.
-                        </li>
-                        <li>
-                          <strong>Microservices and Modular Components:</strong>
-                          Design and implement microservice-based modular
-                          architecture components, with a focus on high
-                          performance, scalability and maintainability.
-                        </li>
-                        <li>
-                          <strong>System Integration:</strong> Manage the
-                          integration of both internal and external systems thru
-                          Open API, Event and microservice based API, ensuring
-                          effective data exchange across multiple systems and
-                          database.
-                        </li>
-                        <li>
-                          <strong>Security and Performance:</strong> Uphold high
-                          standards in security and system performance,
-                          implementing the latest best practices.
-                        </li>
-                        <li>
-                          <strong>Team Management:</strong> Lead a large
-                          technical team, promoting a culture of innovation and
-                          continuous improvement.
-                        </li>
-                        <li>
-                          <strong>Database Design:</strong> Apply advanced
-                          knowledge in database design for efficient data
-                          management.
-                        </li>
-                        <li>
-                          <strong
-                            >Web and Mobile Application Development:</strong
-                          >
-                          Expertise in developing PWAs, hybrid, and native
-                          mobile apps.
-                        </li>
-                        <li>
-                          <strong>Cross-Platform Integration:</strong> Maintain
-                          knowledge of cross-application platforms for seamless
-                          system integration.
-                        </li>
-                        <li>
-                          <strong>Insurance Industry Experience:</strong>
-                          Utilize your strong experience of Indian life /group
-                          insurance domain in technical solution design.
-                        </li>
-                        <li>
-                          <strong>Cloud-Native Applications:</strong> Architect,
-                          design, and build cloud-native applications, ensuring
-                          they are optimized for the AWS and Google cloud
-                          environment.
-                        </li>
-                        <li>
-                          <strong>Emerging Technologies:</strong> Stay abreast
-                          of emerging technologies like AI/ML Chatbots, Business
-                          Rules Engines (BRE) and Gen AI, integrating them into
-                          solutions where appropriate.
-                        </li>
-                        <li>
-                          <strong>India Stack Knowledge:</strong> Possess a good
-                          understanding of India Stack and its application in
-                          digital solutions.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="question-jd">
-                      <h4>Required Skills and Qualifications:</h4>
-                      <ul>
-                        <li>MTech/ME/BE/MCA</li>
-                        <li>
-                          Minimum of 12 to 15 years of working experience in
-                          architecting large digital applications, with a solid
-                          background in software development including Cyber
-                          security.
-                        </li>
-                        <li>
-                          Excellent in <strong>Java</strong>,
-                          <strong>React JS</strong>,
-                          <strong>Angular JS</strong>, <strong>Flutter</strong>,
-                          <strong>Node.js</strong>,
-                          <strong>Spring Boot</strong>, <strong>APIM</strong>,
-                          <strong>ESB</strong>, <strong>Kafka</strong> and
-                          <strong>RDS</strong> technologies including
-                          <strong>NoSQL</strong>.
-                        </li>
-                        <li>
-                          Proficient in DevOps - <strong>CI/CD</strong>,
-                          <strong>Docker</strong> /
-                          <strong>Kubernetes</strong> /
-                          <strong>Jenkins</strong> / <strong>Terraform</strong>/
-                          <strong>Git</strong>.
-                        </li>
-                        <li>
-                          Experience in <strong>PWA</strong>, hybrid, and native
-                          mobile app development.
-                        </li>
-                        <li>
-                          Knowledge of architectural and design patterns, and
-                          building microservices.
-                        </li>
-                        <li>
-                          Strong understanding of security, data protection, and
-                          performance optimization.
-                        </li>
-                        <li>
-                          10+ years an experience in an Indian life insurance
-                          domain like new business onboarding, servicing and
-                          policy life cycle management.
-                        </li>
-                        <li>
-                          Leadership management experience in managing technical
-                          teams.
-                        </li>
-                        <li>
-                          Problem-solving skills and a focus on innovative
-                          solutions.
-                        </li>
-                        <li>
-                          Experience with <strong>Chatbots</strong> and
-                          <strong>Business Rules Engines (BRE)</strong>.
-                        </li>
-                        <li>
-                          Excellent in <strong>AWS</strong> /
-                          <strong>Google cloud</strong> service implementation.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="question-jd">
-                      <h4>Good to Have:</h4>
-                      <ul>
-                        <li>
-                          Familiarity with <strong>General AI</strong> and
-                          <strong>AI/ML</strong> technologies.
-                        </li>
-                        <li>External partner Integration ecosystems.</li>
-                        <li>Data pipeline management.</li>
-                        <li>
-                          Understanding of <strong>India Stack</strong> and its
-                          implications in digital solutions.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="jd-cta question-jd">
-                      <button>Apply Now</button>
-                    </div>
-                  </div>
-                  <div
-                    id="London"
-                    class="w3-container city"
-                    style="display: none"
-                  >
-                    <div class="listof-cards">
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Reporting to</b>
-                          </h4>
-                          <p>SVP- Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Designation</b>
-                          </h4>
-                          <p>Technical Solution Architect</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Grade</b>
-                          </h4>
-                          <p>CM/AVP</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Location</b>
-                          </h4>
-                          <p>Mumbai</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>IC/Team Manager role</b>
-                          </h4>
-                          <p>N/Z</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Education</b>
-                          </h4>
-                          <p>UG: Any Graduate PG: Any Postgraduate</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="question-jd">
-                      <h3>What are we looking for?</h3>
-                      <p>
-                        We are seeking an experienced hardcore Software Solution
-                        Architect to join our Technology Transformation team at
-                        a leading insurance company.
-                      </p>
-                      <p>
-                        This role is crucial for technical solution,
-                        architecting, design, developing large- scale digital
-                        applications in the insurance domain.The ideal candidate
-                        will have a strong technical solution implementation
-                        background, hands on software development and a proven
-                        track record in designing robust, scalable, cloud native
-                        and efficient large size software solutions. They should
-                        have architected and designed web, mobile application
-                        and Microservice base solution for Indian life
-                        Insurance.
-                      </p>
-                    </div>
-                    <div class="question-jd">
-                      <h3>What does the job entail?</h3>
-                      <h4>Key Responsibilities:</h4>
-                      <ul>
-                        <li>
-                          <strong>Software Architectural Leadership:</strong>
-                          Steer the architectural direction for digital
-                          applications, ensuring they meet business goals and
-                          adhere to industry standards.
-                        </li>
-                        <li>
-                          <strong>Development Expertise:</strong> Utilize your
-                          extensive experience in front-end and back-end
-                          development to guide architectural decisions.
-                        </li>
-                        <li>
-                          <strong>Microservices and Modular Components:</strong>
-                          Design and implement microservice-based modular
-                          architecture components, with a focus on high
-                          performance, scalability and maintainability.
-                        </li>
-                        <li>
-                          <strong>System Integration:</strong> Manage the
-                          integration of both internal and external systems thru
-                          Open API, Event and microservice based API, ensuring
-                          effective data exchange across multiple systems and
-                          database.
-                        </li>
-                        <li>
-                          <strong>Security and Performance:</strong> Uphold high
-                          standards in security and system performance,
-                          implementing the latest best practices.
-                        </li>
-                        <li>
-                          <strong>Team Management:</strong> Lead a large
-                          technical team, promoting a culture of innovation and
-                          continuous improvement.
-                        </li>
-                        <li>
-                          <strong>Database Design:</strong> Apply advanced
-                          knowledge in database design for efficient data
-                          management.
-                        </li>
-                        <li>
-                          <strong
-                            >Web and Mobile Application Development:</strong
-                          >
-                          Expertise in developing PWAs, hybrid, and native
-                          mobile apps.
-                        </li>
-                        <li>
-                          <strong>Cross-Platform Integration:</strong> Maintain
-                          knowledge of cross-application platforms for seamless
-                          system integration.
-                        </li>
-                        <li>
-                          <strong>Insurance Industry Experience:</strong>
-                          Utilize your strong experience of Indian life /group
-                          insurance domain in technical solution design.
-                        </li>
-                        <li>
-                          <strong>Cloud-Native Applications:</strong> Architect,
-                          design, and build cloud-native applications, ensuring
-                          they are optimized for the AWS and Google cloud
-                          environment.
-                        </li>
-                        <li>
-                          <strong>Emerging Technologies:</strong> Stay abreast
-                          of emerging technologies like AI/ML Chatbots, Business
-                          Rules Engines (BRE) and Gen AI, integrating them into
-                          solutions where appropriate.
-                        </li>
-                        <li>
-                          <strong>India Stack Knowledge:</strong> Possess a good
-                          understanding of India Stack and its application in
-                          digital solutions.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="question-jd">
-                      <h4>Required Skills and Qualifications:</h4>
-                      <ul>
-                        <li>MTech/ME/BE/MCA</li>
-                        <li>
-                          Minimum of 12 to 15 years of working experience in
-                          architecting large digital applications, with a solid
-                          background in software development including Cyber
-                          security.
-                        </li>
-                        <li>
-                          Excellent in <strong>Java</strong>,
-                          <strong>React JS</strong>,
-                          <strong>Angular JS</strong>, <strong>Flutter</strong>,
-                          <strong>Node.js</strong>,
-                          <strong>Spring Boot</strong>, <strong>APIM</strong>,
-                          <strong>ESB</strong>, <strong>Kafka</strong> and
-                          <strong>RDS</strong> technologies including
-                          <strong>NoSQL</strong>.
-                        </li>
-                        <li>
-                          Proficient in DevOps - <strong>CI/CD</strong>,
-                          <strong>Docker</strong> /
-                          <strong>Kubernetes</strong> /
-                          <strong>Jenkins</strong> / <strong>Terraform</strong>/
-                          <strong>Git</strong>.
-                        </li>
-                        <li>
-                          Experience in <strong>PWA</strong>, hybrid, and native
-                          mobile app development.
-                        </li>
-                        <li>
-                          Knowledge of architectural and design patterns, and
-                          building microservices.
-                        </li>
-                        <li>
-                          Strong understanding of security, data protection, and
-                          performance optimization.
-                        </li>
-                        <li>
-                          10+ years an experience in an Indian life insurance
-                          domain like new business onboarding, servicing and
-                          policy life cycle management.
-                        </li>
-                        <li>
-                          Leadership management experience in managing technical
-                          teams.
-                        </li>
-                        <li>
-                          Problem-solving skills and a focus on innovative
-                          solutions.
-                        </li>
-                        <li>
-                          Experience with <strong>Chatbots</strong> and
-                          <strong>Business Rules Engines (BRE)</strong>.
-                        </li>
-                        <li>
-                          Excellent in <strong>AWS</strong> /
-                          <strong>Google cloud</strong> service implementation.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="question-jd">
-                      <h4>Good to Have:</h4>
-                      <ul>
-                        <li>
-                          Familiarity with <strong>General AI</strong> and
-                          <strong>AI/ML</strong> technologies.
-                        </li>
-                        <li>External partner Integration ecosystems.</li>
-                        <li>Data pipeline management.</li>
-                        <li>
-                          Understanding of <strong>India Stack</strong> and its
-                          implications in digital solutions.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="jd-cta question-jd">
-                      <button>Apply Now</button>
-                    </div>
-                  </div>
-                  <div
-                    id="Paris"
-                    class="w3-container city"
-                    style="display: none"
-                  >
-                    <div class="listof-cards">
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Reporting to</b>
-                          </h4>
-                          <p>SVP- Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Department: IT</b>
-                          </h4>
-                          <p>Technology Transformation</p>
-                        </div>
-                      </div>
-
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Designation</b>
-                          </h4>
-                          <p>Technical Solution Architect</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Grade</b>
-                          </h4>
-                          <p>CM/AVP</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Location</b>
-                          </h4>
-                          <p>Mumbai</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>IC/Team Manager role</b>
-                          </h4>
-                          <p>N/Z</p>
-                        </div>
-                      </div>
-                      <div class="jd-main-title">
-                        <div class="list-titles">
-                          <h4>
-                            <b>Education</b>
-                          </h4>
-                          <p>UG: Any Graduate PG: Any Postgraduate</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="question-jd">
-                      <h3>What are we looking for second part?</h3>
-                      <p>
-                        We are seeking an experienced hardcore Software Solution
-                        Architect to join our Technology Transformation team at
-                        a leading insurance company.
-                      </p>
-                      <p>
-                        This role is crucial for technical solution,
-                        architecting, design, developing large- scale digital
-                        applications in the insurance domain.The ideal candidate
-                        will have a strong technical solution implementation
-                        background, hands on software development and a proven
-                        track record in designing robust, scalable, cloud native
-                        and efficient large size software solutions. They should
-                        have architected and designed web, mobile application
-                        and Microservice base solution for Indian life
-                        Insurance.
-                      </p>
-                    </div>
-                    <div class="question-jd">
-                      <h3>What does the job entail?</h3>
-                      <h4>Key Responsibilities:</h4>
-                      <ul>
-                        <li>
-                          <strong>Software Architectural Leadership:</strong>
-                          Steer the architectural direction for digital
-                          applications, ensuring they meet business goals and
-                          adhere to industry standards.
-                        </li>
-                        <li>
-                          <strong>Development Expertise:</strong> Utilize your
-                          extensive experience in front-end and back-end
-                          development to guide architectural decisions.
-                        </li>
-                        <li>
-                          <strong>Microservices and Modular Components:</strong>
-                          Design and implement microservice-based modular
-                          architecture components, with a focus on high
-                          performance, scalability and maintainability.
-                        </li>
-                        <li>
-                          <strong>System Integration:</strong> Manage the
-                          integration of both internal and external systems thru
-                          Open API, Event and microservice based API, ensuring
-                          effective data exchange across multiple systems and
-                          database.
-                        </li>
-                        <li>
-                          <strong>Security and Performance:</strong> Uphold high
-                          standards in security and system performance,
-                          implementing the latest best practices.
-                        </li>
-                        <li>
-                          <strong>Team Management:</strong> Lead a large
-                          technical team, promoting a culture of innovation and
-                          continuous improvement.
-                        </li>
-                        <li>
-                          <strong>Database Design:</strong> Apply advanced
-                          knowledge in database design for efficient data
-                          management.
-                        </li>
-                        <li>
-                          <strong
-                            >Web and Mobile Application Development:</strong
-                          >
-                          Expertise in developing PWAs, hybrid, and native
-                          mobile apps.
-                        </li>
-                        <li>
-                          <strong>Cross-Platform Integration:</strong> Maintain
-                          knowledge of cross-application platforms for seamless
-                          system integration.
-                        </li>
-                        <li>
-                          <strong>Insurance Industry Experience:</strong>
-                          Utilize your strong experience of Indian life /group
-                          insurance domain in technical solution design.
-                        </li>
-                        <li>
-                          <strong>Cloud-Native Applications:</strong> Architect,
-                          design, and build cloud-native applications, ensuring
-                          they are optimized for the AWS and Google cloud
-                          environment.
-                        </li>
-                        <li>
-                          <strong>Emerging Technologies:</strong> Stay abreast
-                          of emerging technologies like AI/ML Chatbots, Business
-                          Rules Engines (BRE) and Gen AI, integrating them into
-                          solutions where appropriate.
-                        </li>
-                        <li>
-                          <strong>India Stack Knowledge:</strong> Possess a good
-                          understanding of India Stack and its application in
-                          digital solutions.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="question-jd">
-                      <h4>Required Skills and Qualifications:</h4>
-                      <ul>
-                        <li>MTech/ME/BE/MCA</li>
-                        <li>
-                          Minimum of 12 to 15 years of working experience in
-                          architecting large digital applications, with a solid
-                          background in software development including Cyber
-                          security.
-                        </li>
-                        <li>
-                          Excellent in <strong>Java</strong>,
-                          <strong>React JS</strong>,
-                          <strong>Angular JS</strong>, <strong>Flutter</strong>,
-                          <strong>Node.js</strong>,
-                          <strong>Spring Boot</strong>, <strong>APIM</strong>,
-                          <strong>ESB</strong>, <strong>Kafka</strong> and
-                          <strong>RDS</strong> technologies including
-                          <strong>NoSQL</strong>.
-                        </li>
-                        <li>
-                          Proficient in DevOps - <strong>CI/CD</strong>,
-                          <strong>Docker</strong> /
-                          <strong>Kubernetes</strong> /
-                          <strong>Jenkins</strong> / <strong>Terraform</strong>/
-                          <strong>Git</strong>.
-                        </li>
-                        <li>
-                          Experience in <strong>PWA</strong>, hybrid, and native
-                          mobile app development.
-                        </li>
-                        <li>
-                          Knowledge of architectural and design patterns, and
-                          building microservices.
-                        </li>
-                        <li>
-                          Strong understanding of security, data protection, and
-                          performance optimization.
-                        </li>
-                        <li>
-                          10+ years an experience in an Indian life insurance
-                          domain like new business onboarding, servicing and
-                          policy life cycle management.
-                        </li>
-                        <li>
-                          Leadership management experience in managing technical
-                          teams.
-                        </li>
-                        <li>
-                          Problem-solving skills and a focus on innovative
-                          solutions.
-                        </li>
-                        <li>
-                          Experience with <strong>Chatbots</strong> and
-                          <strong>Business Rules Engines (BRE)</strong>.
-                        </li>
-                        <li>
-                          Excellent in <strong>AWS</strong> /
-                          <strong>Google cloud</strong> service implementation.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="question-jd">
-                      <h4>Good to Have:</h4>
-                      <ul>
-                        <li>
-                          Familiarity with <strong>General AI</strong> and
-                          <strong>AI/ML</strong> technologies.
-                        </li>
-                        <li>External partner Integration ecosystems.</li>
-                        <li>Data pipeline management.</li>
-                        <li>
-                          Understanding of <strong>India Stack</strong> and its
-                          implications in digital solutions.
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="jd-cta question-jd">
-                      <button>Apply Now</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="main-pagination">
-                  <div>
-                    <p>Showing 1 to 11 of 200 entries</p>
-                  </div>
-                  <div class="pagination-job">
-                    <a href="#">&laquo;</a>
-                    <a href="#">1</a>
-                    <a href="#" class="active">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
-                  </div>
-                  <div>
-                    <select name="" id="">
-                      <option value="1">1</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="w3-bar w3-black"><button class="w3-bar-item w3-button" onclick="openCity('London')">London</button><button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button><button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button></div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="job-discripattionaccordian mobile-job-description">
+    </div>
+    <div class="job-sub-filter">
+      <div class="main-job-sub-filter desktop-job-description" style="display: none">
         <div class="main-job-sub-row">
           <div class="sub-filter-select row-job-filter">
             <label class="filter-select-label">Function</label>
@@ -1566,7 +659,7 @@
             </select>
           </div>
           <div class="sub-filter-select row-job-filter">
-            <label class="filter-select-label">Preferred Location</label>
+            <label class="filter-select-label">Function</label>
             <select name="format" id="format">
               <option>Select</option>
               <option value="pdf " selected>Mumbai</option>
@@ -1580,92 +673,911 @@
             <button>FIND MY FIT</button>
           </div>
         </div>
-        <div class="left-list-border">
-          <div class="main-job-card-list" onclick="openCitymobile(event,'chennai')">
-            <div class="left-list-border-line"></div>
-            <div class="main-job-card-list-sub">
-              <p class="job-card-title-list">Function 1</p>
-              <h3 class="job-card-sub-title">Associate Manager- Branch Audit</h3>
-              <div class="sub-job-card">
-                <div class="job-location">
-                  <div class="job-location-main">
-                    <img src="./location.png" alt="">
-                    <p>Mumbai</p>
-                  </div>
-                  <div class="job-location-main">
-                    <img src="./calendar.png" alt="">
-                    <p>10 - 15 Years</p>
+        <div>
+          <div class="list-of-job-card">
+            <div class="job-card">
+              <div class="left-list-border">
+                <div class="main-job-card-list" onclick="openCity(event,'chennai')">
+                  <div class="left-list-border-line"></div>
+                  <div class="main-job-card-list-sub">
+                    <p class="job-card-title-list">Function 1</p>
+                    <h3 class="job-card-sub-title">
+                      Associate Manager- Branch Audit
+                    </h3>
+                    <div class="sub-job-card">
+                      <div class="job-location">
+                        <div class="job-location-main">
+                          <img src="./location.png" alt="" />
+                          <p>Mumbai</p>
+                        </div>
+                        <div class="job-location-main">
+                          <img src="./calendar.png" alt="" />
+                          <p>10 - 15 Years</p>
+                        </div>
+                      </div>
+                      <div class="job-sal">
+                        <img src="./money.png" alt="" />
+                        <p>₹ Not Disclosed</p>
+                      </div>
+                      <p class="job-posted">Posted 3 weeks ago</p>
+                    </div>
                   </div>
                 </div>
-                <div class="job-sal">
-                  <img src="./money.png" alt="">
-                  <p> ₹ Not Disclosed</p>
+                <div class="main-job-card-list" onclick="openCity(event,'London')">
+                  <div class="left-list-border-line"></div>
+                  <div class="main-job-card-list-sub">
+                    <p class="job-card-title-list">Function 1</p>
+                    <h3 class="job-card-sub-title">
+                      Associate Manager- Branch Audit
+                    </h3>
+                    <div class="sub-job-card">
+                      <div class="job-location">
+                        <div class="job-location-main">
+                          <img src="./location.png" alt="" />
+                          <p>Mumbai</p>
+                        </div>
+                        <div class="job-location-main">
+                          <img src="./calendar.png" alt="" />
+                          <p>10 - 15 Years</p>
+                        </div>
+                      </div>
+                      <div class="job-sal">
+                        <img src="./money.png" alt="" />
+                        <p>₹ Not Disclosed</p>
+                      </div>
+                      <p class="job-posted">Posted 3 weeks ago</p>
+                    </div>
+                  </div>
                 </div>
-                <p class="job-posted">Posted 3 weeks ago</p>
+                <div class="main-job-card-list" onclick="openCity(event, 'Paris')">
+                  <div class="left-list-border-line"></div>
+                  <div class="main-job-card-list-sub">
+                    <p class="job-card-title-list">Function 1</p>
+                    <h3 class="job-card-sub-title">
+                      Associate Manager- Branch Audit
+                    </h3>
+                    <div class="sub-job-card">
+                      <div class="job-location">
+                        <div class="job-location-main">
+                          <img src="./location.png" alt="" />
+                          <p>Mumbai</p>
+                        </div>
+                        <div class="job-location-main">
+                          <img src="./calendar.png" alt="" />
+                          <p>10 - 15 Years</p>
+                        </div>
+                      </div>
+                      <div class="job-sal">
+                        <img src="./money.png" alt="" />
+                        <p>₹ Not Disclosed</p>
+                      </div>
+                      <p class="job-posted">Posted 3 weeks ago</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="job-discripattionaccordian">
+                <div id="chennai" class="w3-container city" style="display: none">
+                  <div class="listof-cards">
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Reporting to</b>
+                        </h4>
+                        <p>SVP- Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Designation</b>
+                        </h4>
+                        <p>Technical Solution Architect</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Grade</b>
+                        </h4>
+                        <p>CM/AVP</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Location</b>
+                        </h4>
+                        <p>Mumbai</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>IC/Team Manager role</b>
+                        </h4>
+                        <p>N/Z</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Education</b>
+                        </h4>
+                        <p>UG: Any Graduate PG: Any Postgraduate</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-jd">
+                    <h3>What are we looking for part 3?</h3>
+                    <p>
+                      We are seeking an experienced hardcore Software Solution
+                      Architect to join our Technology Transformation team at
+                      a leading insurance company.
+                    </p>
+                    <p>
+                      This role is crucial for technical solution,
+                      architecting, design, developing large- scale digital
+                      applications in the insurance domain.The ideal candidate
+                      will have a strong technical solution implementation
+                      background, hands on software development and a proven
+                      track record in designing robust, scalable, cloud native
+                      and efficient large size software solutions. They should
+                      have architected and designed web, mobile application
+                      and Microservice base solution for Indian life
+                      Insurance.
+                    </p>
+                  </div>
+                  <div class="question-jd">
+                    <h3>What does the job entail?</h3>
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                      <li>
+                        <strong>Software Architectural Leadership:</strong>
+                        Steer the architectural direction for digital
+                        applications, ensuring they meet business goals and
+                        adhere to industry standards.
+                      </li>
+                      <li>
+                        <strong>Development Expertise:</strong> Utilize your
+                        extensive experience in front-end and back-end
+                        development to guide architectural decisions.
+                      </li>
+                      <li>
+                        <strong>Microservices and Modular Components:</strong>
+                        Design and implement microservice-based modular
+                        architecture components, with a focus on high
+                        performance, scalability and maintainability.
+                      </li>
+                      <li>
+                        <strong>System Integration:</strong> Manage the
+                        integration of both internal and external systems thru
+                        Open API, Event and microservice based API, ensuring
+                        effective data exchange across multiple systems and
+                        database.
+                      </li>
+                      <li>
+                        <strong>Security and Performance:</strong> Uphold high
+                        standards in security and system performance,
+                        implementing the latest best practices.
+                      </li>
+                      <li>
+                        <strong>Team Management:</strong> Lead a large
+                        technical team, promoting a culture of innovation and
+                        continuous improvement.
+                      </li>
+                      <li>
+                        <strong>Database Design:</strong> Apply advanced
+                        knowledge in database design for efficient data
+                        management.
+                      </li>
+                      <li>
+                        <strong>Web and Mobile Application Development:</strong>
+                        Expertise in developing PWAs, hybrid, and native
+                        mobile apps.
+                      </li>
+                      <li>
+                        <strong>Cross-Platform Integration:</strong> Maintain
+                        knowledge of cross-application platforms for seamless
+                        system integration.
+                      </li>
+                      <li>
+                        <strong>Insurance Industry Experience:</strong>
+                        Utilize your strong experience of Indian life /group
+                        insurance domain in technical solution design.
+                      </li>
+                      <li>
+                        <strong>Cloud-Native Applications:</strong> Architect,
+                        design, and build cloud-native applications, ensuring
+                        they are optimized for the AWS and Google cloud
+                        environment.
+                      </li>
+                      <li>
+                        <strong>Emerging Technologies:</strong> Stay abreast
+                        of emerging technologies like AI/ML Chatbots, Business
+                        Rules Engines (BRE) and Gen AI, integrating them into
+                        solutions where appropriate.
+                      </li>
+                      <li>
+                        <strong>India Stack Knowledge:</strong> Possess a good
+                        understanding of India Stack and its application in
+                        digital solutions.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="question-jd">
+                    <h4>Required Skills and Qualifications:</h4>
+                    <ul>
+                      <li>MTech/ME/BE/MCA</li>
+                      <li>
+                        Minimum of 12 to 15 years of working experience in
+                        architecting large digital applications, with a solid
+                        background in software development including Cyber
+                        security.
+                      </li>
+                      <li>
+                        Excellent in <strong>Java</strong>,
+                        <strong>React JS</strong>,
+                        <strong>Angular JS</strong>, <strong>Flutter</strong>,
+                        <strong>Node.js</strong>,
+                        <strong>Spring Boot</strong>, <strong>APIM</strong>,
+                        <strong>ESB</strong>, <strong>Kafka</strong> and
+                        <strong>RDS</strong> technologies including
+                        <strong>NoSQL</strong>.
+                      </li>
+                      <li>
+                        Proficient in DevOps - <strong>CI/CD</strong>,
+                        <strong>Docker</strong> /
+                        <strong>Kubernetes</strong> /
+                        <strong>Jenkins</strong> / <strong>Terraform</strong>/
+                        <strong>Git</strong>.
+                      </li>
+                      <li>
+                        Experience in <strong>PWA</strong>, hybrid, and native
+                        mobile app development.
+                      </li>
+                      <li>
+                        Knowledge of architectural and design patterns, and
+                        building microservices.
+                      </li>
+                      <li>
+                        Strong understanding of security, data protection, and
+                        performance optimization.
+                      </li>
+                      <li>
+                        10+ years an experience in an Indian life insurance
+                        domain like new business onboarding, servicing and
+                        policy life cycle management.
+                      </li>
+                      <li>
+                        Leadership management experience in managing technical
+                        teams.
+                      </li>
+                      <li>
+                        Problem-solving skills and a focus on innovative
+                        solutions.
+                      </li>
+                      <li>
+                        Experience with <strong>Chatbots</strong> and
+                        <strong>Business Rules Engines (BRE)</strong>.
+                      </li>
+                      <li>
+                        Excellent in <strong>AWS</strong> /
+                        <strong>Google cloud</strong> service implementation.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="question-jd">
+                    <h4>Good to Have:</h4>
+                    <ul>
+                      <li>
+                        Familiarity with <strong>General AI</strong> and
+                        <strong>AI/ML</strong> technologies.
+                      </li>
+                      <li>External partner Integration ecosystems.</li>
+                      <li>Data pipeline management.</li>
+                      <li>
+                        Understanding of <strong>India Stack</strong> and its
+                        implications in digital solutions.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="jd-cta question-jd">
+                    <button>Apply Now</button>
+                  </div>
+                </div>
+                <div id="London" class="w3-container city" style="display: none">
+                  <div class="listof-cards">
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Reporting to</b>
+                        </h4>
+                        <p>SVP- Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Designation</b>
+                        </h4>
+                        <p>Technical Solution Architect</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Grade</b>
+                        </h4>
+                        <p>CM/AVP</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Location</b>
+                        </h4>
+                        <p>Mumbai</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>IC/Team Manager role</b>
+                        </h4>
+                        <p>N/Z</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Education</b>
+                        </h4>
+                        <p>UG: Any Graduate PG: Any Postgraduate</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-jd">
+                    <h3>What are we looking for?</h3>
+                    <p>
+                      We are seeking an experienced hardcore Software Solution
+                      Architect to join our Technology Transformation team at
+                      a leading insurance company.
+                    </p>
+                    <p>
+                      This role is crucial for technical solution,
+                      architecting, design, developing large- scale digital
+                      applications in the insurance domain.The ideal candidate
+                      will have a strong technical solution implementation
+                      background, hands on software development and a proven
+                      track record in designing robust, scalable, cloud native
+                      and efficient large size software solutions. They should
+                      have architected and designed web, mobile application
+                      and Microservice base solution for Indian life
+                      Insurance.
+                    </p>
+                  </div>
+                  <div class="question-jd">
+                    <h3>What does the job entail?</h3>
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                      <li>
+                        <strong>Software Architectural Leadership:</strong>
+                        Steer the architectural direction for digital
+                        applications, ensuring they meet business goals and
+                        adhere to industry standards.
+                      </li>
+                      <li>
+                        <strong>Development Expertise:</strong> Utilize your
+                        extensive experience in front-end and back-end
+                        development to guide architectural decisions.
+                      </li>
+                      <li>
+                        <strong>Microservices and Modular Components:</strong>
+                        Design and implement microservice-based modular
+                        architecture components, with a focus on high
+                        performance, scalability and maintainability.
+                      </li>
+                      <li>
+                        <strong>System Integration:</strong> Manage the
+                        integration of both internal and external systems thru
+                        Open API, Event and microservice based API, ensuring
+                        effective data exchange across multiple systems and
+                        database.
+                      </li>
+                      <li>
+                        <strong>Security and Performance:</strong> Uphold high
+                        standards in security and system performance,
+                        implementing the latest best practices.
+                      </li>
+                      <li>
+                        <strong>Team Management:</strong> Lead a large
+                        technical team, promoting a culture of innovation and
+                        continuous improvement.
+                      </li>
+                      <li>
+                        <strong>Database Design:</strong> Apply advanced
+                        knowledge in database design for efficient data
+                        management.
+                      </li>
+                      <li>
+                        <strong>Web and Mobile Application Development:</strong>
+                        Expertise in developing PWAs, hybrid, and native
+                        mobile apps.
+                      </li>
+                      <li>
+                        <strong>Cross-Platform Integration:</strong> Maintain
+                        knowledge of cross-application platforms for seamless
+                        system integration.
+                      </li>
+                      <li>
+                        <strong>Insurance Industry Experience:</strong>
+                        Utilize your strong experience of Indian life /group
+                        insurance domain in technical solution design.
+                      </li>
+                      <li>
+                        <strong>Cloud-Native Applications:</strong> Architect,
+                        design, and build cloud-native applications, ensuring
+                        they are optimized for the AWS and Google cloud
+                        environment.
+                      </li>
+                      <li>
+                        <strong>Emerging Technologies:</strong> Stay abreast
+                        of emerging technologies like AI/ML Chatbots, Business
+                        Rules Engines (BRE) and Gen AI, integrating them into
+                        solutions where appropriate.
+                      </li>
+                      <li>
+                        <strong>India Stack Knowledge:</strong> Possess a good
+                        understanding of India Stack and its application in
+                        digital solutions.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="question-jd">
+                    <h4>Required Skills and Qualifications:</h4>
+                    <ul>
+                      <li>MTech/ME/BE/MCA</li>
+                      <li>
+                        Minimum of 12 to 15 years of working experience in
+                        architecting large digital applications, with a solid
+                        background in software development including Cyber
+                        security.
+                      </li>
+                      <li>
+                        Excellent in <strong>Java</strong>,
+                        <strong>React JS</strong>,
+                        <strong>Angular JS</strong>, <strong>Flutter</strong>,
+                        <strong>Node.js</strong>,
+                        <strong>Spring Boot</strong>, <strong>APIM</strong>,
+                        <strong>ESB</strong>, <strong>Kafka</strong> and
+                        <strong>RDS</strong> technologies including
+                        <strong>NoSQL</strong>.
+                      </li>
+                      <li>
+                        Proficient in DevOps - <strong>CI/CD</strong>,
+                        <strong>Docker</strong> /
+                        <strong>Kubernetes</strong> /
+                        <strong>Jenkins</strong> / <strong>Terraform</strong>/
+                        <strong>Git</strong>.
+                      </li>
+                      <li>
+                        Experience in <strong>PWA</strong>, hybrid, and native
+                        mobile app development.
+                      </li>
+                      <li>
+                        Knowledge of architectural and design patterns, and
+                        building microservices.
+                      </li>
+                      <li>
+                        Strong understanding of security, data protection, and
+                        performance optimization.
+                      </li>
+                      <li>
+                        10+ years an experience in an Indian life insurance
+                        domain like new business onboarding, servicing and
+                        policy life cycle management.
+                      </li>
+                      <li>
+                        Leadership management experience in managing technical
+                        teams.
+                      </li>
+                      <li>
+                        Problem-solving skills and a focus on innovative
+                        solutions.
+                      </li>
+                      <li>
+                        Experience with <strong>Chatbots</strong> and
+                        <strong>Business Rules Engines (BRE)</strong>.
+                      </li>
+                      <li>
+                        Excellent in <strong>AWS</strong> /
+                        <strong>Google cloud</strong> service implementation.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="question-jd">
+                    <h4>Good to Have:</h4>
+                    <ul>
+                      <li>
+                        Familiarity with <strong>General AI</strong> and
+                        <strong>AI/ML</strong> technologies.
+                      </li>
+                      <li>External partner Integration ecosystems.</li>
+                      <li>Data pipeline management.</li>
+                      <li>
+                        Understanding of <strong>India Stack</strong> and its
+                        implications in digital solutions.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="jd-cta question-jd">
+                    <button>Apply Now</button>
+                  </div>
+                </div>
+                <div id="Paris" class="w3-container city" style="display: none">
+                  <div class="listof-cards">
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Reporting to</b>
+                        </h4>
+                        <p>SVP- Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Department: IT</b>
+                        </h4>
+                        <p>Technology Transformation</p>
+                      </div>
+                    </div>
+
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Designation</b>
+                        </h4>
+                        <p>Technical Solution Architect</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Grade</b>
+                        </h4>
+                        <p>CM/AVP</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Location</b>
+                        </h4>
+                        <p>Mumbai</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>IC/Team Manager role</b>
+                        </h4>
+                        <p>N/Z</p>
+                      </div>
+                    </div>
+                    <div class="jd-main-title">
+                      <div class="list-titles">
+                        <h4>
+                          <b>Education</b>
+                        </h4>
+                        <p>UG: Any Graduate PG: Any Postgraduate</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="question-jd">
+                    <h3>What are we looking for second part?</h3>
+                    <p>
+                      We are seeking an experienced hardcore Software Solution
+                      Architect to join our Technology Transformation team at
+                      a leading insurance company.
+                    </p>
+                    <p>
+                      This role is crucial for technical solution,
+                      architecting, design, developing large- scale digital
+                      applications in the insurance domain.The ideal candidate
+                      will have a strong technical solution implementation
+                      background, hands on software development and a proven
+                      track record in designing robust, scalable, cloud native
+                      and efficient large size software solutions. They should
+                      have architected and designed web, mobile application
+                      and Microservice base solution for Indian life
+                      Insurance.
+                    </p>
+                  </div>
+                  <div class="question-jd">
+                    <h3>What does the job entail?</h3>
+                    <h4>Key Responsibilities:</h4>
+                    <ul>
+                      <li>
+                        <strong>Software Architectural Leadership:</strong>
+                        Steer the architectural direction for digital
+                        applications, ensuring they meet business goals and
+                        adhere to industry standards.
+                      </li>
+                      <li>
+                        <strong>Development Expertise:</strong> Utilize your
+                        extensive experience in front-end and back-end
+                        development to guide architectural decisions.
+                      </li>
+                      <li>
+                        <strong>Microservices and Modular Components:</strong>
+                        Design and implement microservice-based modular
+                        architecture components, with a focus on high
+                        performance, scalability and maintainability.
+                      </li>
+                      <li>
+                        <strong>System Integration:</strong> Manage the
+                        integration of both internal and external systems thru
+                        Open API, Event and microservice based API, ensuring
+                        effective data exchange across multiple systems and
+                        database.
+                      </li>
+                      <li>
+                        <strong>Security and Performance:</strong> Uphold high
+                        standards in security and system performance,
+                        implementing the latest best practices.
+                      </li>
+                      <li>
+                        <strong>Team Management:</strong> Lead a large
+                        technical team, promoting a culture of innovation and
+                        continuous improvement.
+                      </li>
+                      <li>
+                        <strong>Database Design:</strong> Apply advanced
+                        knowledge in database design for efficient data
+                        management.
+                      </li>
+                      <li>
+                        <strong>Web and Mobile Application Development:</strong>
+                        Expertise in developing PWAs, hybrid, and native
+                        mobile apps.
+                      </li>
+                      <li>
+                        <strong>Cross-Platform Integration:</strong> Maintain
+                        knowledge of cross-application platforms for seamless
+                        system integration.
+                      </li>
+                      <li>
+                        <strong>Insurance Industry Experience:</strong>
+                        Utilize your strong experience of Indian life /group
+                        insurance domain in technical solution design.
+                      </li>
+                      <li>
+                        <strong>Cloud-Native Applications:</strong> Architect,
+                        design, and build cloud-native applications, ensuring
+                        they are optimized for the AWS and Google cloud
+                        environment.
+                      </li>
+                      <li>
+                        <strong>Emerging Technologies:</strong> Stay abreast
+                        of emerging technologies like AI/ML Chatbots, Business
+                        Rules Engines (BRE) and Gen AI, integrating them into
+                        solutions where appropriate.
+                      </li>
+                      <li>
+                        <strong>India Stack Knowledge:</strong> Possess a good
+                        understanding of India Stack and its application in
+                        digital solutions.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="question-jd">
+                    <h4>Required Skills and Qualifications:</h4>
+                    <ul>
+                      <li>MTech/ME/BE/MCA</li>
+                      <li>
+                        Minimum of 12 to 15 years of working experience in
+                        architecting large digital applications, with a solid
+                        background in software development including Cyber
+                        security.
+                      </li>
+                      <li>
+                        Excellent in <strong>Java</strong>,
+                        <strong>React JS</strong>,
+                        <strong>Angular JS</strong>, <strong>Flutter</strong>,
+                        <strong>Node.js</strong>,
+                        <strong>Spring Boot</strong>, <strong>APIM</strong>,
+                        <strong>ESB</strong>, <strong>Kafka</strong> and
+                        <strong>RDS</strong> technologies including
+                        <strong>NoSQL</strong>.
+                      </li>
+                      <li>
+                        Proficient in DevOps - <strong>CI/CD</strong>,
+                        <strong>Docker</strong> /
+                        <strong>Kubernetes</strong> /
+                        <strong>Jenkins</strong> / <strong>Terraform</strong>/
+                        <strong>Git</strong>.
+                      </li>
+                      <li>
+                        Experience in <strong>PWA</strong>, hybrid, and native
+                        mobile app development.
+                      </li>
+                      <li>
+                        Knowledge of architectural and design patterns, and
+                        building microservices.
+                      </li>
+                      <li>
+                        Strong understanding of security, data protection, and
+                        performance optimization.
+                      </li>
+                      <li>
+                        10+ years an experience in an Indian life insurance
+                        domain like new business onboarding, servicing and
+                        policy life cycle management.
+                      </li>
+                      <li>
+                        Leadership management experience in managing technical
+                        teams.
+                      </li>
+                      <li>
+                        Problem-solving skills and a focus on innovative
+                        solutions.
+                      </li>
+                      <li>
+                        Experience with <strong>Chatbots</strong> and
+                        <strong>Business Rules Engines (BRE)</strong>.
+                      </li>
+                      <li>
+                        Excellent in <strong>AWS</strong> /
+                        <strong>Google cloud</strong> service implementation.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="question-jd">
+                    <h4>Good to Have:</h4>
+                    <ul>
+                      <li>
+                        Familiarity with <strong>General AI</strong> and
+                        <strong>AI/ML</strong> technologies.
+                      </li>
+                      <li>External partner Integration ecosystems.</li>
+                      <li>Data pipeline management.</li>
+                      <li>
+                        Understanding of <strong>India Stack</strong> and its
+                        implications in digital solutions.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="jd-cta question-jd">
+                    <button>Apply Now</button>
+                  </div>
+                </div>
+              </div>
+              <div class="main-pagination">
+                <div>
+                  <p>Showing 1 to 11 of 200 entries</p>
+                </div>
+                <div class="pagination-job">
+                  <a href="#">&laquo;</a>
+                  <a href="#">1</a>
+                  <a href="#" class="active">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">&raquo;</a>
+                </div>
+                <div>
+                  <select name="" id="">
+                    <option value="1">1</option>
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="main-job-card-list" onclick="openCitymobile(event,'London')">
-            <div class="left-list-border-line"></div>
-            <div class="main-job-card-list-sub">
-              <p class="job-card-title-list">Function 1</p>
-              <h3 class="job-card-sub-title">Associate Manager- Branch Audit</h3>
-              <div class="sub-job-card">
-                <div class="job-location">
-                  <div class="job-location-main">
-                    <img src="./location.png" alt="">
-                    <p>Mumbai</p>
-                  </div>
-                  <div class="job-location-main">
-                    <img src="./calendar.png" alt="">
-                    <p>10 - 15 Years</p>
-                  </div>
-                </div>
-                <div class="job-sal">
-                  <img src="./money.png" alt="">
-                  <p> ₹ Not Disclosed</p>
-                </div>
-                <p class="job-posted">Posted 3 weeks ago</p>
-              </div>
-            </div>
-          </div>
-          <div class="main-job-card-list" onclick="openCitymobile(event, 'Paris')">
-            <div class="left-list-border-line"></div>
-            <div class="main-job-card-list-sub">
-              <p class="job-card-title-list">Function 1</p>
-              <h3 class="job-card-sub-title">Associate Manager- Branch Audit</h3>
-              <div class="sub-job-card">
-                <div class="job-location">
-                  <div class="job-location-main">
-                    <img src="./location.png" alt="">
-                    <p>Mumbai</p>
-                  </div>
-                  <div class="job-location-main">
-                    <img src="./calendar.png" alt="">
-                    <p>10 - 15 Years</p>
-                  </div>
-                </div>
-                <div class="job-sal">
-                  <img src="./money.png" alt="">
-                  <p> ₹ Not Disclosed</p>
-                </div>
-                <p class="job-posted">Posted 3 weeks ago</p>
-              </div>
-            </div>
+            <!-- <div class="w3-bar w3-black"><button class="w3-bar-item w3-button" onclick="openCity('London')">London</button><button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button><button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button></div> -->
           </div>
         </div>
       </div>
     </div>
-    <div class="applyjd-discription-mobile">
-     
-      <div class="jd-applynow">
-        <div class="main-jd-applynow">
-          <div>
-            <div class="mobile-job-sub-card-title">
-              <span class="mobile-arrow">&#8592;</span>
-              <h2>Find your fit</h2>
-            </div>
-          </div>
+
+    <div class="job-discripattionaccordian mobile-job-description">
+      <div class="main-job-sub-row">
+        <div class="sub-filter-select row-job-filter">
+          <label class="filter-select-label">Function</label>
+          <select name="format" id="format">
+            <option selected>Select</option>
+            <option value="pdf">PDF</option>
+            <option value="txt">txt</option>
+            <option value="epub">ePub</option>
+            <option value="fb2">fb2</option>
+            <option value="mobi">mobi</option>
+          </select>
+        </div>
+        <div class="sub-filter-select row-job-filter">
+          <label class="filter-select-label">Preferred Location</label>
+          <select name="format" id="format">
+            <option>Select</option>
+            <option value="pdf " selected>Mumbai</option>
+            <option value="txt">txt</option>
+            <option value="epub">ePub</option>
+            <option value="fb2">fb2</option>
+            <option value="mobi">mobi</option>
+          </select>
+        </div>
+        <div class="sub-filter-btn row-job-filter">
+          <button>FIND MY FIT</button>
+        </div>
+      </div>
+      <div class="left-list-border">
+        <div class="main-job-card-list" onclick="openCitymobile(event,'chennai')">
           <div class="left-list-border-line"></div>
           <div class="main-job-card-list-sub">
             <p class="job-card-title-list">Function 1</p>
@@ -1673,273 +1585,325 @@
             <div class="sub-job-card">
               <div class="job-location">
                 <div class="job-location-main">
-                  <img src="./location.png" alt="" />
+                  <img src="./location.png" alt="">
                   <p>Mumbai</p>
                 </div>
                 <div class="job-location-main">
-                  <img src="./calendar.png" alt="" />
+                  <img src="./calendar.png" alt="">
                   <p>10 - 15 Years</p>
                 </div>
               </div>
               <div class="job-sal">
-                <img src="./money.png" alt="" />
-                <p>₹ Not Disclosed</p>
+                <img src="./money.png" alt="">
+                <p> ₹ Not Disclosed</p>
               </div>
               <p class="job-posted">Posted 3 weeks ago</p>
             </div>
           </div>
         </div>
-        <div class="mobile-title-job">
-          <div class="listof-cards">
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Department: IT</b>
-                </h4>
-                <p>Technology Transformation</p>
+        <div class="main-job-card-list" onclick="openCitymobile(event,'London')">
+          <div class="left-list-border-line"></div>
+          <div class="main-job-card-list-sub">
+            <p class="job-card-title-list">Function 1</p>
+            <h3 class="job-card-sub-title">Associate Manager- Branch Audit</h3>
+            <div class="sub-job-card">
+              <div class="job-location">
+                <div class="job-location-main">
+                  <img src="./location.png" alt="">
+                  <p>Mumbai</p>
+                </div>
+                <div class="job-location-main">
+                  <img src="./calendar.png" alt="">
+                  <p>10 - 15 Years</p>
+                </div>
               </div>
-            </div>
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Reporting to</b>
-                </h4>
-                <p>SVP- Technology Transformation</p>
+              <div class="job-sal">
+                <img src="./money.png" alt="">
+                <p> ₹ Not Disclosed</p>
               </div>
-            </div>
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Department: IT</b>
-                </h4>
-                <p>Technology Transformation</p>
-              </div>
-            </div>
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Department: IT</b>
-                </h4>
-                <p>Technology Transformation</p>
-              </div>
-            </div>
-
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Designation</b>
-                </h4>
-                <p>Technical Solution Architect</p>
-              </div>
-            </div>
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Grade</b>
-                </h4>
-                <p>CM/AVP</p>
-              </div>
-            </div>
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Location</b>
-                </h4>
-                <p>Mumbai</p>
-              </div>
-            </div>
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>IC/Team Manager role</b>
-                </h4>
-                <p>N/Z</p>
-              </div>
-            </div>
-            <div class="jd-main-title">
-              <div class="list-titles">
-                <h4>
-                  <b>Education</b>
-                </h4>
-                <p>UG: Any Graduate PG: Any Postgraduate</p>
-              </div>
+              <p class="job-posted">Posted 3 weeks ago</p>
             </div>
           </div>
-          <div class="jd-accordian">
-            <div class="accordion">
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <span class="accordion-item-header-title"
-                    >What are we looking for part 3?</span
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-chevron-down accordion-item-header-icon"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
+        </div>
+        <div class="main-job-card-list" onclick="openCitymobile(event, 'Paris')">
+          <div class="left-list-border-line"></div>
+          <div class="main-job-card-list-sub">
+            <p class="job-card-title-list">Function 1</p>
+            <h3 class="job-card-sub-title">Associate Manager- Branch Audit</h3>
+            <div class="sub-job-card">
+              <div class="job-location">
+                <div class="job-location-main">
+                  <img src="./location.png" alt="">
+                  <p>Mumbai</p>
                 </div>
-                <div class="accordion-item-description-wrapper">
-                  <div class="accordion-item-description">
-                    <p>
-                      We are seeking an experienced hardcore Software Solution
-                      Architect to join our Technology Transformation team at a
-                      leading insurance company.
-                    </p>
-                    <p>
-                      We are seeking an experienced hardcore Software Solution
-                      Architect to join our Technology Transformation team at a
-                      leading insurance company.
-                    </p>
-                  </div>
+                <div class="job-location-main">
+                  <img src="./calendar.png" alt="">
+                  <p>10 - 15 Years</p>
                 </div>
               </div>
-
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <span class="accordion-item-header-title"
-                    >What are we looking for part 3?</span
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-chevron-down accordion-item-header-icon"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-                <div class="accordion-item-description-wrapper">
-                  <div class="accordion-item-description">
-                    <p>
-                      We are seeking an experienced hardcore Software Solution
-                      Architect to join our Technology Transformation team at a
-                      leading insurance company.
-                    </p>
-                    <p>
-                      We are seeking an experienced hardcore Software Solution
-                      Architect to join our Technology Transformation team at a
-                      leading insurance company.
-                    </p>
-                  </div>
-                </div>
+              <div class="job-sal">
+                <img src="./money.png" alt="">
+                <p> ₹ Not Disclosed</p>
               </div>
-              <div class="accordion-item">
-                <div class="accordion-item-header">
-                  <span class="accordion-item-header-title"
-                    >What are we looking for part 3?</span
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-chevron-down accordion-item-header-icon"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </div>
-                <div class="accordion-item-description-wrapper">
-                  <div class="accordion-item-description">
-                    <p>
-                      We are seeking an experienced hardcore Software Solution
-                      Architect to join our Technology Transformation team at a
-                      leading insurance company.
-                    </p>
-                    <p>
-                      We are seeking an experienced hardcore Software Solution
-                      Architect to join our Technology Transformation team at a
-                      leading insurance company.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p class="job-posted">Posted 3 weeks ago</p>
             </div>
-          </div>
-          <div class="sticky-apply-jd">
-              <div class=""> 
-                <div class="mobile-applynow">
-                  <button>Apply now</button>
-                </div>
-              </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <script>
-      var cards = document.querySelectorAll(".main-job-card-list");
-      function openCity(event, cityName) {
-        var index = Array.from(event.target.parentNode.childNodes).indexOf(
-          event.target
-        );
-        console.log("Clicked index:", index);
-        var i;
-        var x = document.getElementsByClassName("city");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        var element = document.getElementById(cityName);
-        element.style.display = "block";
+  <div class="applyjd-discription-mobile">
+
+    <div class="jd-applynow">
+      <div class="main-jd-applynow">
+        <div>
+          <div class="mobile-job-sub-card-title">
+            <span class="mobile-arrow">&#8592;</span>
+            <h2>Find your fit</h2>
+          </div>
+        </div>
+        <div class="left-list-border-line"></div>
+        <div class="main-job-card-list-sub">
+          <p class="job-card-title-list">Function 1</p>
+          <h3 class="job-card-sub-title">Associate Manager- Branch Audit</h3>
+          <div class="sub-job-card">
+            <div class="job-location">
+              <div class="job-location-main">
+                <img src="./location.png" alt="" />
+                <p>Mumbai</p>
+              </div>
+              <div class="job-location-main">
+                <img src="./calendar.png" alt="" />
+                <p>10 - 15 Years</p>
+              </div>
+            </div>
+            <div class="job-sal">
+              <img src="./money.png" alt="" />
+              <p>₹ Not Disclosed</p>
+            </div>
+            <p class="job-posted">Posted 3 weeks ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-title-job">
+        <div class="listof-cards">
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Department: IT</b>
+              </h4>
+              <p>Technology Transformation</p>
+            </div>
+          </div>
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Reporting to</b>
+              </h4>
+              <p>SVP- Technology Transformation</p>
+            </div>
+          </div>
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Department: IT</b>
+              </h4>
+              <p>Technology Transformation</p>
+            </div>
+          </div>
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Department: IT</b>
+              </h4>
+              <p>Technology Transformation</p>
+            </div>
+          </div>
+
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Designation</b>
+              </h4>
+              <p>Technical Solution Architect</p>
+            </div>
+          </div>
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Grade</b>
+              </h4>
+              <p>CM/AVP</p>
+            </div>
+          </div>
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Location</b>
+              </h4>
+              <p>Mumbai</p>
+            </div>
+          </div>
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>IC/Team Manager role</b>
+              </h4>
+              <p>N/Z</p>
+            </div>
+          </div>
+          <div class="jd-main-title">
+            <div class="list-titles">
+              <h4>
+                <b>Education</b>
+              </h4>
+              <p>UG: Any Graduate PG: Any Postgraduate</p>
+            </div>
+          </div>
+        </div>
+        <div class="jd-accordian">
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                <span class="accordion-item-header-title">What are we looking for part 3?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-down accordion-item-header-icon">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </div>
+              <div class="accordion-item-description-wrapper">
+                <div class="accordion-item-description">
+                  <p>
+                    We are seeking an experienced hardcore Software Solution
+                    Architect to join our Technology Transformation team at a
+                    leading insurance company.
+                  </p>
+                  <p>
+                    We are seeking an experienced hardcore Software Solution
+                    Architect to join our Technology Transformation team at a
+                    leading insurance company.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                <span class="accordion-item-header-title">What are we looking for part 3?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-down accordion-item-header-icon">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </div>
+              <div class="accordion-item-description-wrapper">
+                <div class="accordion-item-description">
+                  <p>
+                    We are seeking an experienced hardcore Software Solution
+                    Architect to join our Technology Transformation team at a
+                    leading insurance company.
+                  </p>
+                  <p>
+                    We are seeking an experienced hardcore Software Solution
+                    Architect to join our Technology Transformation team at a
+                    leading insurance company.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                <span class="accordion-item-header-title">What are we looking for part 3?</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-down accordion-item-header-icon">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </div>
+              <div class="accordion-item-description-wrapper">
+                <div class="accordion-item-description">
+                  <p>
+                    We are seeking an experienced hardcore Software Solution
+                    Architect to join our Technology Transformation team at a
+                    leading insurance company.
+                  </p>
+                  <p>
+                    We are seeking an experienced hardcore Software Solution
+                    Architect to join our Technology Transformation team at a
+                    leading insurance company.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sticky-apply-jd">
+          <div class="">
+            <div class="mobile-applynow">
+              <button>Apply now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var cards = document.querySelectorAll(".main-job-card-list");
+    function openCity(event, cityName) {
+      var index = Array.from(event.target.parentNode.childNodes).indexOf(
+        event.target
+      );
+      console.log("Clicked index:", index);
+      var i;
+      var x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
       }
+      var element = document.getElementById(cityName);
+      element.style.display = "block";
+    }
 
-      cards.forEach(function (card, index) {
-        card.addEventListener("click", function () {
-          // Remove 'active' class from all elements
-          cards.forEach(function (card) {
-            card.classList.remove("activecard");
-          });
-          // Add 'active' class to the clicked element
-          this.classList.add("activecard");
+    cards.forEach(function (card, index) {
+      card.addEventListener("click", function () {
+        // Remove 'active' class from all elements
+        cards.forEach(function (card) {
+          card.classList.remove("activecard");
         });
+        // Add 'active' class to the clicked element
+        this.classList.add("activecard");
       });
+    });
 
-      document.querySelectorAll(".accordion-item").forEach((item) => {
-        item
-          .querySelector(".accordion-item-header")
-          .addEventListener("click", () => {
-            item.classList.toggle("open");
-          });
-      });
+    document.querySelectorAll(".accordion-item").forEach((item) => {
+      item
+        .querySelector(".accordion-item-header")
+        .addEventListener("click", () => {
+          item.classList.toggle("open");
+        });
+    });
 
-function openCitymobile(){
-  var selectlist = document.querySelector(".main-job-card");
-selectlist.style.display = "none";
- 
-var jdetails = document.querySelector(".applyjd-discription-mobile")
-jdetails.style.display = "block";
-}
+    function openCitymobile() {
+      var selectlist = document.querySelector(".main-job-card");
+      selectlist.style.display = "none";
 
-      //         var cards = document.querySelectorAll('.main-job-card-list');
+      var jdetails = document.querySelector(".applyjd-discription-mobile")
+      jdetails.style.display = "block";
+    }
 
-      // // Loop through each card and attach a click event listener
-      // cards.forEach(function(card, index) {
-      //     card.addEventListener('click', function() {
-      //         // When a card is clicked, log its index
-      //         console.log("Clicked index:", index);
-      //         // You can also pass the index to your openCity function if needed
-      //         openCity(index);
-      //     });
-      // });
-    </script>
-  </body>
+    //         var cards = document.querySelectorAll('.main-job-card-list');
+
+    // // Loop through each card and attach a click event listener
+    // cards.forEach(function(card, index) {
+    //     card.addEventListener('click', function() {
+    //         // When a card is clicked, log its index
+    //         console.log("Clicked index:", index);
+    //         // You can also pass the index to your openCity function if needed
+    //         openCity(index);
+    //     });
+    // });
+  </script>
+</body>
+
 </html>
