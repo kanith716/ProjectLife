@@ -1,0 +1,120 @@
+{
+    "results": {
+        "REQID": "100006",
+        "JOB_DESC": "",
+        "JOB_CODE": "00000000",
+        "DESIGNATION": "",
+        "BAND": "",
+        "CITY_CODE": "",
+        "CITY": "",
+        "LOC_CODE": "",
+        "LOC_NAME": "",
+        "DEPT_CODE": "",
+        "DEPT_NAME": "",
+        "JOBCATEGORY": "",
+        "NO_OPENING": "0",
+        "EXPERIENCE": "",
+        "MSGTY": "S",
+        "MESSAGE": "Job descriptions foundsuccessfully",
+        "JOBDESCRIPTION": {
+            "results": [
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "1",
+                    "HEADER": "Front Line Sales – BancassuranceChannel",
+                    "SR_NO_V": "",
+                    "VALUE": ""
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "2",
+                    "HEADER": "Are yougood at building rewarding professional relationships?",
+                    "SR_NO_V": "1",
+                    "VALUE": "If yes,then this is the right job for you. As a Front Line Sales employee in Bancassurance channel,you will network with assigned channel partner teams to build win-win business relationshipand ensure high performance by selling life insuranceproducts."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "3",
+                    "HEADER": "What are we lookingfor?",
+                    "SR_NO_V": "1",
+                    "VALUE": "Integrity and passion to perform are the two most importanttraits that will define your success in this role. In addition, good verbal & writtencommunication and ability to influence are amust."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "4",
+                    "HEADER": "What does the job entail?",
+                    "SR_NO_V": "1",
+                    "VALUE": "It is a field job. You will have to travel within the assigned location to meet channel partner teams and customers."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "4",
+                    "HEADER": "What does the job entail?",
+                    "SR_NO_V": "2",
+                    "VALUE": "You will be evaluated on your ability to meet the businesstargets (Top line, Persistency, Product mix) by collaborating with and driving channel partners."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "4",
+                    "HEADER": "What does the job entail?",
+                    "SR_NO_V": "3",
+                    "VALUE": "You will also accompany the channel partner teams on pre and post sales such as claim settlement."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "4",
+                    "HEADER": "What does the jobtProcess."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "4",
+                    "HEADER": "What does the job entail?",
+                    "SR_NO_V": "5",
+                    "VALUE": "As a business professional you will uphold organizational values in every action and ensure business ethics and integrity. You are expected to be compliant to regulatory and statutory regulations."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "5",
+                    "HEADER": "About the channel",
+                    "SR_NO_V": "1",
+                    "VALUE": "Bancassurance is the largest sales channel of HDFC Life which includes selling life insurance through Bancassurance partners like HDFC Bank."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "5",
+                    "HEADER": "About the channel",
+                    "SR_NO_V": "2",
+                    "VALUE": "With its vision to be the highest performingBancassurance channel in theindustry, the team has its presence in 400+ locations in the country."
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "6",
+                    "HEADER": "Essential conditions",
+                    "SR_NO_V": "1",
+                    "VALUE": "Age: 21 – 38 years"
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "6",
+                    "HEADER": "Essential conditions",
+                    "SR_NO_V": "2",
+                    "VALUE": "Education: Graduation in any stream"
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "6",
+                    "HEADER": "Essentialconditions",
+                    "SR_NO_V": "3",
+                    "VALUE": "Minimum Sales Experience: 6 months to 4years"
+                },
+                {
+                    "REQID": "100006",
+                    "SR_NO_H": "6",
+                    "HEADER": "Essential conditions",
+                    "SR_NO_V": "4",
+                    "VALUE": "Please connect with HR representative for further requirements"
+                }
+            ]
+        }
+    }
+}
