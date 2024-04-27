@@ -1,6 +1,6 @@
 [{
     "id": 1,
-    "title": "Basic Form Validation",
+    "title": "Associate Manager - 1",
     "rating": "1.21K",
     "updatedTime": "22/04/2024",
     "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
@@ -10,7 +10,7 @@
 },
 {
     "id": 2,
-    "title": "SSO Integration Using Python",
+    "title": "Associate Manager - 2",
     "rating": "1.2K",
     "updatedTime": "12/04/2024",
     "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
@@ -20,7 +20,7 @@
 },
 {
     "id": 3,
-    "title": "SSO Integration Using Python",
+    "title": "Associate Manager - 3",
     "rating": "1.2K",
     "updatedTime": "12/04/2024",
     "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
@@ -30,7 +30,7 @@
 },
 {
     "id": 4,
-    "title": "SSO Integration Using Python",
+    "title": "Associate Manager - 4",
     "rating": "1.2K",
     "updatedTime": "12/04/2024",
     "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
@@ -40,7 +40,7 @@
 },
 {
     "id": 5,
-    "title": "SSO Integration Using Python",
+    "title": "Associate Manager - 5",
     "rating": "1.2K",
     "updatedTime": "12/04/2024",
     "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
@@ -51,11 +51,42 @@
 
 {
     "id": 6,
-    "title": "SSO Integration Using Python",
+    "title": "Associate Manager - 6",
     "rating": "1.2K",
     "updatedTime": "12/04/2024",
     "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
     "HTML": "<h1>Python</h1>",
     "css": "CSS Elements",
     "javascript": "JavaScript Elements"
-}]
+},
+{
+    "id": 7,
+    "title": "Associate Manager - 7",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 8,
+    "title": "Associate Manager - 8",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 9,
+    "title": "Associate Manager - 9",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+}
+]

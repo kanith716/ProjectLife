@@ -1146,7 +1146,26 @@
         justify-content: center;
         margin-top: 5%;
     }
+.main-job-card-list.counted-wrap {
+    border: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.main-job-card-list.counted-wrap h1 {
+    font-size: 40px;
+}
+
+.main-job-card-list.counted-wrap h1 span {
+    font-size: 15px;
+}
+
+a.exp-btn {
+    display: inline-block;
+    color: red;
+    font-size: 21px;
+}
     .main-pagination select {
         border: 1px solid #233253;
         border-radius: 4px;
@@ -1467,6 +1486,9 @@
     @media (max-width: 991px) {
         .inner-wrap {
             flex-wrap: wrap;
+        }
+        .detail-card-sec{
+            display: none !important;
         }
 
         .search-parent {
