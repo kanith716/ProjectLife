@@ -1457,7 +1457,11 @@
 
 
 
-
+@media (min-width: 768px){
+    .first-option{
+        display: none;
+    }
+}
 
 
     @media (max-width: 991px) {

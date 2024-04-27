@@ -63,9 +63,17 @@
                             <!-- <input type="text" class="drop-btn" id="jobrole" placeholder="Job Role" /> -->
                         <select class="job-role-select" aria-placeholder="name">
                            
+                            <!-- <option value="Technology" class="first-option">Technology</option> -->
                             <option value="Field Sales">Field Sales</option>
                             <option value="Technology">Technology</option>
                           
+                        </select>
+                        <select class="job-role-select first-option" aria-placeholder="name">
+                        
+                            <option value="Technology" class="first-option">Technology</option>
+                            <option value="Field Sales">Field Sales</option>
+                            <option value="Technology">Technology</option>
+                        
                         </select>
                         </div>
                         
@@ -4402,14 +4410,16 @@
                 url: './json/component.json',
                 method: 'GET',
                 success: function (response) {
-                    $(".job-card").append(`<div class="left-list-border"></div>`);
+                    
                     var cardCount = 3;
+                  
                     response.map((ele,index)=>{
                    
                     
-                        if(index <= cardCount ){
-                            
-                            $(".left-list-border").append(`<div class="main-job-card-list" onclick="openCity(event,'chennai')">
+                        if(index < cardCount ){
+                            var classCard = cardCount / 3;
+                           cardCount/ cardCount == 1 ?  $(".job-card").append(`<div class="left-list-border-${classCard}"></div>`) : true;
+                            $(`.left-list-border-${classCard}`).append(`<div class="main-job-card-list" onclick="openCity(event,'chennai')">
                                         <div class="left-list-border-line"></div>
                                         <div class="main-job-card-list-sub">
                                             <p class="job-card-title-list">Function 1</p>
@@ -4435,7 +4445,35 @@
                                             </div>
                                         </div>
                                     </div>`)
-                        }
+                        }else{
+                            cardCount += 3;
+                            console.log(cardCount);
+                        } $(`.left-list-border-${cardCount / 3}`).append(`<div class="main-job-card-list" onclick="openCity(event,'chennai')">
+                                        <div class="left-list-border-line"></div>
+                                        <div class="main-job-card-list-sub">
+                                            <p class="job-card-title-list">Function 1</p>
+                                            <h3 class="job-card-sub-title">
+                                                Associate Manager- Branch Audit
+                                            </h3>
+                                            <div class="sub-job-card">
+                                                <div class="job-location">
+                                                    <div class="job-location-main">
+                                                        <img src="./location.png" alt="">
+                                                        <p>Mumbai</p>
+                                                    </div>
+                                                    <div class="job-location-main">
+                                                        <img src="./calendar.png" alt="">
+                                                        <p>10 - 15 Years</p>
+                                                    </div>
+                                                </div>
+                                                <div class="job-sal">
+                                                    <img src="./money.png" alt="">
+                                                    <p>₹ Not Disclosed</p>
+                                                </div>
+                                                <p class="job-posted">Posted 3 weeks ago</p>
+                                            </div>
+                                        </div>
+                                    </div>`)
                        
                     });
                   
@@ -4511,7 +4549,8 @@
                 tags: true,
                 closeOnSelect: true,
                 allowHtml: true,
-                minimumResultsForSearch: Infinity
+                minimumResultsForSearch: Infinity,
+                 dropdownCssClass: "job-role-pop",
             });
 
             $('.job-role-select').on('select2:select', function (e) {
@@ -4521,9 +4560,16 @@
                      $(".banner-slider").removeClass("active");
                     $(".job-search-inner").fadeOut(1000);
                 }else if(selectedData.text == "Field Sales"){
-                     $(".tech-search").fadeOut(1000)
-                      $(".banner-slider").addClass("active");
-                    $(".job-search-inner").fadeIn(1000);
+                    if(window.innerWidth > 768){
+                        $(".tech-search").fadeOut(1000)
+                        $(".banner-slider").addClass("active");
+                        $(".job-search-inner").fadeIn(1000);
+                    }else{
+                         $(".main-search").fadeOut(1000);
+                        $(".banner-slider").addClass("active");
+                        $(".job-search-inner").fadeIn(1000);
+                    }
+                     
                 }
             });
            
