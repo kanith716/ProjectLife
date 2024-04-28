@@ -1,0 +1,782 @@
+.value-section {
+  .inner-section-head {
+    margin-bottom: 33px;
+    @include mq("phone", max) {
+      margin-top: 150px;
+      margin-bottom: 34px;
+    }
+  }
+}
+
+
+.inner-section-head {
+  margin-bottom: 73px;
+  position: relative;
+  margin-top: 180px;
+  z-index: 2;
+  .bg-text {
+    font-size: 150px;
+    font-weight: 900;
+    color: #e9e9e9;
+    opacity: 0.5;
+    letter-spacing: -7.5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -75%;
+    z-index: -1;
+    white-space: nowrap;
+  }
+  h2 {
+    margin-bottom: 15px;
+  }
+  p {
+    width: 598px;
+    display: inline-block;
+  }
+  @include mq("phone", max) {
+    margin-top: 146px;
+    margin-bottom: 36px;
+    .bg-text {
+      font-size: 98px;
+      top: -55%;
+    }
+    p {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.inner-banner {
+  @include abs-position(4px, auto, auto, 50%);
+  @include css3-prefix("transform", "translateX(-50%)");
+  figure {
+    width: 335px;
+    height: 93px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  &:before,
+  &:after {
+    @include pseudo;
+    width: 1px;
+    height: 54px;
+    display: inline-block;
+    margin-left: -0.5px;
+  }
+  &::before {
+    background: #fff;
+    @include abs-position(auto, auto, 0, 50%);
+  }
+  &:after {
+    background: #ed1c24;
+    @include abs-position(auto, auto, -54px, 50%);
+  }
+  @include mq("phone", max) {
+    figure {
+      width: 195px;
+      height: 50px;
+    }
+    &:before,
+    &:after {
+      height: 20px;
+    }
+    &:after {
+      bottom: -20px;
+    }
+  }
+}
+.wrapper {
+  border-top: 4px solid #0067ac;
+}
+
+header {
+  top: 28px !important;
+}
+
+.inner-bg {
+  background: #f6f6f6;
+}
+
+.values-wrap {
+  padding-top: 40px;
+}
+
+.values {
+  position: relative;
+  padding: 144px 0;
+  margin-left: 115px;
+  @include mq("desktop", max) {
+    margin-left: 45px;
+  }
+  .values-cont-list {
+    li {
+      height: 104px;
+      background: #fff;
+      padding: 14px 30px 15px 12px;
+      border-radius: 80px;
+      border: 12px solid #ececec;
+      box-shadow: 0px 3px 6px #00000029;
+      @include abs-position(50%, auto, auto, 50%);
+      &:nth-child(1),
+      &:nth-child(5) {
+        width: 363px;
+      }
+      &:nth-child(2),
+      &:nth-child(4) {
+        width: 364px;
+      }
+      &:nth-child(3) {
+        width: 525px;
+      }
+      figure {
+        @include circle(54px, #f0f0f0);
+        margin-right: 14px;
+        img {
+        }
+      }
+      > div {
+        width: calc(100% - 67px);
+        h6 {
+          @include font-source-sans(16px, #0067ac, 600, 24px);
+        }
+        p {
+          @include font-source-sans(14px, #404040, 400, 16px);
+        }
+      }
+      &:nth-child(1) {
+        top: 48px;
+        left: 302px;
+      }
+      &:nth-child(2) {
+        top: 176px;
+        left: 402px;
+      }
+      &:nth-child(3) {
+        margin-top: -55px;
+        left: 502px;
+      }
+      &:nth-child(4) {
+        top: auto;
+        bottom: 176px;
+        left: 402px;
+      }
+      &:nth-child(5) {
+        top: auto;
+        bottom: 48px;
+        left: 302px;
+      }
+    }
+  }
+  // Animations
+  .values-cont-list {
+    li {
+      opacity: 0;
+      @include css3-prefix("transition", ".3s");
+      @include css3-prefix("transform", "translateX(-15px)");
+      &:nth-child(1) {
+        @include css3-prefix("transition-delay", "1.8s");
+      }
+      &:nth-child(2) {
+        @include css3-prefix("transition-delay", "2.6s");
+      }
+      &:nth-child(3) {
+        @include css3-prefix("transition-delay", "3.6s");
+      }
+      &:nth-child(4) {
+        @include css3-prefix("transition-delay", "4.2s");
+      }
+      &:nth-child(5) {
+        @include css3-prefix("transition-delay", "4.7s");
+      }
+    }
+  }
+  .big-circle {
+    // opacity: 0;
+    // @include css3-prefix("transform", "scale(.8)");
+    @include css3-prefix("transition", ".3s");
+    margin: 100px 0 0 50px;
+    .white-ring,
+    .inner,
+    .gray-ring {
+      opacity: 0;
+      @include css3-prefix("transition", ".3s");
+      @include css3-prefix("transform", "scale(.8)");
+    }
+    .gray-ring {
+      @include css3-prefix("transition-delay", ".2s");
+    }
+    .outer-ring {
+      opacity: 0;
+      @include css3-prefix("transition", ".3s");
+      @include css3-prefix("transition-delay", ".6s");
+    }
+    .dot-ring {
+      // opacity: 0;
+      @include css3-prefix("transition", ".6s");
+      // @include css3-prefix("transform", "rotate(-10deg)");
+      border-radius: 100%;
+      &:before,
+      &:after {
+        box-sizing: inherit;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+      }
+      &:before {
+        border: 1px solid transparent;
+      }
+      &:after {
+        border: 0 solid transparent;
+      }
+      .values-dots-lines-list {
+        li {
+          .dot .inner,
+          .dot .outer {
+            @include css3-prefix("transform", "scale(0)");
+            @include css3-prefix("transition", "transform .3s");
+          }
+          &:nth-child(1) {
+            .dot .inner {
+              @include css3-prefix("transition-delay", "1s");
+            }
+            .dot .outer {
+              @include css3-prefix("transition-delay", "1s");
+            }
+            .line {
+              &:before {
+                @include css3-prefix("transition-delay", "1.5s");
+              }
+            }
+          }
+          &:nth-child(2) {
+            .dot .inner {
+              @include css3-prefix("transition-delay", "2.2s");
+            }
+            .dot .outer {
+              @include css3-prefix("transition-delay", "2.2s");
+            }
+            .line {
+              &:before {
+                @include css3-prefix("transition-delay", "2.3s");
+              }
+            }
+          }
+          &:nth-child(3) {
+            .dot .inner {
+              @include css3-prefix("transition-delay", "3.2s");
+            }
+            .dot .outer {
+              @include css3-prefix("transition-delay", "3.2s");
+            }
+            .line {
+              &:before {
+                @include css3-prefix("transition-delay", "3.3s");
+              }
+            }
+          }
+          &:nth-child(4) {
+            .dot .inner {
+              @include css3-prefix("transition-delay", "3.9s");
+            }
+            .dot .outer {
+              @include css3-prefix("transition-delay", "3.9s");
+            }
+            .line {
+              &:before {
+                @include css3-prefix("transition-delay", "4s");
+              }
+            }
+          }
+          &:nth-child(5) {
+            .dot .inner {
+              @include css3-prefix("transition-delay", "4.4s");
+            }
+            .dot .outer {
+              @include css3-prefix("transition-delay", "4.4s");
+            }
+            .line {
+              &:before {
+                @include css3-prefix("transition-delay", "4.5s");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    .values-cont-list {
+      li {
+        opacity: 1;
+        @include css3-prefix("transform", "translateX(0)");
+        &:hover {
+          @include css3-prefix("transition-delay", "0s");
+          @include css3-prefix("transform", "translateX(0) scale(1.05)");
+        }
+        &.no-delay {
+          @include css3-prefix("transition-delay", "0s");
+        }
+      }
+    }
+    .big-circle {
+      .white-ring,
+      .inner,
+      .gray-ring {
+        opacity: 1;
+        @include css3-prefix("transform", "scale(1)");
+      }
+      .outer-ring {
+        opacity: 1;
+      }
+      .dot-ring {
+        &:before {
+          border-top-color: #ed1c24;
+          border-right-color: #ed1c24;
+          border-bottom-color: #ed1c24;
+          transition: border-top-color 0.1s linear 0.7s, border-right-color 0.1s linear 0.8s,
+            border-bottom-color 0.1s linear 0.9s;
+        }
+        &:after {
+          // border-top: 1px dotted #ed1c24;
+          // border-left-width: 1px;
+          // border-right-width: 1px;
+          // transform: rotate(270deg);
+          // transition: transform 0.4s linear 0.7s, border-left-width 0s linear 1.05s, -webkit-transform 0.4s linear 0.7s;
+        }
+        .values-dots-lines-list {
+          li {
+            .dot .inner,
+            .dot .outer {
+              @include css3-prefix("transform", "scale(1)");
+              // transition-timing-function: cubic-bezier(0.68, 0.55, 0.265, 1.55);
+            }
+            .line {
+              &:before {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.values-dots-lines-list {
+  width: 100%;
+  height: 100%;
+  li {
+    .dot {
+      width: 22px;
+      @include abs-position(50%, -11px, auto, auto);
+      z-index: 1;
+      margin-top: -11px;
+      .inner {
+        @include circle(14px, red);
+        @include abs-position(4px, auto, auto, 4px);
+        z-index: 2;
+      }
+      .outer {
+        @include circle(22px, #fff);
+        border: 1px solid #0067ac;
+      }
+    }
+    .line {
+      height: 2px;
+      width: 130px;
+      @include abs-position(50%, -120px, auto, auto);
+      margin-top: -1px;
+      &:before {
+        @include pseudo;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        border-top: 2px dotted #ed1c24;
+        @include css3-prefix("transition", ".3s");
+      }
+    }
+
+    // Each
+    &:nth-child(1) {
+      .dot {
+        top: 5px;
+        right: 102px;
+      }
+      .line {
+        top: -49px;
+        transform: rotate(-45deg);
+        left: 187px;
+      }
+    }
+    &:nth-child(2) {
+      .dot {
+        top: 66px;
+        right: 14px;
+      }
+      .line {
+        top: 43px;
+        right: -76px;
+        transform: rotate(-22deg);
+        width: 95px;
+      }
+    }
+    &:nth-child(3) {
+      .line {
+        width: 173px;
+        right: -184px;
+      }
+    }
+    &:nth-child(4) {
+      .dot {
+        top: auto;
+        bottom: 50px;
+        right: 18px;
+      }
+      .line {
+        top: auto;
+        bottom: 38px;
+        right: -73px;
+        transform: rotate(22deg);
+        width: 95px;
+      }
+    }
+    &:nth-child(5) {
+      .dot {
+        top: auto;
+        bottom: -5px;
+        right: 102px;
+      }
+      .line {
+        top: auto;
+        bottom: -49px;
+        transform: rotate(45deg);
+        left: 187px;
+      }
+    }
+  }
+}
+
+.big-circle {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  .inner {
+    @include circle(248px, transparent);
+    figure {
+      @include circle(60px, #f0f0f0);
+      img {
+      }
+    }
+    h3 {
+      @include font-source-sans(28px, #0067ac, 400, 28px);
+      letter-spacing: -0.56px;
+      margin-top: 10px;
+      br {
+        display: inline !important;
+      }
+    }
+  }
+  .outer-ring {
+    height: 322px;
+    width: 161px;
+    border-top-left-radius: 181px;
+    border-bottom-left-radius: 181px;
+    border: 10px solid #0067ac;
+    border-right: 0;
+    z-index: 3;
+    left: -38px;
+    top: -37px;
+  }
+  .gray-ring {
+    @include circle(286px, #ececec);
+    box-shadow: 0px 3px 6px #00000029;
+    left: -19px;
+    top: -19px;
+  }
+  .white-ring {
+    @include circle(248px, #fff);
+  }
+  .dot-ring {
+    @include circle(314px, transparent);
+    top: -33px;
+    left: -33px;
+  }
+  > div {
+    position: absolute;
+    // @include abs-position(50%, auto, auto, 50%);
+    // @include css3-prefix("transform", "translate(-50%, -50%)");
+  }
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.values-footer {
+  margin-top: 246px;
+}
+
+@media (min-width: 992px) and (max-width: 1170px) {
+  .values-wrap {
+    @include css3-prefix("transform", "scale(0.8)");
+    @include css3-prefix("transform-origin", "20% center");
+  }
+}
+
+@media (max-width: 991px) {
+  .values-dots-lines-list {
+    display: none;
+  }
+  .values {
+    padding: 0 0 30px;
+    margin-left: 0;
+    .big-circle {
+      margin: 0 auto 32px;
+      > div {
+        position: absolute;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
+      .dot-ring {
+        border: 1px dotted #ed1c24;
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+      .outer-ring {
+        width: 322px;
+        height: 160px;
+        border-top-left-radius: 160px;
+        border-top-right-radius: 160px;
+        border-bottom-left-radius: 0px;
+        border-bottom: none;
+        border-right: 10px solid #0067ac !important;
+      }
+    }
+    .values-cont-list {
+      li {
+        position: static;
+        width: 100% !important;
+        @include css3-prefix("transform", "translateY(10px)");
+        -webkit-transition-delay: 0s !important;
+        -moz-transition-delay: 0s !important;
+        -ms-transition-delay: 0s !important;
+        -o-transition-delay: 0s !important;
+        transition-delay: 0s !important;
+        &:not(:first-child) {
+          margin-top: 24px !important;
+        }
+      }
+    }
+    &.active {
+      .values-cont-list {
+        li {
+          @include css3-prefix("transform", "translateY(0)");
+        }
+      }
+    }
+  }
+
+  // Connecting dots
+  .big-circle {
+    &:before {
+      @include pseudo;
+      width: 1px;
+      height: 50px;
+      border-left: 1px dotted #ed1c24;
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+    }
+  }
+  .values-cont-list {
+    position: relative;
+    margin-left: 55px;
+    margin-right: 10px;
+    &:before {
+      @include pseudo;
+      width: 1px;
+      height: calc(100% - 102px);
+      border-left: 1px dotted #ed1c24;
+      position: absolute;
+      top: 51px;
+      left: -53px;
+    }
+    &:after {
+      @include pseudo;
+      width: calc(50% + 27px);
+      height: 104px;
+      border: 1px dotted #ed1c24;
+      border-right: none;
+      border-bottom: none;
+      position: absolute;
+      top: -53px;
+      left: -53px;
+    }
+    li {
+      &:before {
+        @include pseudo;
+        width: 50px;
+        height: 1px;
+        border-top: 1px dotted #ed1c24;
+        position: absolute;
+        left: -65px;
+      }
+      &:after {
+        @include pseudo;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: red;
+        border: 3px solid #fff;
+        box-shadow: 0px 0px 0px 1px #0067ac;
+        position: absolute;
+        z-index: 1;
+        left: -76px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .values {
+    .big-circle {
+      height: 280px;
+    }
+    .values-cont-list {
+      li {
+        height: auto;
+      }
+    }
+  }
+  .big-circle {
+    &:before {
+      height: 14px;
+      bottom: -14px;
+    }
+  }
+  .values-cont-list {
+    margin-left: 10px;
+    margin-right: 0;
+    &:before {
+      left: -13px;
+      height: calc(100% - 106px);
+      top: 52px;
+    }
+    &:after {
+      height: 71px;
+      top: -18px;
+      left: -13px;
+      width: calc(50% + 10px);
+    }
+    li {
+      &:before {
+        left: -24px;
+        width: 10px;
+      }
+      &:after {
+        width: 11px;
+        height: 11px;
+        left: -29px;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .values {
+    .big-circle {
+      -webkit-transform: scale(0.8) !important;
+      -moz-transform: scale(0.8) !important;
+      -ms-transform: scale(0.8) !important;
+      -o-transform: scale(0.8) !important;
+      transform: scale(0.8) !important;
+    }
+  }
+  .inner-section-head {
+    .bg-text {
+      font-size: 78px;
+      top: -28%;
+    }
+  }
+  .big-circle {
+    &:before {
+      height: 52px;
+      bottom: -52px;
+    }
+  }
+  .values-cont-list {
+    &:after {
+      width: calc(50% + 9px);
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .values-wrap {
+    overflow: hidden;
+    padding-top: 4px;
+  }
+  .inner-banner {
+    figure {
+      width: 125px;
+      height: 35px;
+      &:before,
+      &:after {
+        height: 15px;
+      }
+      &:after {
+        bottom: -15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .values-wrap {
+    .big-circle {
+      margin-bottom: 0;
+    }
+    .big-circle {
+      transform-origin: 80px;
+    }
+  }
+  .values-cont-list:after {
+    top: -28px;
+    height: 17px;
+    left: -10px;
+    width: calc(50% + 0px);
+    left: -12px;
+    border: none;
+    border-bottom: 1px dotted #ed1c24;
+    border-right: 1px dotted #ed1c24;
+  }
+  .values-cont-list:before {
+    top: -12px;
+    height: calc(100% - 51px);
+  }
+  .big-circle:before {
+    height: 17px;
+    bottom: -18px;
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .values-wrap {
+    .big-circle {
+      transform-origin: 40px;
+    }
+  }
+}

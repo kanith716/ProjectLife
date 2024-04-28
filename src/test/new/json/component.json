@@ -1,0 +1,122 @@
+[{
+    "id": 1,
+    "title": "Associate Manager - 1",
+    "rating": "1.21K",
+    "updatedTime": "22/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<form> <input type='text' placeholder='Enter Your Name'/><input type='email' placeholder='Enter Your Email'/><input  type='submit' value='submit'/></form>",
+    "css": "input{color:#000;border:1px solid #eee;padding:10px 10px 10px 10px;margin-bottom:10px;width:100%;display:block;}form{text-align:center;padding:20px; width:50%;margin:0 auto;}",
+    "javascript": "const submitBtn = document.getElementById('submit-btn');\nconst validate = (e) => {  e.preventDefault();const username= document.getElementById('username');const emailAddress = document.getElementById('email-address');f (username.value === '') {alert('Please enter your username.');username.focus();return false;}if (emailAddress.value === '') {alert('Please enter your emailaddress.');emailAddress.focus();return false;}return true;}submitBtn.addEventListener('click', validate);"
+},
+{
+    "id": 2,
+    "title": "Associate Manager - 2",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 3,
+    "title": "Associate Manager - 3",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 4,
+    "title": "Associate Manager - 4",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 5,
+    "title": "Associate Manager - 5",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+
+{
+    "id": 6,
+    "title": "Associate Manager - 6",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 7,
+    "title": "Associate Manager - 7",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 8,
+    "title": "Associate Manager - 8",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 9,
+    "title": "Associate Manager - 9",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 10,
+    "title": "Associate Manager - 9",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 11,
+    "title": "Associate Manager - 9",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+},
+{
+    "id": 12,
+    "title": "Associate Manager - 9",
+    "rating": "1.2K",
+    "updatedTime": "12/04/2024",
+    "description": "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.",
+    "HTML": "<h1>Python</h1>",
+    "css": "CSS Elements",
+    "javascript": "JavaScript Elements"
+}
+]

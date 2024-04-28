@@ -4,72 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encryption Example</title>
+    <title>Decryption Example</title>
 </head>
 
 <body>
-    <h1>Encryption Example</h1>
-    <form id="encryptionForm">
-        <label for="data">Data to Encrypt:</label><br>
-        <input type="text" id="data" name="data"><br>
-        <button type="button" onclick="encryptData()">Encrypt</button>
-    </form>
-    <div id="encryptedData"></div>
-
     <script>
-        const crypto = require('crypto');
-
         class Encrypter {
             constructor(encryptionkey, iv) {
-                this.algorithm = 'aes-256-gcm';
-                this.key = encryptionkey.substr(0, 32);
-                this.iv = Buffer.from(iv, 'base64');
-                this.tagLength = 16;
+                this.algorithm = 'AES-GCM';
+                this.key = this.getKey(encryptionkey);
+                this.iv = this.getIV(iv);
             }
 
-            encrypt(data) {
-                try {
-                    const cipher = crypto.createCipheriv(this.algorithm, this.key, this.iv);
-                    let cipherText = cipher.update(JSON.stringify(data), 'utf8');
-                    cipherText = Buffer.concat([cipherText, cipher.final()]);
-                    const tag = cipher.getAuthTag();
-                    const encryptedData = Buffer.concat([cipherText, tag]);
-
-                    return Buffer.from(encryptedData).toString('base64');
-                } catch (err) {
-                    console.error('Encryption error:', err);
-                    return null;
-                }
+            getKey(encryptionKey) {
+                return crypto.subtle.importKey(
+                    'raw',
+                    this.stringToArrayBuffer(encryptionKey.substr(0, 32)),
+                    { name: this.algorithm },
+                    false,
+                    ['encrypt', 'decrypt']
+                );
             }
 
-            decrypt(encryptedData) {
-                try {
-                    const encryptedBuffer = Buffer.from(encryptedData, 'base64');
-                    const cipherText = encryptedBuffer.slice(0, encryptedBuffer.length - this.tagLength);
-                    const tag = encryptedBuffer.slice(-this.tagLength);
-                    const decipher = crypto.createDecipheriv(this.algorithm, this.key, this.iv);
-                    decipher.setAuthTag(tag);
-                    let data = decipher.update(cipherText, 'binary', 'utf8');
-                    data += decipher.final('utf8');
-                    return JSON.parse(data);
-                } catch (err) {
-                    console.error('Decryption error:', err);
-                    return null;
+            getIV(iv) {
+                return this.stringToArrayBuffer(atob(iv));
+            }
+
+            stringToArrayBuffer(str) {
+                const buf = new ArrayBuffer(str.length);
+                const bufView = new Uint8Array(buf);
+                for (let i = 0, strLen = str.length; i < strLen; i++) {
+                    bufView[i] = str.charCodeAt(i);
                 }
+                return buf;
+            }
+
+            async encrypt(data) {
+                const key = await this.key;
+                const iv = this.iv;
+                const encodedData = new TextEncoder().encode(JSON.stringify(data));
+
+                return crypto.subtle.encrypt({ name: this.algorithm, iv }, key, encodedData)
+                    .then(encryptedData => {
+                        const encryptedArray = new Uint8Array(encryptedData);
+                        const encryptedStr = String.fromCharCode.apply(null, encryptedArray);
+                        return btoa(encryptedStr);
+                    })
+                    .catch(error => {
+                        console.error('Encryption error:', error);
+                        throw error;
+                    });
+            }
+
+            async decrypt(encryptedData) {
+                const key = await this.key;
+                const iv = this.iv;
+                const decodedData = atob(encryptedData);
+                const encryptedArray = new Uint8Array(decodedData.length);
+                for (let i = 0; i < decodedData.length; i++) {
+                    encryptedArray[i] = decodedData.charCodeAt(i);
+                }
+
+                return crypto.subtle.decrypt({ name: this.algorithm, iv }, key, encryptedArray)
+                    .then(decryptedData => {
+                        const decryptedStr = new TextDecoder().decode(decryptedData);
+
+                        return JSON.parse(decryptedStr);
+                    })
+                    .catch(error => {
+                        console.error('Decryption error:', error);
+                        throw error;
+                    });
             }
         }
 
-        // Example usage
-        const encryptionkey = 'your_encryption_key_here';
-        const iv = 'your_base64_encoded_iv_here';
-        const encrypter = new Encrypter(encryptionkey, iv);
 
-        function encryptData() {
-            const dataInput = document.getElementById('data');
-            const data = dataInput.value;
-            const encrypted = encrypter.encrypt(data);
-            document.getElementById('encryptedData').innerText = `Encrypted Data: ${encrypted}`;
-        }
+
+        const encryptionKey = "ob1VbQlyRRaKms81nzKB91hjb4QvmP-5";
+        const iv = "Ud+6Fg5gjsA7WFZx";
+        const encrypter = new Encrypter(encryptionKey, iv);
+
+
+        const encryptedResponseData = "gr/XKivO1E+L9x3oPTcc/4v+qqK1VY9RhwzjaGCh88nvTPamMGwVWB22O03fQmhQlYCt1gPt6/CxpC3G0dIYMBjhcvk1Rv2+GCNdihHLesr0+iJwpK3dJxWm2hM2WD68kM7p4VcMMJKJjrzQ/IxcPuq8gQdzvdBPJpH0y6clLiraAqnn8hvmEDT+pxKnPMIV5THk5sjsSQjcdsahaoHQq81xcrSbBPgmtcNCgPUS42qRSVeu967+XPHyxpGcOesTHe/3iR3a4lTkmZU6ObRN1XiAOqA89ACH9RBEr7Qu8g9yiv4Iv94k92JGh3D+2wDsXo8Ox3t15bFt2p5w0+abmxQdZqOYruv/TZ6tLygxJdDGMWdsp4hN6p4W48UCUOizEc5AAwpGWQzqnSUh50ElXRkhWN2bPzRq7Ib8mOiPuhqTx5JwHEdMXFhnGTn/dgDlkzaPEAT9e9i2P2kW5o7s6+VBZJIQi2bLmDPlC9Q236SOl6nktdToEKb6JzS8OlqrVOA66L0oX0wpSoafHag2YZi9bjWo/q9GVwmZ9TgsM7r8h85xfXLOeNQMuQBVw17CNaB3j+Nrg2tfaN+n/3V7rTz6uV6A/O58PKboKvDEOtrZuZbG07dvnMqUJ8KSkqmxk0Mft3Ruxg5lsVixJI7BB3VDGqg3hCMWog1wp4oXRakeNSFgzE9fyLESBSzBhWzGCC7j1dMOUsdSZ8bIsg4p5f0RPqWlqF6TsFY9lxeC5kWSVip5qszYABye52f0uwLym37J/imY2trilNQ7iDzfwsjd03FX01qYbnumgLn1XntUvfMjx2b0";
+
+
+        encrypter.decrypt(encryptedResponseData)
+            .then(decryptedResponse => {
+                console.log("Decrypted Response Data:", decryptedResponse);
+            })
+            .catch(error => {
+                console.error('Decryption failed:', error);
+            });
     </script>
 </body>
 

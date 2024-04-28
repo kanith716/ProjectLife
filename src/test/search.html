@@ -231,6 +231,9 @@
                 <div class='state-filter-wrap'>
                     <div>
                         <div class="drop-icon"></div>
+                        <div class="state-selection">
+                            <span>You're now seeing</span>
+                        </div>
                         <select name="format" class="state-select">
                             <option value="pdf ">Mumbai</option>
                             <option value="txt">txt</option>
@@ -275,11 +278,11 @@
                         <div class="sub-job-card">
                             <div class="job-location">
                                 <div class="job-location-main">
-                                    <img src="./location.png" alt="" />
+                                    <img src="./img/career-home/location.png" alt="" />
                                     <p>Mumbai</p>
                                 </div>
                                 <div class="job-location-main">
-                                    <img src="./calendar.png" alt="" />
+                                    <img src="./img/career-home/calendar.png" alt="" />
                                     <p>10 - 15 Years</p>
                                 </div>
                             </div>
@@ -456,6 +459,7 @@
                             <div class="main-job-sub-row">
                                 <div class="sub-filter-select row-job-filter job-card-select">
                                     <label class="filter-select-label">Function</label>
+                                    <div class="drop-icon"></div>
                                     <select name="format" multiple="multiple" id="format" class="card-func-select">
                                         <option data-badge="" value="pdf">PDF</option>
                                         <option data-badge="" value="txt">txt</option>
@@ -466,6 +470,7 @@
                                 </div>
                                 <div class="sub-filter-select row-job-filter job-locate-select">
                                     <label class="filter-select-label">Function</label>
+                                    <div class="drop-icon"></div>
                                     <select name="format" id="" class="job-card-locate">
                                         <option value="pdf ">Mumbai</option>
                                         <option value="txt">txt</option>
@@ -2511,6 +2516,8 @@
 
     </div>
     <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/paginathing.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/paginathing@2.2.1/dist/paginathing.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
@@ -2607,16 +2614,16 @@
                                 <div class="sub-job-card">
                                     <div class="job-location">
                                         <div class="job-location-main">
-                                            <img src="./location.png" alt="">
+                                            <img src="./img/career-home/location.png" alt="">
                                             <p>Mumbai</p>
                                         </div>
                                         <div class="job-location-main">
-                                            <img src="./calendar.png" alt="">
+                                            <img src="./img/career-home/calendar.png" alt="">
                                             <p>10 - 15 Years</p>
                                         </div>
                                     </div>
                                     <div class="job-sal">
-                                        <img src="./money.png" alt="">
+                                        <img src="./img/career-home/money.png" alt="">
                                         <p>₹ Not Disclosed</p>
                                     </div>
                                     <p class="job-posted">Posted 3 weeks ago</p>
@@ -2630,18 +2637,15 @@
                                 groupCount++;
                             }
                         }else if(index === 8) {
-                            $(".left-list-border-3").append(`<div class="main-job-card-list counted-wrap"><h1>+153<span>Jobs</span></h1><div><a href="#" class="exp-btn">Explore All Jobs</a></div></div>`);
+                            $(".left-list-border-3").append(`<div class="main-job-card-list counted-wrap"><h1>+ 153<span>Jobs</span></h1><div><a href="#" class="exp-btn">Explore All Jobs</a></div></div>`);
                         }
                     }
-                    $(".home-card .main-job-card-list").click(function () {
-                        $(".main-job-card-list").removeClass("activecard");
-                        $(".job-discripattionaccordian").remove();
-                        $(this).addClass("activecard");
-                        var tarId = $(this).attr("data-id");
-                        $(this).parents(".left-list-border").after(`<div class="job-discripattionaccordian"></div>`);
-                        response.map((ele, index) => {
+                   
+                   
+                    function detailresult(tarId){
+                            response.map((ele, index) => {
                             if (tarId == response[index].id && window.innerWidth > 768 && index < 8) {
-                                $(".job-discripattionaccordian").append(`<div class="w3-container"><h3>${response[index].title}</h3>
+                                $(".job-discripattionaccordian").append(`<div class="w3-container"><h3 class="detail-head">${response[index].title}</h3>
                                         <div class="listof-cards">
                     <div class="jd-main-title">
                       <div class="list-titles">
@@ -2747,6 +2751,43 @@
                             }
                         })
 
+                    }
+                   
+                     // Get the URLSearchParams object for the current URL
+                    let searchParams = new URLSearchParams(window.location.search);
+
+                    // Get the value of the 'id' parameter
+                    let id = searchParams.get('jobId');
+                    if(id){
+                        $(".main-job-card-list").removeClass("activecard");
+                        $(".job-discripattionaccordian").remove();
+                         $(".home-card .main-job-card-list").map((index,ele) =>{
+                           if($(ele).attr("data-id") == id){
+                            $(ele).addClass("activecard");
+                            $(ele).parents(".left-list-border").after(`<div class="job-discripattionaccordian"></div>`);
+                             detailresult(id)
+                           }
+                         })
+                    }
+                    
+                    $(".fit-page-card .main-job-card-list").click(function () {
+                        $(".main-job-card-list").removeClass("activecard");
+                        $(".job-discripattionaccordian").remove();
+                        $(this).addClass("activecard");
+                        var tarId = $(this).attr("data-id");
+                        $(this).parents(".left-list-border").after(`<div class="job-discripattionaccordian"></div>`);
+
+                        detailresult(tarId)
+                        if (window.innerWidth < 767) {
+                            $(".main-job-card").fadeOut(500);
+                            $(".applyjd-discription-mobile").fadeIn(500);
+                        }
+                    })
+
+                      $(".home-card .main-job-card-list").click(function (e) {
+                        e.preventDefault();
+                        var tarId = $(this).attr("data-id");
+                        window.location.href = `/src/test/find-your-fit.html?jobId=${tarId}`
                         if (window.innerWidth < 767) {
                             $(".main-job-card").fadeOut(500);
                             $(".applyjd-discription-mobile").fadeIn(500);
@@ -2800,6 +2841,7 @@
                 placeholder: "Location",
                 tags: true,
                 closeOnSelect: true,
+                dropdownCssClass: "locate-pop",
                 allowHtml: true,
                 // minimumResultsForSearch: Infinity
             });

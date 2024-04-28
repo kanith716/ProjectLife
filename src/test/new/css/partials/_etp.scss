@@ -1,0 +1,223 @@
+.inner-large-banner {
+  &.engineering-banner {
+    &.etp-banner {
+      @include mq("tablet", max) {
+        .left-section {
+          h1 {
+            max-width: 610px;
+            br {
+              display: none;
+            }
+            @include mq("phone", max) {
+              max-width: 340px;
+            }
+          }
+        }
+      }
+      .right-section {
+        background: url(./../img/etp_banner.jpg) no-repeat right bottom / cover;
+        // @include mq("desktop", max) {
+        //   background: url(./../img/etp_banner.jpg) no-repeat 0px 0px / cover;
+        // }
+        @include mq("tablet", max) {
+          background: url(./../img/etp_banner.jpg) no-repeat right bottom / cover;
+        }
+      }
+    }
+  }
+}
+
+.etp-key-benefits {
+  padding: 120px 0 126px;
+  text-align: center;
+  figure {
+    margin-bottom: 70px;
+    img {
+      max-width: 1064px;
+      @include mq("smdesktop", max) {
+        width: 100%;
+      }
+      &.mbl-display-none {
+        display: initial !important;
+      }
+    }
+  }
+  p {
+    display: inline-block;
+    position: relative;
+    &::before {
+      display: block;
+      @include abs-position(-1px, auto, auto, -8px);
+      content: "1";
+      font-size: 8px;
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 72px 0;
+    figure {
+      margin-bottom: 30px;
+      // width: 72%;
+      width: 90%;
+      margin: auto;
+      img {
+        margin-bottom: 60px;
+      }
+      @include mq("phone", max) {
+        width: 100%;
+        img {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 60px 0;
+    h5 {
+      @include font-source-sans(22px, $heading-font-color, 600, 26px);
+      margin: 54px 0;
+      span {
+        @include font-source-sans(49px, rgba(204, 204, 204, 0.5), 600);
+        position: relative;
+        top: 6px;
+      }
+      br {
+        display: block;
+      }
+    }
+    p {
+      &.f-12 {
+        max-width: 226px;
+        margin: auto;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.etp-cgp {
+  padding: 120px 0 269px;
+  background: #fff;
+  .etp-cgp-heading {
+    margin-bottom: 70px;
+  }
+  figure {
+    // max-width: 943px;
+    margin: auto;
+    img {
+      max-width: 967px;
+      @include mq("smdesktop", max) {
+        max-width: 100%;
+      }
+    }
+  }
+  @include mq("tablet", max) {
+    padding: 80px 0;
+    figure {
+      img {
+        margin: auto;
+        // max-width: 65%;
+        max-width: 85%;
+      }
+    }
+  }
+  @include mq("phone", max) {
+    padding: 60px 0;
+    .etp-cgp-heading {
+      margin-bottom: 40px;
+    }
+    figure {
+      img {
+        margin: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.program-structure {
+  &.engineering {
+    &.etp-program-highlights {
+      .gll-wrap {
+        &:before {
+          content: "Program Highlights";
+          @include mq("phone", max) {
+            font-size: 46px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .program-structure {
+    &.engineering {
+      &.etp-program-highlights {
+        .gll-wrap {
+          &:before {
+            @include mq("phone", max) {
+              font-size: 40px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .program-structure {
+    &.engineering {
+      &.etp-program-highlights {
+        .gll-wrap {
+          &:before {
+            @include mq("phone", max) {
+              font-size: 35px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .grow-learn-lead.program-structure.engineering.etp-program-highlights {
+    .gll-wrap {
+      &:before {
+        @include css3-prefix("transform", "translate(-50%, -200px)");
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .grow-learn-lead.program-structure.engineering.etp-program-highlights {
+    .gll-wrap {
+      &:before {
+        top: 10px;
+        @include css3-prefix("transform", "translate(0, -168px)");
+        @include mq("smphone", max) {
+          @include css3-prefix("transform", "translate(0, -158px)");
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .grow-learn-lead.program-structure.engineering.etp-program-highlights {
+    .gll-wrap {
+      &:before {
+        top: 0;
+      }
+    }
+  }
+}
+
+.etp-cb {
+  padding-bottom: 250px;
+  @include mq("tablet", max) {
+    padding-bottom: 60px;
+  }
+}
