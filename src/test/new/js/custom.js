@@ -101,7 +101,7 @@ function openCitymobile() {
                         groupCount++;
                     }
                 } else if (index === 8) {
-                    $(".left-list-border-3").append(`<div class="main-job-card-list counted-wrap"><h1>+ 153<span>Jobs</span></h1><div><a href="#" class="exp-btn">Explore All Jobs<img src="/img/icon/scroll_to_top_arrow.svg" /></a></div></div>`);
+                  $(".left-list-border-3").append(`<div class="main-job-card-list counted-wrap"><h1>+ 153<span>Jobs</span></h1><div><a href="#" class="exp-btn">Explore All Jobs<img src="/src/test/new/img/icon/scroll_to_top_arrow.svg" /></a></div></div>`);
                 }
             }
 
@@ -251,7 +251,7 @@ function openCitymobile() {
             $(".home-card .main-job-card-list").click(function (e) {
                 e.preventDefault();
                 var tarId = $(this).attr("data-id");
-                window.location.href = `/find-your-fit.html?jobId=${tarId}`
+                window.location.href = `/src/test/new/find-your-fit.html?jobId=${tarId}`
                 if (window.innerWidth < 767) {
                     $(".main-job-card").fadeOut(500);
                     $(".applyjd-discription-mobile").fadeIn(500);
