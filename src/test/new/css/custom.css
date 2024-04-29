@@ -26,7 +26,7 @@
     }
 
     .banner-slider .banner-img {
-        height: 96vh !important;
+        height: 126vh !important;
         position: relative;
         transition: 0.8s linear;
     }
@@ -60,13 +60,13 @@
 
     }
 
-    .banner-slider.career-slide {
-        height: 120vh;
+    .banner-slider {
+        height: 126vh;
         transition: 0.8s linear;
     }
 
-    .banner-slider .banner-img {
-        height: 126vh !important;
+    .banner-slider.active .banner-img {
+        height: 90vh !important;
         position: relative;
         transition: 0.8s linear;
     }
