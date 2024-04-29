@@ -286,8 +286,9 @@ function openCitymobile() {
     $(".js-select2").on("select2:open", function (e) {
         $(".select2-dropdown").addClass("func-wrap");
         if ($(".job-search-inner").css("display") == "block") {
-            $(".banner-slider").removeClass("active");
+            $(".banner-slider").addClass("active");
             $(".job-search-inner").fadeOut(1000);
+          $(".tech-search").fadeIn(500)
             $(".js-select2").select2('close');
             //  $(".select2-search__field").trigger("click");
             setTimeout(() => {
@@ -337,19 +338,20 @@ $('.locate-select').select2({
     });
 
     $('.job-role-select').on('select2:select', function (e) {
+      
         var selectedData = e.params.data;
         if (selectedData.text == "Technology") {
             $(".tech-search").fadeIn(1000)
-            $(".banner-slider").removeClass("active");
+            $(".banner-slider").addClass("active");
             $(".job-search-inner").fadeOut(1000);
         } else if (selectedData.text == "Field Sales") {
             if (window.innerWidth > 768) {
                 $(".tech-search").fadeOut(1000)
-                $(".banner-slider").addClass("active");
+                $(".banner-slider").removeClass("active");
                 $(".job-search-inner").fadeIn(1000);
             } else {
                 $(".main-search").fadeOut(1000);
-                $(".banner-slider").addClass("active");
+                $(".banner-slider").removeClass("active");
                 $(".job-search-inner").fadeIn(1000);
             }
 
@@ -374,7 +376,7 @@ $('.locate-select').select2({
     $(".locate-wrapper .select2-container").click((e) => {
         e.preventDefault();
         if ($(".job-search-inner").css("display") == "block") {
-            $(".banner-slider").removeClass("active");
+            $(".banner-slider").addClass("active");
             $(".job-search-inner").fadeOut(1000);
             $(".locate-select").select2('close');
             //  $(".select2-search__field").trigger("click");
